@@ -2,7 +2,7 @@
 
 ## The problem
 
-Auto Click exists on macOS. Its purpose, and the three pressures that decide its design, are stated
+Clickify exists on macOS. Its purpose, and the three pressures that decide its design, are stated
 once for the whole product in [`../../../docs/sdd/01-scope.md`](../../../docs/sdd/01-scope.md) and
 are not repeated here.
 

@@ -1,6 +1,6 @@
-# Auto Click for Android
+# Clickify for Android
 
-The Android member of Auto Click. See the [repository README](../README.md) for the product, and
+The Android member of Clickify. See the [repository README](../README.md) for the product, and
 [`../CONTEXT.md`](../CONTEXT.md) for the shared language.
 
 **Status: all four slices are built.** The app sets itself up, lists **Scenario**s, steps out of the way
@@ -81,7 +81,7 @@ flow, Hilt, Navigation Compose, and the Spotless / ktlint / detekt / Kover toolc
 Removed on purpose, so the absences are not read as oversights:
 
 - **Room** — a **Scenario** is a directory of files, [ADR-0014](docs/adr/0014-no-database.md).
-- **Retrofit, OkHttp, the `INTERNET` permission and the network security config** — Auto Click talks
+- **Retrofit, OkHttp, the `INTERNET` permission and the network security config** — Clickify talks
   to no server at all.
 - **The `dev`/`staging`/`prod` flavours** — they existed to point at three base URLs.
 - **The reference login and item features**, and the network- and auth-shaped `DomainError`

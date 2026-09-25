@@ -14,7 +14,7 @@
 #        ANDROID_SERIAL=emulator-5554 tools/testing/tier2.sh
 set -euo pipefail
 
-PACKAGE="com.pbh.autoclick"
+PACKAGE="com.pbh.clickify"
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 
 find_adb() {

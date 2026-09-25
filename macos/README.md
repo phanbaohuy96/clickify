@@ -1,6 +1,6 @@
-# Auto Click for macOS
+# Clickify for macOS
 
-The macOS member of Auto Click. Every command below runs from this directory (`macos/`); the
+The macOS member of Clickify. Every command below runs from this directory (`macos/`); the
 shared glossary and decision records live one level up. See the [repository README](../README.md).
 
 A native menu-bar app. Two interface surfaces, but only **one** runner underneath:
@@ -29,7 +29,7 @@ from being new kinds of step — they already exist, out of 6 actions × 5 targe
 Window anchoring attaches to the **corner nearest the point**, not always the top-left: that is
 what keeps a button in the bottom-right corner correct when you enlarge the window.
 
-Scenarios live in `~/Library/Application Support/AutoClick/Scenarios/<id>/scenario.json`,
+Scenarios live in `~/Library/Application Support/Clickify/Scenarios/<id>/scenario.json`,
 one directory per scenario. Deleting a scenario deletes the whole directory.
 
 ## Image and text recognition
@@ -73,19 +73,19 @@ and its name to `Localization.nativeName(of:)`. No other Swift changes, no build
 
 ## Recording
 
-Press `⌥⌘R` to start and end a recording session. Auto Click watches your mouse and builds a
+Press `⌥⌘R` to start and end a recording session. Clickify watches your mouse and builds a
 scenario from it: it recognises double clicks, long presses and drags, and folds a whole
 trackpad scroll burst into a single step.
 
 Two things are deliberate:
 
-- **No keyboard capture.** Recording keys would force Auto Click to request Input Monitoring and
+- **No keyboard capture.** Recording keys would force Clickify to request Input Monitoring and
   would turn it into a system-wide keylogger. Typing steps are added by hand after recording.
 - **No cap on idle time.** If you wait 8 seconds, the recording waits 8 seconds. The recorder
   cannot tell "waiting for a page to load" from "gone to make coffee", so a cap would break
   exactly when it matters most.
 
-If a whole recording session stays inside one application, Auto Click locks onto that
+If a whole recording session stays inside one application, Clickify locks onto that
 application and anchors every step to its window — the recording still works after the window
 has moved. Spanning several applications keeps absolute coordinates and says so plainly.
 
@@ -139,7 +139,7 @@ The first time you press **Start**, macOS asks for the Accessibility permission.
 
 `System Settings → Privacy & Security → Accessibility`
 
-and enable it for **Auto Click**. Scenarios that use image or text recognition need the extra
+and enable it for **Clickify**. Scenarios that use image or text recognition need the extra
 **Screen Recording** permission on the same screen — two separate permissions, and granting one
 does not grant the other. Run the app from `/Applications` before enabling "Start with MacBook"
 so macOS registers the right location.
@@ -153,7 +153,7 @@ AUTO_CLICK_SIGNING_IDENTITY="Developer ID Application: Your Name (TEAMID)" ./scr
 ```
 
 To restrict clicking, turn on **Only click in this application** and pick a running app. The
-refresh button beside the list picks up apps opened since. Auto Click brings that app to the
+refresh button beside the list picks up apps opened since. Clickify brings that app to the
 front, checks that the UI at the coordinates belongs to the chosen PID, and only then emits a
 system-wide click. It stops on its own if the app quits or the click point falls outside it.
 
@@ -179,7 +179,7 @@ obvious. Change a behaviour and you change the spec first.
 
 ```bash
 swift test
-swift run AutoClick
+swift run Clickify
 ```
 
 Under `swift run`, clicking may require granting the permission to Terminal. The `.app` in

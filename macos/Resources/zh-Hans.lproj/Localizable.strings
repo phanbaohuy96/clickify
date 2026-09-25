@@ -1,4 +1,4 @@
-/* Auto Click — 简体中文.
+/* Clickify — 简体中文.
    MACHINE TRANSLATED, not reviewed by a native speaker. Corrections are very welcome, and a partial one is
    fine: anything missing here falls back to English (LC-7), so fixing twenty keys is a safe change.
    机器翻译，未经母语者校对。欢迎提交更正；缺失的条目会回退到英文，因此只修改一部分也是安全的。 */
@@ -86,7 +86,7 @@
 "editor.empty.title" = "还没有脚本";
 "editor.empty.action" = "创建第一个脚本";
 "editor.newer_format.title" = "“%@”使用了更新的格式";
-"editor.newer_format.detail" = "只读：此版本的 Auto Click 既不能编辑也不能运行它。";
+"editor.newer_format.detail" = "只读：此版本的 Clickify 既不能编辑也不能运行它。";
 "editor.scenario_name" = "脚本名称";
 "editor.repeat_until_stopped" = "重复到手动停止";
 "editor.iteration_count" = "轮数";
@@ -146,7 +146,7 @@
 "step.key" = "按键";
 "step.modifiers" = "修饰键";
 "step.key_preview" = "将发送 %@。";
-"step.key_activation_hint" = "输入前 Auto Click 会把 %@ 切到前台；切不过去就停止。";
+"step.key_activation_hint" = "输入前 Clickify 会把 %@ 切到前台；切不过去就停止。";
 "step.key_no_lock_hint" = "未锁定应用：按键会进入当前最前面的任意窗口。";
 "step.target.kind" = "类型";
 "step.target.cursor_hint" = "每一轮都重新读取光标位置，因此整串操作会跟着你的手走。";
@@ -211,20 +211,20 @@
 "error.lock.not_running" = "所选应用没有在运行。";
 "error.fixed_point_missing" = "请选择一个固定的点击位置。";
 "error.empty_scenario" = "该脚本还没有任何步骤。";
-"error.accessibility_denied" = "请为 Auto Click 授予「辅助功能」权限后重试。如果 Auto Click 已在列表中，请关掉再打开——更新会让旧的授权失效。";
+"error.accessibility_denied" = "请为 Clickify 授予「辅助功能」权限后重试。如果 Clickify 已在列表中，请关掉再打开——更新会让旧的授权失效。";
 "error.missing_locked_application" = "该脚本有锚定窗口的步骤，因此必须选择要锁定的应用。";
 "error.locked_application_not_running" = "%@ 没有在运行。";
-"error.locked_application_terminated" = "目标应用已关闭；Auto Click 已停止。";
-"error.point_outside_locked_application" = "该位置不在已锁定的应用内；Auto Click 已停止。";
+"error.locked_application_terminated" = "目标应用已关闭；Clickify 已停止。";
+"error.point_outside_locked_application" = "该位置不在已锁定的应用内；Clickify 已停止。";
 "error.anchor_window_unavailable" = "读不到 %@ 的任何窗口作为坐标原点——它可能已最小化到程序坞。";
-"error.activation_failed" = "无法把 %@ 切到前台以输入；Auto Click 已停止。";
+"error.activation_failed" = "无法把 %@ 切到前台以输入；Clickify 已停止。";
 "error.unknown_key" = "无法识别按键“%@”。";
-"error.target_not_found" = "在屏幕上找不到 %@；Auto Click 已停止。";
+"error.target_not_found" = "在屏幕上找不到 %@；Clickify 已停止。";
 "error.launch_at_login" = "无法修改登录设置：%@";
-"error.schema_too_new" = "该脚本使用格式版本 %1$d，而此版本的 Auto Click 最高只支持 %2$d。";
+"error.schema_too_new" = "该脚本使用格式版本 %1$d，而此版本的 Clickify 最高只支持 %2$d。";
 "error.unknown_action" = "无法识别动作“%@”。";
 "error.unknown_target" = "无法识别位置“%@”。";
-"error.screen_recording_denied" = "请为 Auto Click 授予「屏幕录制」权限后重试。如果已经授予，请退出 Auto Click 再重新打开。";
+"error.screen_recording_denied" = "请为 Clickify 授予「屏幕录制」权限后重试。如果已经授予，请退出 Clickify 再重新打开。";
 "error.no_display" = "找不到可截取的显示器。";
 "error.pixel_scale_unreadable" = "读不到显示器的像素缩放比例，因此已跳过，以免点错位置。";
 "error.screen_capture_failed" = "无法截取屏幕。";

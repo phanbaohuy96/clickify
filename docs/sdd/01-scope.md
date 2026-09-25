@@ -2,13 +2,13 @@
 
 ## The problem
 
-Auto Click can currently emit only **one** kind of operation (a left click) repeated N times at
+Clickify can currently emit only **one** kind of operation (a left click) repeated N times at
 one point. The goal is to grow it into a **Scenario** runner — an ordered sequence of varied
 operations — and to let scenarios be created by **recording** the user's real work.
 
 ### No application is the use case
 
-Auto Click encodes **no knowledge of any application**. There is no list of supported apps, no
+Clickify encodes **no knowledge of any application**. There is no list of supported apps, no
 per-app rule, and no scenario shipped in the box. The user supplies the points, the order, the
 timing and the **Template**s; the app supplies faithful execution and gets out of the way.
 Anything that could only ever be true of one application belongs inside a **Scenario**, never in

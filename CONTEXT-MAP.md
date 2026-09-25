@@ -1,15 +1,15 @@
 # Context Map
 
-Auto Click is one product on two platforms. The concepts are shared; almost nothing else is.
+Clickify is one product on two platforms. The concepts are shared; almost nothing else is.
 
 ## Contexts
 
-- [Auto Click](./CONTEXT.md) — the shared language: **Scenario**, **Step**, **Action**,
+- [Clickify](./CONTEXT.md) — the shared language: **Scenario**, **Step**, **Action**,
   **Target**, **Guard**, **Template**, **Search region**, **Recording session**,
   **Interface language**. True on every platform.
-- [Auto Click for Android](./android/CONTEXT.md) — **Overlay**, **Marker**, **Gesture**,
+- [Clickify for Android](./android/CONTEXT.md) — **Overlay**, **Marker**, **Gesture**,
   **Global action**, **Set text**, **Screen profile**, **Foreground application**.
-- [Auto Click for macOS](./macos/CONTEXT.md) — **Simple mode**, **Locked application**,
+- [Clickify for macOS](./macos/CONTEXT.md) — **Simple mode**, **Locked application**,
   **Anchor window**, **Recognition language**, **Input source**.
 
 A term is defined in exactly **one** of the three, and the platform files may cite the root but

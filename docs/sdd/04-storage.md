@@ -5,7 +5,7 @@ The directory layout and why **Template**s are duplicated:
 
 ## Layout
 
-- **ST-1** `[Slice 1]` `[done]` The storage root is `~/Library/Application Support/AutoClick/`.
+- **ST-1** `[Slice 1]` `[done]` The storage root is `~/Library/Application Support/Clickify/`.
 - **ST-2** `[Slice 1]` `[done]` Every **Scenario** is a directory `Scenarios/<uuid>/` holding
   `scenario.json`, and (from Slice 4) a `templates/` subdirectory.
 - **ST-3** `[Slice 1]` `[done]` Deleting a **Scenario** deletes the whole directory. There is no

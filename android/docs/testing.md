@@ -17,9 +17,9 @@ are testable against fixture bitmaps with no emulator at all, including the two-
 
 ## Tier 2 — Instrumented tests on an emulator, against a target app
 
-The tier macOS cannot have, and it exists: `app/src/androidTest/kotlin/com/pbh/autoclick/tier2/`, run
+The tier macOS cannot have, and it exists: `app/src/androidTest/kotlin/com/pbh/clickify/tier2/`, run
 by `tools/testing/tier2.sh` or `make tier2`. Eight assertions, half a minute on an emulator, driving
-the **real** `AutoClickAccessibilityService` — the fake stops at the tier 1 boundary — against a
+the **real** `ClickifyAccessibilityService` — the fake stops at the tier 1 boundary — against a
 window that writes down what arrived.
 
 Three pieces:
@@ -110,8 +110,8 @@ a tier 3 item, and nothing here has moved it.
    then calls Gradle — the obvious shape, and the first one tried — leaves `settings get` answering
    `null`. That is why the grant lives in the suite and the script only prepares the device.
 3. **The target app has to be in the application's own process.** `ActivityScenario` refuses an
-   Activity that resolves elsewhere — *"Intent in process com.pbh.autoclick resolved to different
-   process com.pbh.autoclick.test"* — and the assertions read the recorded touches out of memory,
+   Activity that resolves elsewhere — *"Intent in process com.pbh.clickify resolved to different
+   process com.pbh.clickify.test"* — and the assertions read the recorded touches out of memory,
    which only works in one process anyway. So `TouchLogActivity` lives in `src/debug`: absent from
    every build that ships, not exported, and with no intent filter, so nothing but the tests can
    start it.

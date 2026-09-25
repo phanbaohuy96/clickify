@@ -2,15 +2,15 @@
 
     <!-- The target app docs/testing.md asks for, and it has to live in the **debug variant of the
          application** rather than in the test APK. `ActivityScenario` refuses to launch an Activity
-         that resolves to another process — "Intent in process com.pbh.autoclick resolved to
-         different process com.pbh.autoclick.test" — and the tests have to read the touches it
+         that resolves to another process — "Intent in process com.pbh.clickify resolved to
+         different process com.pbh.clickify.test" — and the tests have to read the touches it
          recorded out of memory, which only works if it is in the same process they are.
 
          Debug-only, not exported, and no intent filter: nothing can start it but the tests, and it
          is absent from every build that ships. -->
     <application>
         <activity
-            android:name="com.pbh.autoclick.tier2.TouchLogActivity"
+            android:name="com.pbh.clickify.tier2.TouchLogActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Material.NoActionBar" />

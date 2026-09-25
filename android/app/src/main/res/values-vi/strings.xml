@@ -1,6 +1,6 @@
 <resources>
     <string name="accessibility_service_summary">Chạm, vuốt và nhập thay bạn</string>
-    <string name="accessibility_service_description">Auto Click phát lại đúng những thao tác chạm và vuốt do bạn tự thiết lập. Quyền này là bắt buộc vì gửi một cú chạm sang ứng dụng khác là việc duy nhất Android cho phép một dịch vụ trợ năng làm. Ứng dụng không đọc gì trên màn hình, giữ mọi thứ trong máy, và không có quyền truy cập internet.</string>
+    <string name="accessibility_service_description">Clickify phát lại đúng những thao tác chạm và vuốt do bạn tự thiết lập. Quyền này là bắt buộc vì gửi một cú chạm sang ứng dụng khác là việc duy nhất Android cho phép một dịch vụ trợ năng làm. Ứng dụng không đọc gì trên màn hình, giữ mọi thứ trong máy, và không có quyền truy cập internet.</string>
     <string name="scenario_new">Kịch bản mới</string>
     <string name="scenario_none">Chưa có kịch bản nào. Tạo một cái, rồi đặt các điểm chạm lên ứng dụng bạn muốn tự động hoá.</string>
     <string name="scenario_default_name">Chưa đặt tên</string>

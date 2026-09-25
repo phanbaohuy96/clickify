@@ -7,23 +7,23 @@ and [ADR-0004](../adr/0004-recordings-keep-real-timing.md) (no timing cap).
 
 - **RC-1** `[done]` A **Recording session** starts and ends with the global `⌥⌘R` shortcut, **not**
   with an on-screen button — clicking a button would land in the recording itself.
-- **RC-2** `[done]` Any event **landing in one of Auto Click's own windows** is excluded from the
+- **RC-2** `[done]` Any event **landing in one of Clickify's own windows** is excluded from the
   recording, including the tail of that gesture (mouse up, drag), not just the press.
 
   The condition is **position**, not "which application is frontmost". The frontmost-application
   test is wrong in **both directions**, and both were measured on the real app:
 
   - **Missed.** The floating panel is an `NSPanel` of kind `.nonactivatingPanel`, so clicking it
-    does **not** bring Auto Click to the front — which let the "Finish" click land in the
+    does **not** bring Clickify to the front — which let the "Finish" click land in the
     recording as a spurious click Step right where the button is.
   - **Falsely caught, and worse.** The user opens the popover and presses "Record": the popover
-    closes but Auto Click is **still the frontmost application**, so the first click on the
+    closes but Clickify is **still the frontmost application**, so the first click on the
     destination app is treated as our own and swallowed. That means **every recording started from
     the popover lost its first operation**, silently. Measured: three clicks produced two Steps,
     and the missing one was always the first.
 
   Along with this, the **owning application** of a gesture has to be asked by coordinate whenever
-  the frontmost application is Auto Click itself. Attributing it to ourselves makes the whole
+  the frontmost application is Clickify itself. Attributing it to ourselves makes the whole
   session look like it spans two applications (`RC-14`) and loses **Anchor window**-relative
   Targets entirely (`RC-13`).
 - **RC-3** `[done]` While recording, the floating panel shows the number of **Step**s recorded and

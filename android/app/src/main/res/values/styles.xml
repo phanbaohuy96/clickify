@@ -7,7 +7,7 @@
       deliberate, and it is the same ink the Overlay uses — the first thing the user sees is the
       thing the app actually looks like. Ignored below API 31, where there is no such screen.
     -->
-    <style name="Theme.AutoClick" parent="android:style/Theme.Material.Light.NoActionBar">
+    <style name="Theme.Clickify" parent="android:style/Theme.Material.Light.NoActionBar">
         <item name="android:windowSplashScreenBackground" tools:targetApi="s">#14161A</item>
         <item name="android:windowSplashScreenAnimatedIcon" tools:targetApi="s">@drawable/ic_launcher_foreground</item>
         <item name="android:windowSplashScreenIconBackgroundColor" tools:targetApi="s">#14161A</item>

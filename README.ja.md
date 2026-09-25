@@ -1,15 +1,15 @@
-# Auto Click
+# Clickify
 
 <p align="center">
   <a href="README.md">English</a> | <a href="README.vi.md">Tiếng Việt</a> | <a href="README.zh-Hans.md">简体中文</a> | <b>日本語</b> | <a href="README.es.md">Español</a>
 </p>
 
 <p align="center">
-  <img src="docs/assets/hero_showcase.jpg" alt="Auto Click クロスプラットフォーム ショーケース" width="100%" />
+  <img src="docs/assets/hero_showcase.jpg" alt="Clickify クロスプラットフォーム ショーケース" width="100%" />
 </p>
 
 <p align="center">
-  <a href="https://github.com/phanbaohuy96/auto-click/actions"><img src="https://img.shields.io/badge/プラットフォーム-macOS%2014%2B%20%7C%20Android%2011%2B-000000?style=for-the-badge&logo=apple&logoColor=white" alt="プラットフォーム" /></a>
+  <a href="https://github.com/phanbaohuy96/clickify/actions"><img src="https://img.shields.io/badge/プラットフォーム-macOS%2014%2B%20%7C%20Android%2011%2B-000000?style=for-the-badge&logo=apple&logoColor=white" alt="プラットフォーム" /></a>
   <a href="macos/"><img src="https://img.shields.io/badge/macOS-Swift%20%2F%20SwiftUI-F05138?style=for-the-badge&logo=swift&logoColor=white" alt="macOS Swift" /></a>
   <a href="android/"><img src="https://img.shields.io/badge/Android-Kotlin%20%2F%20Compose-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white" alt="Android Kotlin" /></a>
   <a href="docs/sdd/08-permissions-and-safety.md"><img src="https://img.shields.io/badge/タッチ安全性-SF--1%20完全解放保証-00C853?style=for-the-badge&logo=shield&logoColor=white" alt="タッチ安全性 SF-1" /></a>
@@ -27,13 +27,13 @@
 
 ---
 
-## なぜ Auto Click なのか？
+## なぜ Clickify なのか？
 
-市場にある既存のオートクリッカーの多くは、**不具合だらけの単純アプリ**（1億以上のDL数があるにもかかわらず、画面がフリーズしてスマホを再起動せざるを得ない致命的なバグを放置）か、**学習コストが異常に高いツール**（ボタンを1つ押すために難解なスクリプト言語の習得が必要）のどちらかです。Auto Click はその中間に位置する理想的な選択肢を提供します。詳細な市場分析と証拠は [`android/docs/landscape.md`](android/docs/landscape.md) に記録されています。
+市場にある既存のオートクリッカーの多くは、**不具合だらけの単純アプリ**（1億以上のDL数があるにもかかわらず、画面がフリーズしてスマホを再起動せざるを得ない致命的なバグを放置）か、**学習コストが異常に高いツール**（ボタンを1つ押すために難解なスクリプト言語の習得が必要）のどちらかです。Clickify はその中間に位置する理想的な選択肢を提供します。詳細な市場分析と証拠は [`android/docs/landscape.md`](android/docs/landscape.md) に記録されています。
 
 ```
                       ┌──────────────────────────────────────────────┐
-                      │                 Auto Click                   │
+                      │                 Clickify                   │
                       │   洗練されたUI · 画像認識 · クラッシュ防止   │
                       │      フリーズ完全防止 · 仕様主導の実装       │
                       └──────────────────────┬───────────────────────┘
@@ -112,7 +112,7 @@
 
 [`android/docs/landscape.md`](android/docs/landscape.md) の調査記録より：
 
-| 評価項目 | 従来のクリッカー *(True Developers など)* | Macrorify | Klick'r / Smart AutoClicker | **Auto Click（当プロジェクト）** |
+| 評価項目 | 従来のクリッカー *(True Developers など)* | Macrorify | Klick'r / Smart AutoClicker | **Clickify（当プロジェクト）** |
 |---|---|---|---|---|
 | **タッチフリーズ復旧** | ❌ 業界共通の致命的バグ（再起動が必要） | ⚠️ 部分対応 | ⚠️ 特別な対策なし | ✅ **`SF-1` 規準 + 1タップ「タッチ解放」** |
 | **画像検出** | ❌ なし | ✅ テンプレート + OCR | ✅ 画像トリガー | ✅ **両プラットフォームで画像対応；macOSでOCR** |
@@ -155,8 +155,8 @@
 Xcode Command Line Tools が必要です。
 
 ```bash
-git clone https://github.com/phanbaohuy96/auto-click.git
-cd auto-click/macos
+git clone https://github.com/phanbaohuy96/clickify.git
+cd clickify/macos
 
 swift test              # ユニットテストおよび仕様テストの実行
 ./scripts/install.sh    # ビルドして /Applications へインストール
@@ -168,7 +168,7 @@ swift test              # ユニットテストおよび仕様テストの実行
 ### Android（11 以降）
 
 ```bash
-cd auto-click/android
+cd clickify/android
 
 ./gradlew assembleDebug        # デバッグ版 APK のビルド
 ./gradlew testDebugUnitTest    # ユニットテストの実行

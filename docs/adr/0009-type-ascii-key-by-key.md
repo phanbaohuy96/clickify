@@ -94,7 +94,7 @@ at once, and the clipboard route in ADR-0007 is the next thing to weigh.
 `B15` put the decision above to the test on the real machine, typing `password aa dd` — a string Telex
 transforms — with EVKey in Vietnamese mode. It came out `Pasword â đ`.
 
-Auto Click did its half correctly: the observer recorded 14 `keyDown` events, one per character, with
+Clickify did its half correctly: the observer recorded 14 `keyDown` events, one per character, with
 real key codes about 25 ms apart. **EVKey rewrote them downstream**, replaying `á`, `as`, `â` and `đ`
 under its own pid.
 

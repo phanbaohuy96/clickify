@@ -25,10 +25,10 @@ Vietnamese wording the interface had at the time; the same labels now come from 
 ./scripts/build-app.sh && ./scripts/install.sh
 ```
 
-Open **System Settings → Privacy & Security** and grant Auto Click: **Accessibility** (required,
+Open **System Settings → Privacy & Security** and grant Clickify: **Accessibility** (required,
 `SF-3`) and **Screen Recording** (only needed for session C, `SF-5`).
 
-> After granting, you **must quit and reopen** Auto Click. macOS does not hand a permission to an
+> After granting, you **must quit and reopen** Clickify. macOS does not hand a permission to an
 > already-running process. This is exactly where `SF-7` cannot tell "never granted" from "granted
 > but not restarted".
 
@@ -47,7 +47,7 @@ Always remember the way out: **`⌥⌘S` stops everything** (`UI-15`). Press it 
 |---|---|---|---|---|
 | A1 | Simple mode, at the cursor, 5 times, 500 ms apart | A 3-second countdown then exactly 5 clicks at the cursor | `UI-1` `UI-6` `EX-3` | **Pass** — 5 down/up pairs at `(500,550)`, 530/508/527/524 ms apart, first click 3.0 s after pressing |
 | A2 | As A1 but cancel during the countdown | **No** click emitted | `EX-3` | **Pass** — 0 events |
-| A3 | Check `Scenarios/` after A1 | No new directory | `UI-7` | **Pass** — `AutoClick/` had not even been created |
+| A3 | Check `Scenarios/` after A1 | No new directory | `UI-7` | **Pass** — `Clickify/` had not even been created |
 | A4 | A 1-step scenario, 20 repetitions, 200 ms apart | Clicks the right place, the floating panel counts up | `UI-2` `UI-13` `EX-4` | **Pass** — exactly 20 pairs, 3,993 ms total |
 | A5 | Press `⌥⌘S` while A4 is running | Stops at once, status says the user stopped it | `EX-13` `EX-15` `SF-9` | **Pass** — 10 of 40 events then stopped; status *"Đã dừng"* |
 | A6 | One `click` Step with `count = 3` | Three consecutive pairs, understood by the OS as a triple click | `EX-16` `EX-17` | **Pass** — `clickState` exactly 1, 2, 3; 30 and 32 ms apart |
@@ -77,7 +77,7 @@ have shown it.
 
 | # | Do | Expect | Proves | Result |
 |---|---|---|---|---|
-| B1 | Set **Locked application** = TextEdit, a `click`/`windowRelative` Step, run | Clicks the right relative position inside the TextEdit window | `EX-7` | **Pass** — 3 clicks at exactly `(500,450)` = corner `(200,200)` + offset `(300,250)`, pid = Auto Click |
+| B1 | Set **Locked application** = TextEdit, a `click`/`windowRelative` Step, run | Clicks the right relative position inside the TextEdit window | `EX-7` | **Pass** — 3 clicks at exactly `(500,450)` = corner `(200,200)` + offset `(300,250)`, pid = Clickify |
 | B2 | 10 repetitions 800 ms apart; **drag the TextEdit window elsewhere around repetition 3–4, while running** | Clicks **follow the window from the very next repetition** — two coordinate clusters, the second matching the new position | `EX-6` `DM-9` | **Pass** — 4 clicks at `(500,450)`; window dragged to `(400,350)` at t+6.2 s; **the very next click was already at `(700,600)`**, as were the remaining 6 |
 | B2b | Stop fully, move the window, **run again** | Still hits the same point in the interface | smoke test, **not** evidence for `EX-6` | **Pass** — window at `(400,350)`, rerun produced `(700,600)` |
 | B3 | Drag another window (Finder) over that point, then run | The scenario does **not** click into Finder | `EX-10` | **Pass** — 4 clicks then Finder brought forward: **complete silence**, 0 clicks into Finder; status *"Điểm thao tác không nằm trong ứng dụng…"* |
@@ -130,7 +130,7 @@ Measured two-sided with `B15`, typing `password aa dd`:
 
 | Who | What the observer saw |
 |---|---|
-| Auto Click (pid 67983) | 14 `keyDown`, one per character, `p a s s w o r d ␣ a a ␣ d d`, real key codes, ~25 ms apart — **correct** |
+| Clickify (pid 67983) | 14 `keyDown`, one per character, `p a s s w o r d ␣ a a ␣ d d`, real key codes, ~25 ms apart — **correct** |
 | EVKey (pid 61037) | replayed `á`, then `as`, then `â`, then `đ`, each as `virtualKey: 0` with a Unicode payload |
 
 TextEdit ended up with `Pasword â đ`. So `EX-26` emits exactly the right thing and EVKey rewrites it
@@ -157,7 +157,7 @@ able to fire at something else.
 
 ### A measurement trap: the Vietnamese input method holds text in a composition buffer
 
-This machine runs EVKey. Text typed by Auto Click may be **correct but not yet committed** to the
+This machine runs EVKey. Text typed by Clickify may be **correct but not yet committed** to the
 document, and while it is not, `get text of document 1` returns **empty** — indistinguishable from
 lost characters. Proof: typing `"abc"` reads back `""`; pressing the right arrow to commit and
 reading again gives `"abc"`.
@@ -192,7 +192,7 @@ here.
 
 | # | Do | Expect | Proves | Result |
 |---|---|---|---|---|
-| C1 | A `click`/`template` Step → **Crop a template** → draw around a button in TextEdit | The overlay disappears **before** the capture; the template contains neither the overlay nor an Auto Click window | `RG-5` `RG-20` | **Pass** — the app's template matched the reference image **pixel for pixel** (`0.00/255`). The check is not vacuous: the overlay really does darken the screen (`12.74/255`). `RG-20`: putting an Auto Click window over the capture area still produced the TextEdit behind it (`0.00/255`), quite unlike what was on screen (`65.74/255`) |
+| C1 | A `click`/`template` Step → **Crop a template** → draw around a button in TextEdit | The overlay disappears **before** the capture; the template contains neither the overlay nor an Clickify window | `RG-5` `RG-20` | **Pass** — the app's template matched the reference image **pixel for pixel** (`0.00/255`). The check is not vacuous: the overlay really does darken the screen (`12.74/255`). `RG-20`: putting an Clickify window over the capture area still produced the TextEdit behind it (`0.00/255`), quite unlike what was on screen (`65.74/255`) |
 | C2 | Run that Step | **Clicks the exact centre of the button**, no offset | `RG-2` `RG-11` | **Pass** — clicked `(273,321)`, a **pixel-exact** match with the centre measured through Accessibility. A 272×86 **pixel** template → a 136×43 **point** area: `RG-2` is right |
 | C3 | **If the machine has a non-Retina external display**: move TextEdit there, repeat C1–C2 | Still hits the centre | `RG-2` `RG-24` | **To run** — the earlier *"only one internal Retina display"* is out of date: this machine does drive a 1920-wide external display, remembered at both `Scale 1` and `Scale 2`. Run it at **`Scale 1`**, which is the case that matters: that is where the old `?? 2` fallback would have halved every coordinate | **Invalid, not a failure** — the Template was cut with `screencapture` rather than the app's own crop, and at a 3·10⁻⁵ margin that mismatch flips the choice. It clicked `DUP-A` twice, deterministically, but the matcher picks `DUP-B` correctly when handed the same images offline. Needs re-running with a Template cropped through **Chụp lại…**. See below |
 | C4 | **If there are several displays**: put the window on the secondary display, repeat C1–C2 | Still hits, and does not fire onto the main display | `RG-2` | **To run** — the external display sits at `OriginX = 1512`, so this exercises a non-zero `frame.minX`, which a single-display machine can never reach | **Pass** — with the page on the external display and a game window on the built-in, the Step searched both and clicked `(2063,332)` on the external. Nothing was emitted onto the main display |
@@ -200,13 +200,13 @@ here.
 | C6 | Cover the button (put another window over it), run with `wait = 5000ms`, `onTimeout = stop` | Retries for about 5 seconds then stops with a message | `EX-8` | **Pass** — 0 clicks, the following Step did **not** run; measured 8.44 s = 3 s countdown + **5.44 s of retrying** (5000 ms configured) |
 | C7 | Repeat C6 with `onTimeout = skipStep` and another Step after it | That Step is skipped and the next one **still runs** | `EX-9` | **Pass** — Step 1 timed out without clicking, **Step 2 still ran** and clicked exactly `(900,700)` |
 | C8 | Repeat C6 but uncover it **while** it is waiting | Found and clicked at once, without waiting out the timeout | `EX-8` | **Pass** — uncovered at t+5.0 s, click emitted at t+5.7 s: found after **714 ms**, not after the full 8 seconds |
-| C9 | A `click`/`text` Step with a word visible on screen | Clicks the centre of that piece of text | `RG-13` `RG-15` | **Pass after a fix** — the first run clicked `(356,551)` = the centre of the **whole line** `"ZUKAMI QWERTY"`, not of the word being aimed at; 83 points off (see `RG-15`). Rerun on the target page, where each word is wrapped in its own `<span>` so the page **declares each word's own coordinates**: Auto Click clicked `(138,716)` = exactly the centre of `word-zukami`, while the whole line's centre is `(404,716)` — 266 points apart, impossible to confuse. The page confirmed the click landed on `word-zukami` |
+| C9 | A `click`/`text` Step with a word visible on screen | Clicks the centre of that piece of text | `RG-13` `RG-15` | **Pass after a fix** — the first run clicked `(356,551)` = the centre of the **whole line** `"ZUKAMI QWERTY"`, not of the word being aimed at; 83 points off (see `RG-15`). Rerun on the target page, where each word is wrapped in its own `<span>` so the page **declares each word's own coordinates**: Clickify clicked `(138,716)` = exactly the centre of `word-zukami`, while the whole line's centre is `(404,716)` — 266 points apart, impossible to confuse. The page confirmed the click landed on `word-zukami` |
 | C10 | Repeat C9 with the case changed | Still found | `RG-14` | **Pass** — the scenario looked for lowercase `"zukami"` while the screen showed uppercase `"ZUKAMI"`: it still clicked `word-zukami@(138,716)` |
 | C11 | **Draw a search region** over the left half of the screen, put the template in the right half, run | **Not found** — the search region really does take effect | `RG-4` `RG-6` | **Pass in both directions** — target outside the region: *"Không tìm thấy Ảnh mẫu zukami.png (ngưỡng 0.90)"*; moved inside the region: clicked exactly `(873,551)` |
 | C12 | A `template` Step with **no** Locked application | Still runs, not blocked | `RG-17` (ADR-0006) | **Pass** — a scenario with no Locked application ran recognition normally |
 | C13 | Time it by eye: how long a `template` Step takes from start to click | Record the number. Over 1 second means `RG-18` needs another look | `RG-18` `RG-21` | **Pass** — 560–710 ms per full-screen recognition. Under the 1-second threshold |
-| C14 | **Revoke** the Screen Recording permission in System Settings then run a `template` Step | An error naming **both** possibilities (never granted / needs restarting), no crash | `SF-7` | **Pass** — no manual revoke was needed: after the install with a stable certificate, the Screen Recording permission lapsed on its own even though the System Settings toggle still showed as on, so the machine was already in exactly the state to test. Running a scenario with a `template` Step: the app **did not crash**, and the popover showed exactly one orange line *"Có lỗi: Hãy cấp quyền Screen Recording cho Auto Click rồi thử lại. Nếu đã cấp rồi, hãy thoát và mở lại Auto Click."* — naming both possibilities as `SF-7` demands. Before that the popover already carried the warning *"Kịch bản dùng nhận dạng ảnh/chữ nên cần thêm quyền Screen Recording"* with a grant link, exactly per `SF-5`: it only asks when the selected scenario actually uses recognition.<br><br>**The "toggle it off yourself" branch does not reproduce on this machine, and is not waiting to be run.** Turning Auto Click's toggle off in System Settings: the toggle **stays at `0`**, but the running process **still captures the screen normally** (still recognised `S3` and clicked its exact centre `(267,353)`) — standard macOS behaviour, a revoke only takes effect after the app quits. Quit and reopen: the toggle **returns to `1`** on its own and the app captures as before. Tried twice, the second time with no stray clicks from the rig. So the state "revoked and in force" does not reproduce here; what was measured is the state where the permission genuinely is not in force, and there `SF-7` reports correctly |
-| C15 | Crop a Template on the **built-in** screen, move the window to the **1x external** display, run | Found and clicked — the second pass at the other scale is what makes this work. Without it the Step just times out | `RG-25` |**Blocked** — the external display was not connected during this session | **Pass**, two-sided. Template `124×124` cropped at 2x on the built-in; `DUP-A` on the 1x external is `62×62`. Auto Click emitted `(2063,332)` and the page independently logged `DUP-A` at `screenX 2063, screenY 332`. **A/B:** with the second pass disabled and nothing else changed, the Step emitted nothing and timed out — `RG-25` is exactly what makes this work |
+| C14 | **Revoke** the Screen Recording permission in System Settings then run a `template` Step | An error naming **both** possibilities (never granted / needs restarting), no crash | `SF-7` | **Pass** — no manual revoke was needed: after the install with a stable certificate, the Screen Recording permission lapsed on its own even though the System Settings toggle still showed as on, so the machine was already in exactly the state to test. Running a scenario with a `template` Step: the app **did not crash**, and the popover showed exactly one orange line *"Có lỗi: Hãy cấp quyền Screen Recording cho Clickify rồi thử lại. Nếu đã cấp rồi, hãy thoát và mở lại Clickify."* — naming both possibilities as `SF-7` demands. Before that the popover already carried the warning *"Kịch bản dùng nhận dạng ảnh/chữ nên cần thêm quyền Screen Recording"* with a grant link, exactly per `SF-5`: it only asks when the selected scenario actually uses recognition.<br><br>**The "toggle it off yourself" branch does not reproduce on this machine, and is not waiting to be run.** Turning Clickify's toggle off in System Settings: the toggle **stays at `0`**, but the running process **still captures the screen normally** (still recognised `S3` and clicked its exact centre `(267,353)`) — standard macOS behaviour, a revoke only takes effect after the app quits. Quit and reopen: the toggle **returns to `1`** on its own and the app captures as before. Tried twice, the second time with no stray clicks from the rig. So the state "revoked and in force" does not reproduce here; what was measured is the state where the permission genuinely is not in force, and there `SF-7` reports correctly |
+| C15 | Crop a Template on the **built-in** screen, move the window to the **1x external** display, run | Found and clicked — the second pass at the other scale is what makes this work. Without it the Step just times out | `RG-25` |**Blocked** — the external display was not connected during this session | **Pass**, two-sided. Template `124×124` cropped at 2x on the built-in; `DUP-A` on the 1x external is `62×62`. Clickify emitted `(2063,332)` and the page independently logged `DUP-A` at `screenX 2063, screenY 332`. **A/B:** with the second pass disabled and nothing else changed, the Step emitted nothing and timed out — `RG-25` is exactly what makes this work |
 | C16 | The reverse: crop on the **1x external** display, move the window back to the built-in, run | Found and clicked | `RG-25` |**Blocked** — needs the external display | **Pass** — the other direction. A genuine 1x capture (`62×62`) found on the 2x built-in, where the tile is `124×124`: clicked `(687,433)`, page logged `DUP-B`, `pageX 627`. Here it did pick the tile the Template came from |
 | C17 | Time `C15` by eye, then time `C2` again | `C2` is unchanged (560–710 ms): the ordinary same-display case must not have been made slower. `C15` may be about twice that | `RG-25` `RG-18` |**Blocked** — needs the external display | **Pass** — native, same scale: **567 ms**. Cross-scale 1x→2x: **639 ms**. Cross-scale 2x→1x: **829 ms**, the dearest because the native pass has to fail on both displays first. All under the 1-second bar, and the ordinary path is unchanged |
 | C18 | Drag the external display's box **up or down** in System Settings so the screens are no longer top-aligned, then crop a Template on it | The highlighted frame follows the cursor instead of being drawn offset | `RG-26` |**Blocked** — needs the external display | **Inconclusive** — the two formulas draw **pixel-identically** on this arrangement. See `RG-26` |
@@ -253,7 +253,7 @@ no text whatsoever.
 | I5 | A tiny 26 px target | Still found | **Pass** — `TINY@(274,558)`, hitting the exact centre despite being only 28×28 |
 | I6 | A target on a noisy background | Still found | **Pass** — `NOISY-ICON@(160,591)`, 1 px off the page's declared centre `(160,592)` because the 63.5 px height rounds |
 | I7 | A target that appears late | Waits then clicks | **Pass** — pressed the button that makes `LATE` appear after 4 s and only then ran; the scenario waited within its 12 s budget and clicked `LATE@(371,575)` |
-| I8 | A target that has moved | Finds it at the new place | **Pass** — moved `MOVE` from `(491,575)` to `(651,605)` immediately before running; Auto Click clicked exactly `(651,605)`, not the old spot |
+| I8 | A target that has moved | Finds it at the new place | **Pass** — moved `MOVE` from `(491,575)` to `(651,605)` immediately before running; Clickify clicked exactly `(651,605)`, not the old spot |
 
 ### Findings outside the checklist — template matching
 
@@ -318,18 +318,18 @@ only the rig's problem.
 |---|---|---|---|---|
 | D1 | Press `⌥⌘R`, click a few places in TextEdit, press `⌥⌘R` again | A new scenario appears, named after the application and the time | `RC-1` `RC-16` | **Pass** — the new scenario appeared at once, named after the target application and the time (`BiaKiemThuA 12/09 09:58`), and the editor window opened on it |
 | D2 | Watch the floating panel while recording | Shows the number of Steps recorded and the `⌥⌘R` reminder | `RC-3` | **Pass** — the panel showed *"Đang ghi thao tác"*, the operation count rising with each click, and the reminder *"Kết thúc bằng ⌥⌘R"*. Read from a **screenshot**: the panel's contents do not appear in the Accessibility tree (see the findings below) |
-| D3 | Press `⌥⌘R`, **click only inside Auto Click's own window**, finish | No scenario is created; it reports "nothing was recorded" | `RC-2` `RC-17` | **Pass** — no scenario was created and the popover correctly reported that nothing was recorded |
+| D3 | Press `⌥⌘R`, **click only inside Clickify's own window**, finish | No scenario is created; it reports "nothing was recorded" | `RC-2` `RC-17` | **Pass** — no scenario was created and the popover correctly reported that nothing was recorded |
 | D4 | Record one double click | **One** Step with `count = 2`, not two Steps | `RC-7` | **Pass** — a single Step with `count=2` |
 | D5 | Record one ~2-second long press | `holdMs ≈ 2000` | `RC-6` | **Pass** — `holdMilliseconds=2967`, matching the rig's real hold of ~2.87 s (not a round 2000: the number to compare against is what the tool actually held, not what it was asked to hold) |
 | D6 | Record one text selection by dragging | One `drag` Step, not a burst of clicks | `RC-8` | **Pass** — one `drag` Step, both measurements agreeing exactly: `(800,430) → (990,510)` |
 | D7 | Record a trackpad scroll burst, **scrolling to the end and letting inertia run** | **One** scroll Step, not cut in two when the inertia changes sign | `RC-9` | **Pass** — reproduced the exact event shape of a trackpad flick (touch phases `began/changed/ended`, then inertia phases `begin/continue/end`, with a **sign-flipping** tail `-1 -2 -1`, 17 events 16 ms apart) and injected it into the session event stream. The recorder produced **1 Step**, `scroll deltaY=11`. The 11 is in **lines**, not the 92 pixels emitted: the recorder reads `scrollWheelEventDeltaAxis1`, and `MouseEventEmitter.scroll` replays with `units: .line` — the same unit on both ends, so the round trip does not drift |
 | D8 | Record: click, **wait 5 seconds**, click | The first Step has a delay of about 5000 ms | `RC-10` (ADR-0004) | **Pass** — the first Step's delay is `5330 ms` |
 | D9 | Look at the last Step of every recording | Delay = 0 | `RC-11` | **Pass** — every recording made this session has a last-Step delay of `0 ms` |
-| D10 | **Replay** the D1 recording | Repeats exactly what was recorded | `RC-13` | **Pass** — two-sided, point for point: Auto Click emitted `(270,220) (720,420) (870,220)` and the target received exactly `T1 T6 T3` at exactly those three coordinates |
+| D10 | **Replay** the D1 recording | Repeats exactly what was recorded | `RC-13` | **Pass** — two-sided, point for point: Clickify emitted `(270,220) (720,420) (870,220)` and the target received exactly `T1 T6 T3` at exactly those three coordinates |
 | D11 | Record a session touching **two** applications (TextEdit then Finder) | A warning that the recording spans 2 applications; Targets are absolute coordinates | `RC-14` | **Pass** — recorded 3 clicks across two targets. The scenario: locked application = *none*, all 3 Steps absolute `screenPoint`, the name falling back to `Bản ghi 12/09 10:00` rather than an application name. The popover showed exactly one orange line: *"Bản ghi trải trên 2 ứng dụng nên dùng toạ độ tuyệt đối; các bước sẽ trượt nếu cửa sổ dịch chuyển."* |
 | D12 | After recording, move the TextEdit window and replay the single-application recording | The operations **follow the window** | `RC-13` | **Pass** — moved the target window from `(120,88)` to `(300,240)`, i.e. `+180/+152`, then replayed D10's scenario. Every click shifted by exactly that: `(450,372) (900,572) (1050,372)`, and the target still received `T1 T6 T3`. The three Steps anchor to **three different corners** (`topLeft`, `bottomRight`, `topRight`), so this also tests `WindowAnchor.offset` picking the nearest corner |
 | D13 | Type on the keyboard while recording | Keystrokes **do not** enter the scenario | `RC-4` `SF-6` (ADR-0003) | **Pass** — typed the string `matkhau` outright while recording: the scenario came out with **0** keyboard Steps, and the string `matkhau` **appears nowhere** in the file on disk |
-| D14 | Open System Settings → Privacy → **Input Monitoring** | Auto Click is **not** in the list | `SF-6` | **Pass** — the app's only `CGEvent.tapCreate` registers a mask of **mouse and scroll only**; the two remaining uses of `keyDown` are `addLocalMonitorForEvents` (which only sees keys delivered to the app's own windows, needs no permission, and exists to catch Esc). `Info.plist` has **no** key requesting Input Monitoring; the installed binary **does not reference** `IOHIDRequestAccess`/`IOHIDCheckAccess`. **Seen with my own eyes**: after a whole test session with dozens of recordings, the Input Monitoring list is still **`No Items`** — macOS has never registered Auto Click as something watching the keyboard |
+| D14 | Open System Settings → Privacy → **Input Monitoring** | Clickify is **not** in the list | `SF-6` | **Pass** — the app's only `CGEvent.tapCreate` registers a mask of **mouse and scroll only**; the two remaining uses of `keyDown` are `addLocalMonitorForEvents` (which only sees keys delivered to the app's own windows, needs no permission, and exists to catch Esc). `Info.plist` has **no** key requesting Input Monitoring; the installed binary **does not reference** `IOHIDRequestAccess`/`IOHIDCheckAccess`. **Seen with my own eyes**: after a whole test session with dozens of recordings, the Input Monitoring list is still **`No Items`** — macOS has never registered Clickify as something watching the keyboard |
 
 ### Findings outside the checklist — the two-display session
 
@@ -396,7 +396,7 @@ produces confident wrong answers.
 
 `RG-25` changed how every Template is matched, so the practice targets were re-run to check the
 ordinary path had not been disturbed. The page reports which target it received, independently of
-what the observer saw Auto Click emit.
+what the observer saw Clickify emit.
 
 | # | Result |
 |---|---|
@@ -410,7 +410,7 @@ The window was at a **different position** from when the Templates were cropped 
 rather than `(60,74)`), so these also re-prove `RG-8`: a Template is found again after the interface
 has moved.
 
-**Timing (`C13`)**: measured from the rig's click on Start to the click Auto Click emitted, minus the
+**Timing (`C13`)**: measured from the rig's click on Start to the click Clickify emitted, minus the
 3-second countdown, with all three clicks separated by source pid: **I1 554 ms, I4 562 ms, I5 469 ms,
 I6 491 ms**. The band recorded before this change was 560–710 ms. Native-first did what it was
 supposed to: the ordinary path never reaches the second pass and is not slower.
@@ -485,7 +485,7 @@ received nothing. That is what lets a replayed scroll Step avoid moving the user
 
 | # | Do | Expect | Proves | Result |
 |---|---|---|---|---|
-| E1 | `echo "broken" > ~/Library/Application\ Support/AutoClick/Scenarios/<uuid>/scenario.json` then reopen the app | The app still runs, only that scenario is missing | `ST-9` | **Pass** — before the damage: the app saw all **9 of 9** scenarios with no warning. After: it saw **8**, exactly the damaged one gone, and showed *"1 kịch bản có vấn đề"* with a tooltip naming the directory. The broken file and its `templates/` were **left intact** — the app does not clean up what it cannot read |
+| E1 | `echo "broken" > ~/Library/Application\ Support/Clickify/Scenarios/<uuid>/scenario.json` then reopen the app | The app still runs, only that scenario is missing | `ST-9` | **Pass** — before the damage: the app saw all **9 of 9** scenarios with no warning. After: it saw **8**, exactly the damaged one gone, and showed *"1 kịch bản có vấn đề"* with a tooltip naming the directory. The broken file and its `templates/` were **left intact** — the app does not clean up what it cannot read |
 | E2 | Change one scenario's `"schemaVersion"` to `99`, reopen the app | The scenario appears but **read-only**, with no data lost | `ST-12` | **Pass, but it exposed a data-loss bug** — the scenario showed the right name, the edit panel was replaced entirely by a lock message (no name field, no repeat field, no Step list), and the file on disk was untouched. But the **Duplicate** button was still clickable → see below |
 | E3 | Add an unknown field to `scenario.json`, reopen | Ignored, no error | `ST-10` | **Pass on all three counts** — added an unknown field at the root *and* inside a Step, removed `delayMillisecondsAfter`, set `repeat = 999,999,999` and `threshold = 7.5`. The scenario loaded normally with no warning; the app showed `×1,000,000` and `threshold 1.00` — clamped correctly. The file on disk was **not overwritten**: out-of-range values are clamped in memory only |
 | E4 | Delete a scenario that uses a template, check the directory | The whole directory disappears, `templates/` included | `ST-3` | **Pass** — duplicated `I6` (which has `NOISYICON.png`) then deleted the copy: the whole directory went, `templates/` included. Building this check is what exposed the other half of `ST-3` being broken → see below |
@@ -598,7 +598,7 @@ Nothing was judged by eye. Two small tools were built:
 
 - **The observer** — a listen-only `CGEventTap` logging every mouse event to TSV with its timestamp,
   coordinates, `clickState` and **source pid**. `pid=0` is the user's real mouse, `pid=<n>` is an
-  event synthesised by that process, which separates exactly what Auto Click emitted.
+  event synthesised by that process, which separates exactly what Clickify emitted.
 - **The clicker** — emits `mouseMoved` + `mouseDown`/`mouseUp` at a coordinate, to drive the
   interface like a user.
 

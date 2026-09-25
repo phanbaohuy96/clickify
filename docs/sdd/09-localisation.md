@@ -27,7 +27,7 @@ ruled out are in [ADR-0010](../adr/0010-strings-files-and-a-live-bundle-swap.md)
   declares no resources.
 
   This is not a style preference. SwiftPM's generated `Bundle.module` accessor looks for the
-  resource bundle at `Bundle.main.bundleURL/AutoClick_AutoClick.bundle` — the **root** of the
+  resource bundle at `Bundle.main.bundleURL/Clickify_Clickify.bundle` — the **root** of the
   `.app`, not `Contents/Resources` — and when that fails it falls back to an **absolute path into
   the `.build/` directory of the machine that compiled it**. Measured: on the build machine it
   resolves through that fallback and works; with `.build/` renamed it dies with
@@ -104,7 +104,7 @@ ruled out are in [ADR-0010](../adr/0010-strings-files-and-a-live-bundle-swap.md)
   entry in [`macos/CONTEXT.md`](../../macos/CONTEXT.md), where two of the three are defined.
 
   OCR reads text belonging to **the application being automated**, which has nothing to do with the
-  language of Auto Click's own menus.
+  language of Clickify's own menus.
 
 - **LC-17** `[Slice 6]` `[done]` A translation is readable from **any thread**, and no lookup path may
   assert main-actor isolation.

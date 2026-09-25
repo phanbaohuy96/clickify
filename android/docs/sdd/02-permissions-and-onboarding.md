@@ -1,7 +1,7 @@
 # 02 — Permissions and onboarding (Android)
 
 On macOS the app asks for two TCC permissions and the system does the explaining. Android grants
-nothing by dialogue here: the two permissions Auto Click cannot work without are both **Settings
+nothing by dialogue here: the two permissions Clickify cannot work without are both **Settings
 screens the user has to walk to**, and on a sideloaded build one of them is *hidden behind a
 refusal the user has to trigger first*. Onboarding is therefore not a splash screen. It is the
 feature that decides whether the app works at all.
@@ -20,24 +20,24 @@ feature that decides whether the app works at all.
 A1 mentions MediaProjection, and no screen offers a toggle for a capability that is not built.
 
 **PM-2** `[A1]` Each request is preceded by one screen saying, in the interface language, what the
-permission lets the app do **and what it does not do** — specifically that Auto Click reads no
+permission lets the app do **and what it does not do** — specifically that Clickify reads no
 screen content and sends nothing off the device. This is not politeness. The accessibility consent
 dialogue Android shows says the service "can observe your actions" and "retrieve window content",
 and a user who has read that deserves the rest of the sentence.
 
 **PM-3** `[A1]` The service declares `android:isAccessibilityTool="false"`, and the app never
-claims otherwise. Auto Click is an automation tool, not an assistive one; only software built to
+claims otherwise. Clickify is an automation tool, not an assistive one; only software built to
 help people overcome a disability may declare `true`. The cost of the honest declaration is stated
 in [Advanced Protection](#advanced-protection-mode) below, and is accepted.
 
 ## The Android 13 wall
 
 From Android 13 (API 33) an app installed from anywhere other than a session-based installer — so
-any APK the user downloads and opens, which is exactly how Auto Click ships — is placed under
+any APK the user downloads and opens, which is exactly how Clickify ships — is placed under
 **restricted settings**. Its accessibility toggle is greyed out, and tapping it produces
 *"Restricted setting — For your security, this setting is currently unavailable."*
 
-The way out is **Settings → Apps → Auto Click → ⋮ → Allow restricted settings**. What makes this a
+The way out is **Settings → Apps → Clickify → ⋮ → Allow restricted settings**. What makes this a
 specification problem rather than a FAQ entry is the ordering:
 
 > **The menu entry does not exist until the restriction has been triggered.**
@@ -88,7 +88,7 @@ exception.
 setting is responsible and stops. It does not retry, and it does not suggest a way around it.
 
 This is the honest end of the road for `PM-3`: a user who turns Advanced Protection on has chosen a
-device where Auto Click cannot run, and that choice is theirs to make. Declaring `true` to escape
+device where Clickify cannot run, and that choice is theirs to make. Declaring `true` to escape
 it would be a lie about what this app is for.
 
 ## What the tests can and cannot prove

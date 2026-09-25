@@ -1,4 +1,4 @@
-/* Auto Click — 日本語.
+/* Clickify — 日本語.
    MACHINE TRANSLATED, not reviewed by a native speaker. Corrections are very welcome, and a partial one is
    fine: anything missing here falls back to English (LC-7), so fixing twenty keys is a safe change.
    機械翻訳であり、ネイティブによる校正は受けていません。修正の提案を歓迎します。未翻訳の項目は英語に
@@ -87,7 +87,7 @@
 "editor.empty.title" = "シナリオがありません";
 "editor.empty.action" = "最初のシナリオを作成";
 "editor.newer_format.title" = "「%@」は新しい形式です";
-"editor.newer_format.detail" = "読み取り専用: このバージョンの Auto Click では編集も実行もできません。";
+"editor.newer_format.detail" = "読み取り専用: このバージョンの Clickify では編集も実行もできません。";
 "editor.scenario_name" = "シナリオ名";
 "editor.repeat_until_stopped" = "停止するまで繰り返す";
 "editor.iteration_count" = "周回数";
@@ -147,7 +147,7 @@
 "step.key" = "キー";
 "step.modifiers" = "修飾キー";
 "step.key_preview" = "%@ を送信します。";
-"step.key_activation_hint" = "入力前に Auto Click が %@ を前面に出します。出せない場合は停止します。";
+"step.key_activation_hint" = "入力前に Clickify が %@ を前面に出します。出せない場合は停止します。";
 "step.key_no_lock_hint" = "アプリが固定されていません: キーはそのとき最前面のウインドウに入ります。";
 "step.target.kind" = "種類";
 "step.target.cursor_hint" = "毎回カーソル位置を読み直すので、操作の並びが手の動きについてきます。";
@@ -212,20 +212,20 @@
 "error.lock.not_running" = "選択したアプリケーションは実行されていません。";
 "error.fixed_point_missing" = "固定のクリック位置を選択してください。";
 "error.empty_scenario" = "このシナリオにはまだステップがありません。";
-"error.accessibility_denied" = "Auto Click に「アクセシビリティ」を許可してからもう一度お試しください。すでに一覧にある場合は、いったんオフにしてからオンに戻してください — アップデートで以前の許可は無効になります。";
+"error.accessibility_denied" = "Clickify に「アクセシビリティ」を許可してからもう一度お試しください。すでに一覧にある場合は、いったんオフにしてからオンに戻してください — アップデートで以前の許可は無効になります。";
 "error.missing_locked_application" = "このシナリオにはウインドウ基準のステップがあるため、固定するアプリケーションを選ぶ必要があります。";
 "error.locked_application_not_running" = "%@ は実行されていません。";
-"error.locked_application_terminated" = "対象のアプリケーションが終了しました。Auto Click を停止しました。";
-"error.point_outside_locked_application" = "その位置は固定したアプリケーションの外です。Auto Click を停止しました。";
+"error.locked_application_terminated" = "対象のアプリケーションが終了しました。Clickify を停止しました。";
+"error.point_outside_locked_application" = "その位置は固定したアプリケーションの外です。Clickify を停止しました。";
 "error.anchor_window_unavailable" = "座標の基準となる %@ のウインドウを取得できませんでした — Dock に最小化されている可能性があります。";
-"error.activation_failed" = "入力のために %@ を前面に出せませんでした。Auto Click を停止しました。";
+"error.activation_failed" = "入力のために %@ を前面に出せませんでした。Clickify を停止しました。";
 "error.unknown_key" = "キー「%@」を認識できません。";
-"error.target_not_found" = "画面上に %@ が見つかりませんでした。Auto Click を停止しました。";
+"error.target_not_found" = "画面上に %@ が見つかりませんでした。Clickify を停止しました。";
 "error.launch_at_login" = "ログイン設定を変更できませんでした: %@";
-"error.schema_too_new" = "このシナリオは形式バージョン %1$d を使っていますが、このバージョンの Auto Click は %2$d までしか対応していません。";
+"error.schema_too_new" = "このシナリオは形式バージョン %1$d を使っていますが、このバージョンの Clickify は %2$d までしか対応していません。";
 "error.unknown_action" = "アクション「%@」を認識できません。";
 "error.unknown_target" = "位置「%@」を認識できません。";
-"error.screen_recording_denied" = "Auto Click に「画面収録」を許可してからもう一度お試しください。すでに許可している場合は、Auto Click を終了して開き直してください。";
+"error.screen_recording_denied" = "Clickify に「画面収録」を許可してからもう一度お試しください。すでに許可している場合は、Clickify を終了して開き直してください。";
 "error.no_display" = "取得できるディスプレイが見つかりません。";
 "error.pixel_scale_unreadable" = "ディスプレイのピクセル倍率を読み取れなかったため、誤った位置をクリックしないようスキップしました。";
 "error.screen_capture_failed" = "画面を取得できませんでした。";

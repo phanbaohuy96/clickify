@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">Auto Click</string>
+    <string name="app_name">Clickify</string>
     <string name="accessibility_service_summary">Taps, swipes and types on your behalf</string>
-    <string name="accessibility_service_description">Auto Click replays the taps and swipes you set up yourself. It needs this permission because sending a touch to another app is the only thing Android allows an accessibility service to do. It reads nothing from your screen, keeps everything on this device, and has no permission to use the internet.</string>
+    <string name="accessibility_service_description">Clickify replays the taps and swipes you set up yourself. It needs this permission because sending a touch to another app is the only thing Android allows an accessibility service to do. It reads nothing from your screen, keeps everything on this device, and has no permission to use the internet.</string>
     <string name="scenario_new">New scenario</string>
     <string name="scenario_none">No scenarios yet. Create one, then place its markers over the app you want to automate.</string>
     <string name="scenario_default_name">Untitled</string>

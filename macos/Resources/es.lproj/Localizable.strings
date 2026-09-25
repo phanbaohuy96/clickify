@@ -1,4 +1,4 @@
-/* Auto Click — Español.
+/* Clickify — Español.
    MACHINE TRANSLATED, not reviewed by a native speaker. Corrections are very welcome, and a partial one is
    fine: anything missing here falls back to English (LC-7), so fixing twenty keys is a safe change.
    Traducción automática, sin revisión de un hablante nativo. Se agradecen las correcciones; lo que falte
@@ -90,7 +90,7 @@
 "editor.empty.title" = "Aún no hay escenarios";
 "editor.empty.action" = "Crear el primer escenario";
 "editor.newer_format.title" = "«%@» usa un formato más nuevo";
-"editor.newer_format.detail" = "Solo lectura: esta versión de Auto Click no puede editarlo ni ejecutarlo.";
+"editor.newer_format.detail" = "Solo lectura: esta versión de Clickify no puede editarlo ni ejecutarlo.";
 "editor.scenario_name" = "Nombre del escenario";
 "editor.repeat_until_stopped" = "Repetir hasta detenerlo";
 "editor.iteration_count" = "Vueltas";
@@ -150,7 +150,7 @@
 "step.key" = "Tecla";
 "step.modifiers" = "Modificadores";
 "step.key_preview" = "Se enviará %@.";
-"step.key_activation_hint" = "Antes de escribir, Auto Click pone %@ en primer plano; si no puede, se detiene.";
+"step.key_activation_hint" = "Antes de escribir, Clickify pone %@ en primer plano; si no puede, se detiene.";
 "step.key_no_lock_hint" = "Sin aplicación fijada: las teclas irán a la ventana que esté delante.";
 "step.target.kind" = "Tipo";
 "step.target.cursor_hint" = "Vuelve a leer la posición del cursor en cada repetición, así que la secuencia sigue tu mano.";
@@ -215,20 +215,20 @@
 "error.lock.not_running" = "La aplicación elegida no está en marcha.";
 "error.fixed_point_missing" = "Elige un punto de clic fijo.";
 "error.empty_scenario" = "El escenario aún no tiene pasos.";
-"error.accessibility_denied" = "Concede a Auto Click el permiso de Accesibilidad y vuelve a intentarlo. Si Auto Click ya está en la lista, desactívalo y actívalo otra vez: una actualización invalida el permiso anterior.";
+"error.accessibility_denied" = "Concede a Clickify el permiso de Accesibilidad y vuelve a intentarlo. Si Clickify ya está en la lista, desactívalo y actívalo otra vez: una actualización invalida el permiso anterior.";
 "error.missing_locked_application" = "El escenario tiene un paso anclado a una ventana, así que hay que elegir una aplicación fijada.";
 "error.locked_application_not_running" = "%@ no está en marcha.";
-"error.locked_application_terminated" = "La aplicación de destino se cerró; Auto Click se detuvo.";
-"error.point_outside_locked_application" = "El punto está fuera de la aplicación fijada; Auto Click se detuvo.";
+"error.locked_application_terminated" = "La aplicación de destino se cerró; Clickify se detuvo.";
+"error.point_outside_locked_application" = "El punto está fuera de la aplicación fijada; Clickify se detuvo.";
 "error.anchor_window_unavailable" = "No se pudo leer ninguna ventana de %@ como origen de coordenadas: puede estar minimizada en el Dock.";
-"error.activation_failed" = "No se pudo poner %@ en primer plano para escribir; Auto Click se detuvo.";
+"error.activation_failed" = "No se pudo poner %@ en primer plano para escribir; Clickify se detuvo.";
 "error.unknown_key" = "No se reconoce la tecla «%@».";
-"error.target_not_found" = "No se encontró %@ en la pantalla; Auto Click se detuvo.";
+"error.target_not_found" = "No se encontró %@ en la pantalla; Clickify se detuvo.";
 "error.launch_at_login" = "No se pudo cambiar el ajuste de inicio de sesión: %@";
-"error.schema_too_new" = "El escenario usa la versión de formato %1$d, y esta versión de Auto Click solo entiende hasta la %2$d.";
+"error.schema_too_new" = "El escenario usa la versión de formato %1$d, y esta versión de Clickify solo entiende hasta la %2$d.";
 "error.unknown_action" = "No se reconoce la acción «%@».";
 "error.unknown_target" = "No se reconoce la posición «%@».";
-"error.screen_recording_denied" = "Concede a Auto Click el permiso de Grabación de pantalla y vuelve a intentarlo. Si ya está concedido, sal de Auto Click y ábrelo otra vez.";
+"error.screen_recording_denied" = "Concede a Clickify el permiso de Grabación de pantalla y vuelve a intentarlo. Si ya está concedido, sal de Clickify y ábrelo otra vez.";
 "error.no_display" = "No se encontró ninguna pantalla que capturar.";
 "error.pixel_scale_unreadable" = "No se pudo leer la escala de píxeles de la pantalla, así que se omitió para no hacer clic en el sitio equivocado.";
 "error.screen_capture_failed" = "No se pudo capturar la pantalla.";

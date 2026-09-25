@@ -32,7 +32,7 @@ belongs under test.
 
 - `:core` gains an overlay window host — owners, theming, and teardown — beside the Activity-side
   `BaseScreen`, and `:app` uses one or the other depending on which surface it is building.
-- Together with [ADR-0014] (no Room) and the absence of any network layer (Auto Click talks to no
+- Together with [ADR-0014] (no Room) and the absence of any network layer (Clickify talks to no
   server, so Retrofit and OkHttp go too), what survives of the template is `:domain` as pure Kotlin,
   `:data` over files, Hilt, and the quality and test toolchain. That is still the reason to start
   from it; the screen scaffolding is not.

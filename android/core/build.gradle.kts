@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.pbh.autoclick.core"
+    namespace = "com.pbh.clickify.core"
     compileSdk = 36
 
     defaultConfig {

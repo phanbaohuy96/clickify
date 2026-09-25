@@ -100,13 +100,13 @@ configure(subprojects.filter { it.path in coveredModules }) {
                         // Grows with each slice. Only classes that carry logic worth asserting on
                         // belong here; Compose screens, generated code and wiring are excluded.
                         classes(
-                            "com.pbh.autoclick.core.overlay.*",
-                            "com.pbh.autoclick.core.ui.DomainErrorText*",
-                            "com.pbh.autoclick.core.ui.UiText*",
-                            "com.pbh.autoclick.data.scenario.*",
-                            "com.pbh.autoclick.domain.model.*",
-                            "com.pbh.autoclick.domain.run.*",
-                            "com.pbh.autoclick.domain.scenario.*",
+                            "com.pbh.clickify.core.overlay.*",
+                            "com.pbh.clickify.core.ui.DomainErrorText*",
+                            "com.pbh.clickify.core.ui.UiText*",
+                            "com.pbh.clickify.data.scenario.*",
+                            "com.pbh.clickify.domain.model.*",
+                            "com.pbh.clickify.domain.run.*",
+                            "com.pbh.clickify.domain.scenario.*",
                         )
                     }
                     excludes {
@@ -121,10 +121,10 @@ configure(subprojects.filter { it.path in coveredModules }) {
                             "*Hilt_*",
                             "*_Factory",
                             "*_HiltModules*",
-                            "com.pbh.autoclick.core.common.*",
-                            "com.pbh.autoclick.core.designsystem.AppTheme",
-                            "com.pbh.autoclick.core.designsystem.AppThemeKt",
-                            "com.pbh.autoclick.core.designsystem.components.*",
+                            "com.pbh.clickify.core.common.*",
+                            "com.pbh.clickify.core.designsystem.AppTheme",
+                            "com.pbh.clickify.core.designsystem.AppThemeKt",
+                            "com.pbh.clickify.core.designsystem.components.*",
                             "*ScreenKt*",
                         )
                     }

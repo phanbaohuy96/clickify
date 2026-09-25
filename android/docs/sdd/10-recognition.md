@@ -41,7 +41,7 @@ elapsed**, never in polls — otherwise a device that refuses a call would short
 **TP-5** `[A3]` A frame is never reused between two polls of one wait. The whole point of waiting is
 to see an interface that **has changed**. Mirrors `RG-3`.
 
-**TP-6** `[A3]` **Auto Click's own windows are in the frame and cannot be taken out of it.**
+**TP-6** `[A3]` **Clickify's own windows are in the frame and cannot be taken out of it.**
 
 macOS excludes its own windows from a capture (`RG-20`); `takeScreenshot` captures the display and
 offers no exclusion. While a **Scenario** runs, the **Marker**s and the panel are already gone

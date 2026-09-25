@@ -1,15 +1,15 @@
-# Auto Click
+# Clickify
 
 <p align="center">
   <a href="README.md">English</a> | <a href="README.vi.md">Tiếng Việt</a> | <a href="README.zh-Hans.md">简体中文</a> | <a href="README.ja.md">日本語</a> | <b>Español</b>
 </p>
 
 <p align="center">
-  <img src="docs/assets/hero_showcase.jpg" alt="Demostración Multiplataforma de Auto Click" width="100%" />
+  <img src="docs/assets/hero_showcase.jpg" alt="Demostración Multiplataforma de Clickify" width="100%" />
 </p>
 
 <p align="center">
-  <a href="https://github.com/phanbaohuy96/auto-click/actions"><img src="https://img.shields.io/badge/Plataforma-macOS%2014%2B%20%7C%20Android%2011%2B-000000?style=for-the-badge&logo=apple&logoColor=white" alt="Plataforma" /></a>
+  <a href="https://github.com/phanbaohuy96/clickify/actions"><img src="https://img.shields.io/badge/Plataforma-macOS%2014%2B%20%7C%20Android%2011%2B-000000?style=for-the-badge&logo=apple&logoColor=white" alt="Plataforma" /></a>
   <a href="macos/"><img src="https://img.shields.io/badge/macOS-Swift%20%2F%20SwiftUI-F05138?style=for-the-badge&logo=swift&logoColor=white" alt="macOS Swift" /></a>
   <a href="android/"><img src="https://img.shields.io/badge/Android-Kotlin%20%2F%20Compose-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white" alt="Android Kotlin" /></a>
   <a href="docs/sdd/08-permissions-and-safety.md"><img src="https://img.shields.io/badge/Seguridad_Táctil-SF--1%20Garantizada-00C853?style=for-the-badge&logo=shield&logoColor=white" alt="Seguridad táctil SF-1" /></a>
@@ -27,13 +27,13 @@ Automatice el trabajo repetitivo emitiendo pulsaciones y clics sintéticos de al
 
 ---
 
-## ¿Por qué Auto Click?
+## ¿Por qué Clickify?
 
-La gran mayoría de los auto-clickers del mercado son **juguetes plagados de fallos** (con más de 100 millones de descargas pero con un fallo fatal de bloqueo táctil que obliga a reiniciar el teléfono) o **herramientas demasiado complejas** (que exigen aprender lenguajes de scripting solo para pulsar un botón). Auto Click se posiciona exactamente en el equilibrio ideal. Toda la evidencia y el análisis comparativo están detallados en [`android/docs/landscape.md`](android/docs/landscape.md).
+La gran mayoría de los auto-clickers del mercado son **juguetes plagados de fallos** (con más de 100 millones de descargas pero con un fallo fatal de bloqueo táctil que obliga a reiniciar el teléfono) o **herramientas demasiado complejas** (que exigen aprender lenguajes de scripting solo para pulsar un botón). Clickify se posiciona exactamente en el equilibrio ideal. Toda la evidencia y el análisis comparativo están detallados en [`android/docs/landscape.md`](android/docs/landscape.md).
 
 ```
                       ┌──────────────────────────────────────────────┐
-                      │                 Auto Click                   │
+                      │                 Clickify                   │
                       │   Interfaz limpia · Reconocimiento visual    │
                       │     Sin bloqueos · Basado en especificación  │
                       └──────────────────────┬───────────────────────┘
@@ -112,7 +112,7 @@ Un **Paso** asocia exactamente una **Acción** con un **Objetivo** ([ADR-0002](d
 
 Datos extraídos del análisis de mercado en [`android/docs/landscape.md`](android/docs/landscape.md):
 
-| Criterio | Auto-clickers tradicionales *(True Developers, etc.)* | Macrorify | Klick'r / Smart AutoClicker | **Auto Click (Este Proyecto)** |
+| Criterio | Auto-clickers tradicionales *(True Developers, etc.)* | Macrorify | Klick'r / Smart AutoClicker | **Clickify (Este Proyecto)** |
 |---|---|---|---|---|
 | **Recuperación de bloqueo táctil** | ❌ Defecto generalizado; exige reiniciar | ⚠️ Parcial | ⚠️ No abordado específicamente | ✅ **`SF-1` + Botón "Liberar el toque"** |
 | **Detección visual** | ❌ Inexistente | ✅ Plantilla + OCR | ✅ Disparadores por imagen | ✅ **Plantilla en ambos sistemas; OCR en macOS** |
@@ -155,8 +155,8 @@ Datos extraídos del análisis de mercado en [`android/docs/landscape.md`](andro
 Requiere Xcode Command Line Tools.
 
 ```bash
-git clone https://github.com/phanbaohuy96/auto-click.git
-cd auto-click/macos
+git clone https://github.com/phanbaohuy96/clickify.git
+cd clickify/macos
 
 swift test              # Ejecutar pruebas unitarias y de especificación
 ./scripts/install.sh    # Compilar e instalar en /Applications
@@ -168,7 +168,7 @@ swift test              # Ejecutar pruebas unitarias y de especificación
 ### Android (Android 11 o posterior)
 
 ```bash
-cd auto-click/android
+cd clickify/android
 
 ./gradlew assembleDebug        # Generar APK de depuración
 ./gradlew testDebugUnitTest    # Ejecutar pruebas unitarias

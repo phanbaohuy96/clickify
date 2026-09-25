@@ -3,9 +3,9 @@
 set -eu
 
 project_dir=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
-install_root="${AUTO_CLICK_INSTALL_DIR:-/Applications}"
-source_app="$project_dir/dist/Auto Click.app"
-destination_app="$install_root/Auto Click.app"
+install_root="${CLICKIFY_INSTALL_DIR:-/Applications}"
+source_app="$project_dir/dist/Clickify.app"
+destination_app="$install_root/Clickify.app"
 should_build=1
 should_launch=1
 
@@ -14,7 +14,7 @@ usage() {
     printf '%s\n' ""
     printf '%s\n' "Options:"
     printf '%s\n' "  --no-build   Install the bundle already in dist/"
-    printf '%s\n' "  --no-launch  Do not open Auto Click after installing"
+    printf '%s\n' "  --no-launch  Do not open Clickify after installing"
     printf '%s\n' "  -h, --help   Show this help"
 }
 
@@ -47,13 +47,13 @@ elif [ ! -d "$source_app" ]; then
     exit 1
 fi
 
-if pgrep -f "$destination_app/Contents/MacOS/AutoClick" >/dev/null 2>&1; then
-    printf '%s\n' "Closing Auto Click…"
-    osascript -e 'tell application id "com.local.AutoClick" to quit' >/dev/null 2>&1 || true
+if pgrep -f "$destination_app/Contents/MacOS/Clickify" >/dev/null 2>&1; then
+    printf '%s\n' "Closing Clickify…"
+    osascript -e 'tell application id "com.pbh.clickify" to quit' >/dev/null 2>&1 || true
 
     attempts=0
     while [ "$attempts" -lt 20 ]; do
-        if ! pgrep -f "$destination_app/Contents/MacOS/AutoClick" >/dev/null 2>&1; then
+        if ! pgrep -f "$destination_app/Contents/MacOS/Clickify" >/dev/null 2>&1; then
             break
         fi
         sleep 0.1
@@ -79,5 +79,5 @@ if [ "$should_launch" -eq 1 ]; then
     open "$destination_app"
 fi
 
-printf '%s\n' "Auto Click installed successfully."
-printf '%s\n' "If the app does not click after an update, toggle Auto Click off and on in Privacy & Security → Accessibility."
+printf '%s\n' "Clickify installed successfully."
+printf '%s\n' "If the app does not click after an update, toggle Clickify off and on in Privacy & Security → Accessibility."
