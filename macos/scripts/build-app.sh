@@ -32,6 +32,8 @@ cp "$project_dir/Resources/Info.plist" "$contents_dir/Info.plist"
 rm -rf "$contents_dir/Resources"
 mkdir -p "$contents_dir/Resources"
 cp -R "$project_dir/Resources/"*.lproj "$contents_dir/Resources/"
+# The application icon. Copied after the wipe above, not before it.
+cp "$project_dir/Resources/Clickify.icns" "$contents_dir/Resources/Clickify.icns"
 
 codesign --force --deep --sign "$signing_identity" "$app_dir"
 

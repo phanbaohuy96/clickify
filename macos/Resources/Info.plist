@@ -8,6 +8,8 @@
     <string>Clickify</string>
     <key>CFBundleExecutable</key>
     <string>Clickify</string>
+    <key>CFBundleIconFile</key>
+    <string>Clickify</string>
     <key>CFBundleIdentifier</key>
     <string>com.pbh.clickify</string>
     <key>CFBundleInfoDictionaryVersion</key>
