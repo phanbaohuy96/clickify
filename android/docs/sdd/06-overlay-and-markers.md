@@ -1,7 +1,7 @@
 # 06 — The Overlay and Markers (Android)
 
 macOS has a menu bar, windows and a cursor. Android has none of those while another application is
-in front, so **every** surface Auto Click offers during authoring or running is drawn on top of
+in front, so **every** surface Clickify offers during authoring or running is drawn on top of
 somebody else's screen. That is the **Overlay**, and it is why this document is long.
 
 Compose runs there by hand-wiring three owners onto a `WindowManager` view: [ADR-0015].
@@ -19,12 +19,12 @@ the system:
 
 **OV-2** `[A1]` Every **Overlay** window is `TYPE_APPLICATION_OVERLAY` and passes through every
 touch that is not on one of its own controls. The application underneath must behave exactly as it
-does without Auto Click installed; a tool that intercepts stray taps is worse than no tool.
+does without Clickify installed; a tool that intercepts stray taps is worse than no tool.
 
 **OV-3** `[A1]` **No Overlay window takes input focus**, with the single narrow exception in
 `OV-20`. `FLAG_NOT_FOCUSABLE` is not an optimisation here. `setText` finds the field with
 `findFocus(FOCUS_INPUT)` (`GX-17`), so an **Overlay** that takes focus makes every `setText`
-**Step** write into Auto Click instead of the application being automated — a failure that looks
+**Step** write into Clickify instead of the application being automated — a failure that looks
 like the other application's fault.
 
 **OV-4** `[A1]` A window is removed from `WindowManager` when it stops being needed, not hidden.
@@ -62,7 +62,7 @@ layer behind them carrying the connecting lines takes no touches at all.
 
 This is not an implementation note: it is the requirement that there is **no mode**. Android has no
 public way to say "this window answers touches *here* and nowhere else", so a full-screen layer
-either takes every touch — which makes the phone unusable while Auto Click is open — or takes none,
+either takes every touch — which makes the phone unusable while Clickify is open — or takes none,
 in which case a **Marker** can be looked at but not moved. The earlier answer was a mode the user
 had to remember to leave, and `landscape.md` ranks "controls that sit on top of what you are
 automating" seventh among the category's complaints. One window per handle gives both at once: the

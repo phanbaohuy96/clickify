@@ -1,6 +1,6 @@
 # 07 — The design system (Android)
 
-Auto Click has two surfaces and they have different problems. The Activity is an ordinary app
+Clickify has two surfaces and they have different problems. The Activity is an ordinary app
 screen and can look like one. The **Overlay** is drawn on top of something it does not own — a
 game, a dark chat, a white form — and everything below follows from that.
 
@@ -13,7 +13,7 @@ symbols *are* the platform's own and a third-party set would be the thing that l
 
 **DS-1** `[A1]` Two families, **bundled** with the app rather than fetched.
 
-Bundled because Auto Click has no `INTERNET` permission and no intention of asking for one, and
+Bundled because Clickify has no `INTERNET` permission and no intention of asking for one, and
 because a font provider is one more thing that can be unavailable at the moment the floating
 control has to be legible over somebody else's game.
 

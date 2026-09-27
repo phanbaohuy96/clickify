@@ -1,10 +1,10 @@
 <resources>
     <!-- Central DomainError -> text policy (see DomainErrorText.kt). -->
     <string name="core_error_generic">Đã xảy ra lỗi. Vui lòng thử lại.</string>
-    <string name="core_error_permission_accessibility">Auto Click cần bật dịch vụ trợ năng thì mới chạm được.</string>
-    <string name="core_error_permission_overlay">Auto Click cần quyền hiển thị trên ứng dụng khác thì mới vẽ được điểm chạm.</string>
-    <string name="core_error_permission_notifications">Auto Click cần quyền gửi thông báo, để kịch bản đang chạy luôn hiện rõ.</string>
+    <string name="core_error_permission_accessibility">Clickify cần bật dịch vụ trợ năng thì mới chạm được.</string>
+    <string name="core_error_permission_overlay">Clickify cần quyền hiển thị trên ứng dụng khác thì mới vẽ được điểm chạm.</string>
+    <string name="core_error_permission_notifications">Clickify cần quyền gửi thông báo, để kịch bản đang chạy luôn hiện rõ.</string>
     <string name="core_error_screen_profile">Kịch bản này được tạo trên màn hình khác, nên các điểm chạm không còn rơi đúng chỗ đã đặt.</string>
-    <string name="core_error_scenario_too_new">Kịch bản này được lưu bởi phiên bản Auto Click mới hơn (định dạng %1$d, bản này đọc được %2$d).</string>
+    <string name="core_error_scenario_too_new">Kịch bản này được lưu bởi phiên bản Clickify mới hơn (định dạng %1$d, bản này đọc được %2$d).</string>
     <string name="core_error_scenario_unreadable">Không đọc được kịch bản này.</string>
 </resources>

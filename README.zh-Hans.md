@@ -1,15 +1,15 @@
-# Auto Click
+# Clickify
 
 <p align="center">
   <a href="README.md">English</a> | <a href="README.vi.md">Tiếng Việt</a> | <b>简体中文</b> | <a href="README.ja.md">日本語</a> | <a href="README.es.md">Español</a>
 </p>
 
 <p align="center">
-  <img src="docs/assets/hero_showcase.jpg" alt="Auto Click 跨平台展示" width="100%" />
+  <img src="docs/assets/hero_showcase.jpg" alt="Clickify 跨平台展示" width="100%" />
 </p>
 
 <p align="center">
-  <a href="https://github.com/phanbaohuy96/auto-click/actions"><img src="https://img.shields.io/badge/平台-macOS%2014%2B%20%7C%20Android%2011%2B-000000?style=for-the-badge&logo=apple&logoColor=white" alt="平台" /></a>
+  <a href="https://github.com/phanbaohuy96/clickify/actions"><img src="https://img.shields.io/badge/平台-macOS%2014%2B%20%7C%20Android%2011%2B-000000?style=for-the-badge&logo=apple&logoColor=white" alt="平台" /></a>
   <a href="macos/"><img src="https://img.shields.io/badge/macOS-Swift%20%2F%20SwiftUI-F05138?style=for-the-badge&logo=swift&logoColor=white" alt="macOS Swift" /></a>
   <a href="android/"><img src="https://img.shields.io/badge/Android-Kotlin%20%2F%20Compose-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white" alt="Android Kotlin" /></a>
   <a href="docs/sdd/08-permissions-and-safety.md"><img src="https://img.shields.io/badge/触控安全-SF--1%20强制释放-00C853?style=for-the-badge&logo=shield&logoColor=white" alt="SF-1 触控安全" /></a>
@@ -27,13 +27,13 @@
 
 ---
 
-## 为什么选择 Auto Click？
+## 为什么选择 Clickify？
 
-市场上现有的绝大多数自动点击器要么是**漏洞百出的玩具**（拥有上亿下载量，却伴随着导致手机死锁、必须重启手机的触控卡死严重缺陷），要么是**极其复杂的重型工具**（点击一个按钮却需要编写复杂脚本）。Auto Click 正好填补了这两者之间的空白。相关分析与证据请参阅市场调研报告 [`android/docs/landscape.md`](android/docs/landscape.md)。
+市场上现有的绝大多数自动点击器要么是**漏洞百出的玩具**（拥有上亿下载量，却伴随着导致手机死锁、必须重启手机的触控卡死严重缺陷），要么是**极其复杂的重型工具**（点击一个按钮却需要编写复杂脚本）。Clickify 正好填补了这两者之间的空白。相关分析与证据请参阅市场调研报告 [`android/docs/landscape.md`](android/docs/landscape.md)。
 
 ```
                       ┌──────────────────────────────────────────────┐
-                      │                 Auto Click                   │
+                      │                 Clickify                   │
                       │   清爽界面 · 图像匹配 · 零崩溃稳定架构       │
                       │      绝不死锁 · 规范驱动的标准实现           │
                       └──────────────────────┬───────────────────────┘
@@ -112,7 +112,7 @@
 
 根据 [`android/docs/landscape.md`](android/docs/landscape.md) 的实测调研整理：
 
-| 评估维度 | 传统点击器 *(True Developers 等)* | Macrorify | Klick'r / Smart AutoClicker | **Auto Click（本项目）** |
+| 评估维度 | 传统点击器 *(True Developers 等)* | Macrorify | Klick'r / Smart AutoClicker | **Clickify（本项目）** |
 |---|---|---|---|---|
 | **触控卡死解脱机制** | ❌ 全行业痛点，仅能强行重启设备 | ⚠️ 部分缓解 | ⚠️ 未作针对性处理 | ✅ **`SF-1` 强制释放 + 一键「释放触控」** |
 | **图像识别能力** | ❌ 完全无 | ✅ 模板匹配 + OCR | ✅ 图像触发器 | ✅ **双平台均支持模板；macOS 支持 OCR** |
@@ -142,7 +142,7 @@
 
 **以下内容目前仍在规划中。** 记录于此旨在展现清晰的产品发展方向；目前代码库尚未包含这些高级功能：
 
-- **核心功能永久免费。** 无限点击、多点手势、动作录制与 `SF-1` 触控安全 — 这些同行收费或频频出 Bug 的核心功能在 Auto Click 中完全免费。
+- **核心功能永久免费。** 无限点击、多点手势、动作录制与 `SF-1` 触控安全 — 这些同行收费或频频出 Bug 的核心功能在 Clickify 中完全免费。
 - **平价一次性买断，拒绝流氓周期订阅。** 调研表明，用户对同类软件每周扣费的恶性订阅深恶痛绝，一次性买断是最受好评的付费形式。
 - **计划中的 Pro 高级特性**：防封伪装（高斯坐标随机偏移与微扰间隔）、平滑贝塞尔曲线拟人滑动、绝对时钟定时执行（抢购与定时签到）、像素取色器（Color Guard）与无限脚本存储槽位。
 
@@ -155,8 +155,8 @@
 需要安装 Xcode Command Line Tools。
 
 ```bash
-git clone https://github.com/phanbaohuy96/auto-click.git
-cd auto-click/macos
+git clone https://github.com/phanbaohuy96/clickify.git
+cd clickify/macos
 
 swift test              # 运行单元测试与规范测试套件
 ./scripts/install.sh    # 构建并安装到 /Applications
@@ -168,7 +168,7 @@ swift test              # 运行单元测试与规范测试套件
 ### Android（Android 11 或更高版本）
 
 ```bash
-cd auto-click/android
+cd clickify/android
 
 ./gradlew assembleDebug        # 构建 Debug 版 APK
 ./gradlew testDebugUnitTest    # 运行单元测试

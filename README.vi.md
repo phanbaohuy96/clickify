@@ -1,15 +1,15 @@
-# Auto Click
+# Clickify
 
 <p align="center">
   <a href="README.md">English</a> | <b>Tiếng Việt</b> | <a href="README.zh-Hans.md">简体中文</a> | <a href="README.ja.md">日本語</a> | <a href="README.es.md">Español</a>
 </p>
 
 <p align="center">
-  <img src="docs/assets/hero_showcase.jpg" alt="Trưng bày Auto Click Đa Nền Tảng" width="100%" />
+  <img src="docs/assets/hero_showcase.jpg" alt="Trưng bày Clickify Đa Nền Tảng" width="100%" />
 </p>
 
 <p align="center">
-  <a href="https://github.com/phanbaohuy96/auto-click/actions"><img src="https://img.shields.io/badge/Nền_tảng-macOS%2014%2B%20%7C%20Android%2011%2B-000000?style=for-the-badge&logo=apple&logoColor=white" alt="Nền tảng" /></a>
+  <a href="https://github.com/phanbaohuy96/clickify/actions"><img src="https://img.shields.io/badge/Nền_tảng-macOS%2014%2B%20%7C%20Android%2011%2B-000000?style=for-the-badge&logo=apple&logoColor=white" alt="Nền tảng" /></a>
   <a href="macos/"><img src="https://img.shields.io/badge/macOS-Swift%20%2F%20SwiftUI-F05138?style=for-the-badge&logo=swift&logoColor=white" alt="macOS Swift" /></a>
   <a href="android/"><img src="https://img.shields.io/badge/Android-Kotlin%20%2F%20Compose-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white" alt="Android Kotlin" /></a>
   <a href="docs/sdd/08-permissions-and-safety.md"><img src="https://img.shields.io/badge/An_toàn_chạm-SF--1%20Bắt_buộc-00C853?style=for-the-badge&logo=shield&logoColor=white" alt="An toàn chạm SF-1" /></a>
@@ -27,13 +27,13 @@ Tự động hoá các tác vụ lặp đi lặp lại bằng cách phát các s
 
 ---
 
-## Tại sao chọn Auto Click?
+## Tại sao chọn Clickify?
 
-Đa số các ứng dụng auto-click hiện nay trên thị trường hoặc là **đồ chơi nhiều lỗi** (hơn 100 triệu lượt tải nhưng dính lỗi đơ cảm ứng kinh điển phải khởi động lại máy) hoặc là **công cụ quá phức tạp** (bắt học cả ngôn ngữ kịch bản chỉ để bấm 1 nút). Auto Click đứng ở khoảng trống tiềm năng ở giữa. Bằng chứng thực tế được phân tích chi tiết trong tài liệu khảo sát thị trường [`android/docs/landscape.md`](android/docs/landscape.md).
+Đa số các ứng dụng auto-click hiện nay trên thị trường hoặc là **đồ chơi nhiều lỗi** (hơn 100 triệu lượt tải nhưng dính lỗi đơ cảm ứng kinh điển phải khởi động lại máy) hoặc là **công cụ quá phức tạp** (bắt học cả ngôn ngữ kịch bản chỉ để bấm 1 nút). Clickify đứng ở khoảng trống tiềm năng ở giữa. Bằng chứng thực tế được phân tích chi tiết trong tài liệu khảo sát thị trường [`android/docs/landscape.md`](android/docs/landscape.md).
 
 ```
                       ┌──────────────────────────────────────────────┐
-                      │                 Auto Click                   │
+                      │                 Clickify                   │
                       │  UI Hiện đại · Nhận diện ảnh · Chống crash   │
                       │   An toàn không đơ chạm · Thiết kế chuẩn mực │
                       └──────────────────────┬───────────────────────┘
@@ -112,7 +112,7 @@ Một **Bước** ghép nối chính xác một **Hành động** với một **
 
 Tổng hợp từ khảo sát thực tế trong [`android/docs/landscape.md`](android/docs/landscape.md):
 
-| Tiêu chí | Auto-clicker truyền thống *(True Developers,...)* | Macrorify | Klick'r / Smart AutoClicker | **Auto Click** |
+| Tiêu chí | Auto-clicker truyền thống *(True Developers,...)* | Macrorify | Klick'r / Smart AutoClicker | **Clickify** |
 |---|---|---|---|---|
 | **Khắc phục đơ chạm** | ❌ Lỗi toàn ngành; cách duy nhất là reboot | ⚠️ Khắc phục một phần | ⚠️ Chưa xử lý bài bản | ✅ **`SF-1` + Nút "Giải phóng chạm" 1 chạm** |
 | **Nhận diện hình ảnh** | ❌ Không có | ✅ Mẫu ảnh + OCR | ✅ Kích hoạt theo ảnh | ✅ **Mẫu ảnh trên cả 2 nền tảng; OCR trên macOS** |
@@ -155,8 +155,8 @@ Tổng hợp từ khảo sát thực tế trong [`android/docs/landscape.md`](an
 Yêu cầu Xcode Command Line Tools.
 
 ```bash
-git clone https://github.com/phanbaohuy96/auto-click.git
-cd auto-click/macos
+git clone https://github.com/phanbaohuy96/clickify.git
+cd clickify/macos
 
 swift test              # Chạy bộ test đơn vị và test đặc tả
 ./scripts/install.sh    # Build và cài đặt vào /Applications
@@ -168,7 +168,7 @@ swift test              # Chạy bộ test đơn vị và test đặc tả
 ### Android (Android 11 trở lên)
 
 ```bash
-cd auto-click/android
+cd clickify/android
 
 ./gradlew assembleDebug        # Build file APK debug
 ./gradlew testDebugUnitTest    # Chạy unit tests

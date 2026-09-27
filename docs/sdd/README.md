@@ -1,6 +1,6 @@
-# SDD — Auto Click design specification
+# SDD — Clickify design specification
 
-The specification comes **before** the code. Every observable behaviour of Auto Click has to
+The specification comes **before** the code. Every observable behaviour of Clickify has to
 appear here as a numbered requirement, and the code has to cite that number wherever the
 behaviour is not obvious from the code itself.
 

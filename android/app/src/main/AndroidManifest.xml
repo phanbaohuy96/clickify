@@ -17,7 +17,7 @@
         android:localeConfig="@xml/locales_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AutoClick">
+        android:theme="@style/Theme.Clickify">
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -32,7 +32,7 @@
         <!-- PM-2: the consent dialogue Android shows says this service "can observe your actions".
              The description resource is the rest of that sentence. -->
         <service
-            android:name=".service.AutoClickAccessibilityService"
+            android:name=".service.ClickifyAccessibilityService"
             android:exported="false"
             android:label="@string/app_name"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">

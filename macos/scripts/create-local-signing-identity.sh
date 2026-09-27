@@ -6,7 +6,7 @@
 # Recording and they have to be re-enabled in System Settings — a huge waste of time mid-testing.
 #
 # Signing with a stable certificate produces a designated requirement of
-# `identifier "com.local.AutoClick" and certificate leaf = H"…"`, which does not depend on the build. Grant
+# `identifier "com.pbh.clickify" and certificate leaf = H"…"`, which does not depend on the build. Grant
 # the permission once and you are done.
 #
 # This certificate is **for this machine only**. It is not a Developer ID, cannot be distributed, and
@@ -14,7 +14,7 @@
 
 set -euo pipefail
 
-name="Auto Click Local Signing"
+name="Clickify Local Signing"
 
 if security find-identity -p codesigning | grep -q "$name"; then
     printf '%s\n' "Already present: $name"
@@ -41,10 +41,10 @@ openssl req -x509 -newkey rsa:2048 -keyout "$work/key.pem" -out "$work/cert.pem"
     -days 3650 -nodes -config "$work/cert.cnf" >/dev/null 2>&1
 
 openssl pkcs12 -export -out "$work/bundle.p12" -inkey "$work/key.pem" -in "$work/cert.pem" \
-    -passout pass:autoclick -name "$name" >/dev/null 2>&1
+    -passout pass:clickify -name "$name" >/dev/null 2>&1
 
 security import "$work/bundle.p12" -k "$HOME/Library/Keychains/login.keychain-db" \
-    -P autoclick -T /usr/bin/codesign -T /usr/bin/security
+    -P clickify -T /usr/bin/codesign -T /usr/bin/security
 
 printf '%s\n' "Created $name."
 printf '%s\n' "Run ./scripts/install.sh, then grant Accessibility + Screen Recording ONE more time."

@@ -20,7 +20,7 @@
   owns a point. Requested when Start is first pressed.
 - **SF-5** `[Slice 4]` `[done]` **Screen Recording** — needed for **Template**s and for finding by
   text. Only requested when the user actually uses it, never at launch.
-- **SF-6** `[done]` Auto Click **never** requests **Input Monitoring**, and the recorder **never**
+- **SF-6** `[done]` Clickify **never** requests **Input Monitoring**, and the recorder **never**
   listens to the keyboard. See [ADR-0003](../adr/0003-no-keyboard-capture-when-recording.md).
 
   Three layers of verification, of which the first is the only one that **automatically stops a
@@ -42,7 +42,7 @@
 - **SF-10** `[done]` The message for a missing **Accessibility** permission must name **both**
   possibilities: never granted, and granted but invalidated by an app update. Installing over an
   existing copy changes the signature, macOS invalidates the old grant **but still shows the
-  toggle as on**; the user opens System Settings, sees Auto Click enabled, and concludes the app is
+  toggle as on**; the user opens System Settings, sees Clickify enabled, and concludes the app is
   broken. The fix is to toggle it off and on. No API can read the real state to tell the two
   apart, so both have to be stated — the same approach as `SF-7`. Found while running session A of
   the [manual tests](../manual-e2e-tests.md), not while writing the spec: only installing over a
@@ -50,7 +50,7 @@
 
   **The cause, and how to end it on a development machine:** ad-hoc signing (`codesign --sign -`)
   produces a designated requirement of `cdhash H"…"`, and the cdhash changes with **every build**.
-  Signing with a stable certificate produces `identifier "com.local.AutoClick" and certificate leaf
+  Signing with a stable certificate produces `identifier "com.local.Clickify" and certificate leaf
   = H"…"`, which does not depend on the build — grant the permission once and you are done.
   `scripts/create-local-signing-identity.sh` creates such a self-signed certificate, and
   `build-app.sh` uses it automatically when present.
@@ -61,7 +61,7 @@
   certificate, **Accessibility** did indeed survive — pressing `⌥⌘R` brought the recording panel
   straight up, with nothing to grant again. But **Screen Recording did not**: the first time
   recognition was used after that install, `CGPreflightScreenCaptureAccess()` returned `false` and
-  macOS raised the permission dialog again, **while System Settings still showed Auto Click as
+  macOS raised the permission dialog again, **while System Settings still showed Clickify as
   enabled** — exactly the trap `SF-10` describes, just on the other permission. So the stable
   certificate helps Accessibility and has proved nothing for Screen Recording. `SF-7` remains the
   only thing that rescues the user in that situation, and it did its job (see `C14` of the

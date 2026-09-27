@@ -1,4 +1,4 @@
-/* Auto Click — Tiếng Việt.
+/* Clickify — Tiếng Việt.
    Bản dịch duy nhất ngoài `en` có người rà, nên nó bị test giữ ở cùng chuẩn: thiếu một key là build đỏ
    (LC-15). Chuỗi có số đếm nằm ở Localizable.stringsdict. */
 
@@ -85,7 +85,7 @@
 "editor.empty.title" = "Chưa có kịch bản nào";
 "editor.empty.action" = "Tạo kịch bản đầu tiên";
 "editor.newer_format.title" = "“%@” dùng định dạng mới hơn";
-"editor.newer_format.detail" = "Chỉ xem được, không sửa và không chạy được bằng bản Auto Click này.";
+"editor.newer_format.detail" = "Chỉ xem được, không sửa và không chạy được bằng bản Clickify này.";
 "editor.scenario_name" = "Tên kịch bản";
 "editor.repeat_until_stopped" = "Lặp đến khi dừng";
 "editor.iteration_count" = "Số vòng";
@@ -145,7 +145,7 @@
 "step.key" = "Phím";
 "step.modifiers" = "Phím bổ trợ";
 "step.key_preview" = "Sẽ gửi %@.";
-"step.key_activation_hint" = "Trước khi gõ, Auto Click đưa %@ lên trước; không đưa lên được thì dừng.";
+"step.key_activation_hint" = "Trước khi gõ, Clickify đưa %@ lên trước; không đưa lên được thì dừng.";
 "step.key_no_lock_hint" = "Chưa khoá ứng dụng: phím sẽ đi vào bất kỳ cửa sổ nào đang ở trước.";
 "step.target.kind" = "Loại";
 "step.target.cursor_hint" = "Đọc lại vị trí con trỏ ở mỗi lần lặp, nên chuỗi thao tác sẽ đi theo tay bạn.";
@@ -210,20 +210,20 @@
 "error.lock.not_running" = "Ứng dụng đã chọn hiện không chạy.";
 "error.fixed_point_missing" = "Hãy chọn một điểm click cố định.";
 "error.empty_scenario" = "Kịch bản chưa có bước nào.";
-"error.accessibility_denied" = "Hãy cấp quyền Accessibility cho Auto Click rồi thử lại. Nếu Auto Click đã có trong danh sách, hãy tắt rồi bật lại — bản cập nhật làm quyền cũ hết hiệu lực.";
+"error.accessibility_denied" = "Hãy cấp quyền Accessibility cho Clickify rồi thử lại. Nếu Clickify đã có trong danh sách, hãy tắt rồi bật lại — bản cập nhật làm quyền cũ hết hiệu lực.";
 "error.missing_locked_application" = "Kịch bản có bước neo theo cửa sổ nên phải chọn ứng dụng khoá.";
 "error.locked_application_not_running" = "%@ hiện không chạy.";
-"error.locked_application_terminated" = "Ứng dụng đích đã đóng; Auto Click đã dừng.";
-"error.point_outside_locked_application" = "Điểm thao tác không nằm trong ứng dụng đã khoá; Auto Click đã dừng.";
+"error.locked_application_terminated" = "Ứng dụng đích đã đóng; Clickify đã dừng.";
+"error.point_outside_locked_application" = "Điểm thao tác không nằm trong ứng dụng đã khoá; Clickify đã dừng.";
 "error.anchor_window_unavailable" = "Không lấy được cửa sổ nào của %@ để làm gốc toạ độ — cửa sổ có thể đang thu nhỏ dưới Dock.";
-"error.activation_failed" = "Không đưa được %@ lên trước để gõ phím; Auto Click đã dừng.";
+"error.activation_failed" = "Không đưa được %@ lên trước để gõ phím; Clickify đã dừng.";
 "error.unknown_key" = "Không nhận ra phím “%@”.";
-"error.target_not_found" = "Không tìm thấy %@ trên màn hình; Auto Click đã dừng.";
+"error.target_not_found" = "Không tìm thấy %@ trên màn hình; Clickify đã dừng.";
 "error.launch_at_login" = "Không thể đổi cài đặt đăng nhập: %@";
-"error.schema_too_new" = "Kịch bản dùng định dạng phiên bản %1$d, bản Auto Click này chỉ hiểu tới %2$d.";
+"error.schema_too_new" = "Kịch bản dùng định dạng phiên bản %1$d, bản Clickify này chỉ hiểu tới %2$d.";
 "error.unknown_action" = "Không nhận ra hành động “%@”.";
 "error.unknown_target" = "Không nhận ra vị trí “%@”.";
-"error.screen_recording_denied" = "Hãy cấp quyền Screen Recording cho Auto Click rồi thử lại. Nếu đã cấp rồi, hãy thoát và mở lại Auto Click.";
+"error.screen_recording_denied" = "Hãy cấp quyền Screen Recording cho Clickify rồi thử lại. Nếu đã cấp rồi, hãy thoát và mở lại Clickify.";
 "error.no_display" = "Không tìm thấy màn hình nào để chụp.";
 "error.pixel_scale_unreadable" = "Không đọc được tỉ lệ điểm ảnh của màn hình nên đã bỏ qua để tránh bấm sai chỗ.";
 "error.screen_capture_failed" = "Không chụp được màn hình.";

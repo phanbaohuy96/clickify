@@ -1,13 +1,13 @@
 <resources>
-    <string name="onboarding_title">设置 Auto Click</string>
-    <string name="onboarding_intro">Auto Click 需要两项权限才能工作。它不读取你的屏幕内容，所有场景都留在本机，也没有联网权限。</string>
+    <string name="onboarding_title">设置 Clickify</string>
+    <string name="onboarding_intro">Clickify 需要两项权限才能工作。它不读取你的屏幕内容，所有场景都留在本机，也没有联网权限。</string>
 
     <string name="onboarding_accessibility_title">无障碍服务</string>
-    <string name="onboarding_accessibility_body">向其他应用发送触摸是 Android 允许无障碍服务做的唯一一件事，也是本应用能工作的唯一途径。Android 会提示该服务“可以观察你的操作”——这条警告适用于所有同类服务。Auto Click 只重放你设置的点按，不查看任何内容。</string>
+    <string name="onboarding_accessibility_body">向其他应用发送触摸是 Android 允许无障碍服务做的唯一一件事，也是本应用能工作的唯一途径。Android 会提示该服务“可以观察你的操作”——这条警告适用于所有同类服务。Clickify 只重放你设置的点按，不查看任何内容。</string>
     <string name="onboarding_open_accessibility">打开无障碍设置</string>
 
     <string name="onboarding_restricted_title">开关是灰色的</string>
-    <string name="onboarding_restricted_body">对于从文件而非应用商店安装的应用，Android 会封锁无障碍权限。既然开关已经拒绝过一次，通路就出现了：设置 → 应用 → Auto Click → ⋮ 菜单 → 允许受限设置。然后回来打开该服务。</string>
+    <string name="onboarding_restricted_body">对于从文件而非应用商店安装的应用，Android 会封锁无障碍权限。既然开关已经拒绝过一次，通路就出现了：设置 → 应用 → Clickify → ⋮ 菜单 → 允许受限设置。然后回来打开该服务。</string>
     <string name="onboarding_open_app_info">打开应用信息</string>
 
     <string name="onboarding_overlay_title">在其他应用上层显示</string>
@@ -15,17 +15,17 @@
     <string name="onboarding_open_overlay">允许显示在其他应用上层</string>
 
     <string name="onboarding_notifications_title">通知</string>
-    <string name="onboarding_notifications_body">运行时会在通知栏放一条带“停止”和“松开手指”的通知。没有它 Auto Click 照样运行，只是不会那么显眼地告诉你它在运行。</string>
+    <string name="onboarding_notifications_body">运行时会在通知栏放一条带“停止”和“松开手指”的通知。没有它 Clickify 照样运行，只是不会那么显眼地告诉你它在运行。</string>
     <string name="onboarding_allow">允许</string>
 
     <string name="onboarding_blocked_title">高级保护已开启</string>
-    <string name="onboarding_blocked_body">高级保护会拒绝向所有非辅助类应用授予无障碍权限，而 Auto Click 是自动化工具而非辅助工具。没有单应用例外，这里也没有可重试的东西。唯一的办法是关闭高级保护，而那是你自己的决定。</string>
+    <string name="onboarding_blocked_body">高级保护会拒绝向所有非辅助类应用授予无障碍权限，而 Clickify 是自动化工具而非辅助工具。没有单应用例外，这里也没有可重试的东西。唯一的办法是关闭高级保护，而那是你自己的决定。</string>
 
     <string name="onboarding_granted">就绪</string>
     <string name="onboarding_needed">必需</string>
     <string name="onboarding_optional">可选</string>
-    <string name="onboarding_done">开始使用 Auto Click</string>
+    <string name="onboarding_done">开始使用 Clickify</string>
     <string name="onboarding_waiting">等待上面两项</string>
     <string name="onboarding_reopen">设置</string>
-    <string name="onboarding_not_ready">Auto Click 尚未设置完成</string>
+    <string name="onboarding_not_ready">Clickify 尚未设置完成</string>
 </resources>

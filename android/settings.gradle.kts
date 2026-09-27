@@ -14,7 +14,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "auto-click-android"
+rootProject.name = "clickify-android"
 
 include(":app")
 include(":core")

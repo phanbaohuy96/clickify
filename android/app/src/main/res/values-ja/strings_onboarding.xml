@@ -1,13 +1,13 @@
 <resources>
-    <string name="onboarding_title">Auto Click をセットアップ</string>
-    <string name="onboarding_intro">Auto Click は動作するために 2 つの権限が必要です。画面の内容は読み取らず、シナリオはすべてこの端末内に留まり、インターネットを使う権限もありません。</string>
+    <string name="onboarding_title">Clickify をセットアップ</string>
+    <string name="onboarding_intro">Clickify は動作するために 2 つの権限が必要です。画面の内容は読み取らず、シナリオはすべてこの端末内に留まり、インターネットを使う権限もありません。</string>
 
     <string name="onboarding_accessibility_title">ユーザー補助サービス</string>
-    <string name="onboarding_accessibility_body">他のアプリにタッチを送ることは Android がユーザー補助サービスに許可している唯一の操作であり、このアプリが動作する唯一の方法です。Android は「操作を監視できます」と警告しますが、これはこの種のサービスすべてに出る文言です。Auto Click はあなたが設定したタップを再生するだけで、何も見ていません。</string>
+    <string name="onboarding_accessibility_body">他のアプリにタッチを送ることは Android がユーザー補助サービスに許可している唯一の操作であり、このアプリが動作する唯一の方法です。Android は「操作を監視できます」と警告しますが、これはこの種のサービスすべてに出る文言です。Clickify はあなたが設定したタップを再生するだけで、何も見ていません。</string>
     <string name="onboarding_open_accessibility">ユーザー補助の設定を開く</string>
 
     <string name="onboarding_restricted_title">スイッチがグレーアウトしていました</string>
-    <string name="onboarding_restricted_body">ストアではなくファイルからインストールされたアプリには、Android がユーザー補助をブロックします。スイッチが一度拒否された今なら道が開けます：設定 → アプリ → Auto Click → ⋮ メニュー → 制限付き設定を許可。そのあと戻ってサービスをオンにしてください。</string>
+    <string name="onboarding_restricted_body">ストアではなくファイルからインストールされたアプリには、Android がユーザー補助をブロックします。スイッチが一度拒否された今なら道が開けます：設定 → アプリ → Clickify → ⋮ メニュー → 制限付き設定を許可。そのあと戻ってサービスをオンにしてください。</string>
     <string name="onboarding_open_app_info">アプリ情報を開く</string>
 
     <string name="onboarding_overlay_title">他のアプリの上に表示</string>
@@ -15,17 +15,17 @@
     <string name="onboarding_open_overlay">他のアプリの上への表示を許可</string>
 
     <string name="onboarding_notifications_title">通知</string>
-    <string name="onboarding_notifications_body">実行中は「停止」と「タッチを解放」を持つ通知が表示されます。なくても Auto Click は動きますが、動いていることが分かりにくくなります。</string>
+    <string name="onboarding_notifications_body">実行中は「停止」と「タッチを解放」を持つ通知が表示されます。なくても Clickify は動きますが、動いていることが分かりにくくなります。</string>
     <string name="onboarding_allow">許可</string>
 
     <string name="onboarding_blocked_title">高度な保護機能がオンです</string>
-    <string name="onboarding_blocked_body">高度な保護機能は、支援ツールではないすべてのアプリにユーザー補助権限を与えません。Auto Click は支援ツールではなく自動化ツールです。アプリごとの例外はなく、ここで再試行できるものもありません。唯一の方法は高度な保護機能をオフにすることで、それはあなたが決めることです。</string>
+    <string name="onboarding_blocked_body">高度な保護機能は、支援ツールではないすべてのアプリにユーザー補助権限を与えません。Clickify は支援ツールではなく自動化ツールです。アプリごとの例外はなく、ここで再試行できるものもありません。唯一の方法は高度な保護機能をオフにすることで、それはあなたが決めることです。</string>
 
     <string name="onboarding_granted">準備完了</string>
     <string name="onboarding_needed">必須</string>
     <string name="onboarding_optional">任意</string>
-    <string name="onboarding_done">Auto Click を使い始める</string>
+    <string name="onboarding_done">Clickify を使い始める</string>
     <string name="onboarding_waiting">上の 2 つを待っています</string>
     <string name="onboarding_reopen">セットアップ</string>
-    <string name="onboarding_not_ready">Auto Click はまだセットアップされていません</string>
+    <string name="onboarding_not_ready">Clickify はまだセットアップされていません</string>
 </resources>

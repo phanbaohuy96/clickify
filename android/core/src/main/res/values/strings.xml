@@ -1,10 +1,10 @@
 <resources>
     <!-- Central DomainError -> text policy (see DomainErrorText.kt). -->
     <string name="core_error_generic">Something went wrong. Please try again.</string>
-    <string name="core_error_permission_accessibility">Auto Click needs its accessibility service turned on before it can tap anything.</string>
-    <string name="core_error_permission_overlay">Auto Click needs permission to draw over other apps before it can show markers.</string>
-    <string name="core_error_permission_notifications">Auto Click needs permission to post notifications, so a running scenario is always visible.</string>
+    <string name="core_error_permission_accessibility">Clickify needs its accessibility service turned on before it can tap anything.</string>
+    <string name="core_error_permission_overlay">Clickify needs permission to draw over other apps before it can show markers.</string>
+    <string name="core_error_permission_notifications">Clickify needs permission to post notifications, so a running scenario is always visible.</string>
     <string name="core_error_screen_profile">This scenario was built on a different screen, so its points no longer land where they were placed.</string>
-    <string name="core_error_scenario_too_new">This scenario was saved by a newer version of Auto Click (format %1$d, this build reads %2$d).</string>
+    <string name="core_error_scenario_too_new">This scenario was saved by a newer version of Clickify (format %1$d, this build reads %2$d).</string>
     <string name="core_error_scenario_unreadable">This scenario could not be read.</string>
 </resources>

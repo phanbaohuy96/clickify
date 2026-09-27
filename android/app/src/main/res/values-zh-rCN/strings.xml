@@ -1,6 +1,6 @@
 <resources>
     <string name="accessibility_service_summary">代你点按、滑动和输入</string>
-    <string name="accessibility_service_description">Auto Click 只重放你自己设置的点按和滑动。它需要这项权限，是因为向其他应用发送触摸是 Android 允许无障碍服务做的唯一一件事。它不读取你的屏幕内容，所有数据都留在本机，也没有联网权限。</string>
+    <string name="accessibility_service_description">Clickify 只重放你自己设置的点按和滑动。它需要这项权限，是因为向其他应用发送触摸是 Android 允许无障碍服务做的唯一一件事。它不读取你的屏幕内容，所有数据都留在本机，也没有联网权限。</string>
     <string name="scenario_new">新建场景</string>
     <string name="scenario_none">还没有场景。先建一个，再把标记放到你想自动操作的应用上。</string>
     <string name="scenario_default_name">未命名</string>

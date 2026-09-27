@@ -1,4 +1,4 @@
-# Auto Click
+# Clickify
 
 <p align="center">
   <b>English</b> | <a href="README.vi.md">Tiếng Việt</a> | <a href="README.zh-Hans.md">简体中文</a> | <a href="README.ja.md">日本語</a> | <a href="README.es.md">Español</a>
@@ -9,11 +9,11 @@
 </p>
 
 <p align="center">
-  <img src="docs/assets/hero_showcase.jpg" alt="Auto Click Cross-Platform Showcase" width="100%" />
+  <img src="docs/assets/hero_showcase.jpg" alt="Clickify Cross-Platform Showcase" width="100%" />
 </p>
 
 <p align="center">
-  <a href="https://github.com/phanbaohuy96/auto-click/actions"><img src="https://img.shields.io/badge/Platform-macOS%2014%2B%20%7C%20Android%2011%2B-000000?style=for-the-badge&logo=apple&logoColor=white" alt="Platform" /></a>
+  <a href="https://github.com/phanbaohuy96/clickify/actions"><img src="https://img.shields.io/badge/Platform-macOS%2014%2B%20%7C%20Android%2011%2B-000000?style=for-the-badge&logo=apple&logoColor=white" alt="Platform" /></a>
   <a href="macos/"><img src="https://img.shields.io/badge/macOS-Swift%20%2F%20SwiftUI-F05138?style=for-the-badge&logo=swift&logoColor=white" alt="macOS Swift" /></a>
   <a href="android/"><img src="https://img.shields.io/badge/Android-Kotlin%20%2F%20Compose-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white" alt="Android Kotlin" /></a>
   <a href="docs/sdd/08-permissions-and-safety.md"><img src="https://img.shields.io/badge/Touch%20Safety-SF--1%20Enforced-00C853?style=for-the-badge&logo=shield&logoColor=white" alt="SF-1 touch safety" /></a>
@@ -32,7 +32,7 @@ Automate repetitive work by emitting synthetic input: an ordered sequence of ope
 
 ---
 
-## Why Auto Click?
+## Why Clickify?
 
 Most auto-clickers are either **dumb-but-buggy toys** (100M+ installs, and a touch-freeze bug that
 makes you reboot the phone) or **steep power tools** (a scripting language to press one button).
@@ -41,7 +41,7 @@ by complaint, is in [`android/docs/landscape.md`](android/docs/landscape.md).
 
 ```
                       ┌──────────────────────────────────────────────┐
-                      │                 Auto Click                   │
+                      │                 Clickify                   │
                       │   Clean UI · Image matching · Crash-proof    │
                       │   Zero-freeze safety · Specification-first   │
                       └──────────────────────┬───────────────────────┘
@@ -142,7 +142,7 @@ A **Step** pairs exactly one **Action** with exactly one **Target** ([ADR-0002](
 Sourced from the survey in [`android/docs/landscape.md`](android/docs/landscape.md), which was done
 before the Android specification was written.
 
-| Criterion | Traditional auto-clickers *(True Developers, etc.)* | Macrorify | Klick'r / Smart AutoClicker | **Auto Click** |
+| Criterion | Traditional auto-clickers *(True Developers, etc.)* | Macrorify | Klick'r / Smart AutoClicker | **Clickify** |
 |---|---|---|---|---|
 | **Touch-freeze recovery** | ❌ Category-wide bug; the fix is a reboot | ⚠️ Partial | ⚠️ Not addressed as such | ✅ **`SF-1`, plus one-tap "Free the touch"** |
 | **Image detection** | ❌ None | ✅ Template + OCR | ✅ Image triggers | ✅ **Template on both platforms; OCR on macOS** |
@@ -189,8 +189,8 @@ project is legible; nothing below exists in this repository today.
 Requires the Xcode command-line tools.
 
 ```bash
-git clone https://github.com/phanbaohuy96/auto-click.git
-cd auto-click/macos
+git clone https://github.com/phanbaohuy96/clickify.git
+cd clickify/macos
 
 swift test              # unit and specification suites
 ./scripts/install.sh    # build and install into /Applications
@@ -203,7 +203,7 @@ swift test              # unit and specification suites
 ### Android (11+)
 
 ```bash
-cd auto-click/android
+cd clickify/android
 
 ./gradlew assembleDebug        # debug APK
 ./gradlew testDebugUnitTest    # unit tests

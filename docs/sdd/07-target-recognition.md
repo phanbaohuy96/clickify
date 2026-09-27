@@ -22,7 +22,7 @@ Slice 4. See [ADR-0001](../adr/0001-screencapturekit-and-min-macos-14.md).
 - **RG-3** `[done]` The capture must not be cached between `EX-8` retries — the whole point of
   retrying is to see an interface that **has changed**.
 
-- **RG-20** `[done]` The capture **excludes Auto Click's own windows**. The floating panel sits in
+- **RG-20** `[done]` The capture **excludes Clickify's own windows**. The floating panel sits in
   the middle-top of the screen and can perfectly well cover the target being looked for.
 
 ## Cropping a Template

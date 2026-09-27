@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.pbh.autoclick.data"
+    namespace = "com.pbh.clickify.data"
     compileSdk = 36
 
     defaultConfig {

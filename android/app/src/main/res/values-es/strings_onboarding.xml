@@ -1,13 +1,13 @@
 <resources>
-    <string name="onboarding_title">Configurar Auto Click</string>
-    <string name="onboarding_intro">Auto Click necesita dos permisos antes de poder hacer nada. No lee nada de tu pantalla, guarda cada escenario en este dispositivo y no tiene permiso para usar internet.</string>
+    <string name="onboarding_title">Configurar Clickify</string>
+    <string name="onboarding_intro">Clickify necesita dos permisos antes de poder hacer nada. No lee nada de tu pantalla, guarda cada escenario en este dispositivo y no tiene permiso para usar internet.</string>
 
     <string name="onboarding_accessibility_title">Servicio de accesibilidad</string>
-    <string name="onboarding_accessibility_body">Enviar un toque a otra aplicación es lo único que Android permite hacer a un servicio de accesibilidad, y es la única forma en que esta aplicación puede funcionar. Android te avisará de que el servicio «puede observar tus acciones»: ese aviso vale para todos los servicios de este tipo. Auto Click repite los toques que tú configuras y no mira nada.</string>
+    <string name="onboarding_accessibility_body">Enviar un toque a otra aplicación es lo único que Android permite hacer a un servicio de accesibilidad, y es la única forma en que esta aplicación puede funcionar. Android te avisará de que el servicio «puede observar tus acciones»: ese aviso vale para todos los servicios de este tipo. Clickify repite los toques que tú configuras y no mira nada.</string>
     <string name="onboarding_open_accessibility">Abrir los ajustes de accesibilidad</string>
 
     <string name="onboarding_restricted_title">El interruptor estaba en gris</string>
-    <string name="onboarding_restricted_body">Android bloquea la accesibilidad para las aplicaciones instaladas desde un archivo en lugar de desde una tienda. Ahora que el interruptor se ha negado una vez, el camino existe: Ajustes → Aplicaciones → Auto Click → el menú ⋮ → Permitir ajustes restringidos. Después vuelve y activa el servicio.</string>
+    <string name="onboarding_restricted_body">Android bloquea la accesibilidad para las aplicaciones instaladas desde un archivo en lugar de desde una tienda. Ahora que el interruptor se ha negado una vez, el camino existe: Ajustes → Aplicaciones → Clickify → el menú ⋮ → Permitir ajustes restringidos. Después vuelve y activa el servicio.</string>
     <string name="onboarding_open_app_info">Abrir la información de la aplicación</string>
 
     <string name="onboarding_overlay_title">Mostrar sobre otras aplicaciones</string>
@@ -15,17 +15,17 @@
     <string name="onboarding_open_overlay">Permitir mostrar sobre otras aplicaciones</string>
 
     <string name="onboarding_notifications_title">Notificaciones</string>
-    <string name="onboarding_notifications_body">Una ejecución deja en la barra una notificación con Parar y Liberar el toque. Auto Click funcionará igual sin ella, solo que será menos evidente que está funcionando.</string>
+    <string name="onboarding_notifications_body">Una ejecución deja en la barra una notificación con Parar y Liberar el toque. Clickify funcionará igual sin ella, solo que será menos evidente que está funcionando.</string>
     <string name="onboarding_allow">Permitir</string>
 
     <string name="onboarding_blocked_title">La Protección Avanzada está activada</string>
-    <string name="onboarding_blocked_body">La Protección Avanzada niega el permiso de accesibilidad a toda aplicación que no sea una herramienta de asistencia, y Auto Click es una herramienta de automatización, no de asistencia. No hay excepción por aplicación ni nada que reintentar aquí. Desactivar la Protección Avanzada es la única vía, y esa decisión es tuya.</string>
+    <string name="onboarding_blocked_body">La Protección Avanzada niega el permiso de accesibilidad a toda aplicación que no sea una herramienta de asistencia, y Clickify es una herramienta de automatización, no de asistencia. No hay excepción por aplicación ni nada que reintentar aquí. Desactivar la Protección Avanzada es la única vía, y esa decisión es tuya.</string>
 
     <string name="onboarding_granted">Listo</string>
     <string name="onboarding_needed">Necesario</string>
     <string name="onboarding_optional">Opcional</string>
-    <string name="onboarding_done">Empezar a usar Auto Click</string>
+    <string name="onboarding_done">Empezar a usar Clickify</string>
     <string name="onboarding_waiting">Esperando a los dos de arriba</string>
     <string name="onboarding_reopen">Configuración</string>
-    <string name="onboarding_not_ready">Auto Click todavía no está configurado</string>
+    <string name="onboarding_not_ready">Clickify todavía no está configurado</string>
 </resources>

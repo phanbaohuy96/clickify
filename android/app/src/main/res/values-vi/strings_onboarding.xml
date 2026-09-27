@@ -1,13 +1,13 @@
 <resources>
-    <string name="onboarding_title">Thiết lập Auto Click</string>
-    <string name="onboarding_intro">Auto Click cần hai quyền trước khi làm được bất cứ việc gì. Ứng dụng không đọc gì trên màn hình bạn, giữ mọi kịch bản trên chính máy này, và không có quyền dùng internet.</string>
+    <string name="onboarding_title">Thiết lập Clickify</string>
+    <string name="onboarding_intro">Clickify cần hai quyền trước khi làm được bất cứ việc gì. Ứng dụng không đọc gì trên màn hình bạn, giữ mọi kịch bản trên chính máy này, và không có quyền dùng internet.</string>
 
     <string name="onboarding_accessibility_title">Dịch vụ trợ năng</string>
-    <string name="onboarding_accessibility_body">Gửi một cú chạm sang app khác là việc duy nhất Android cho phép một dịch vụ trợ năng làm, và đó là cách duy nhất ứng dụng này hoạt động được. Android sẽ cảnh báo rằng dịch vụ "có thể quan sát hành động của bạn" — cảnh báo đó áp cho mọi dịch vụ loại này. Auto Click chỉ phát lại những cú chạm bạn tự đặt, và không nhìn gì cả.</string>
+    <string name="onboarding_accessibility_body">Gửi một cú chạm sang app khác là việc duy nhất Android cho phép một dịch vụ trợ năng làm, và đó là cách duy nhất ứng dụng này hoạt động được. Android sẽ cảnh báo rằng dịch vụ "có thể quan sát hành động của bạn" — cảnh báo đó áp cho mọi dịch vụ loại này. Clickify chỉ phát lại những cú chạm bạn tự đặt, và không nhìn gì cả.</string>
     <string name="onboarding_open_accessibility">Mở cài đặt trợ năng</string>
 
     <string name="onboarding_restricted_title">Nút gạt bị làm mờ</string>
-    <string name="onboarding_restricted_body">Android chặn trợ năng với ứng dụng cài từ file thay vì từ cửa hàng. Giờ nút gạt đã từ chối một lần, lối đi đã xuất hiện: Cài đặt → Ứng dụng → Auto Click → menu ⋮ → Cho phép cài đặt bị hạn chế. Sau đó quay lại và bật dịch vụ lên.</string>
+    <string name="onboarding_restricted_body">Android chặn trợ năng với ứng dụng cài từ file thay vì từ cửa hàng. Giờ nút gạt đã từ chối một lần, lối đi đã xuất hiện: Cài đặt → Ứng dụng → Clickify → menu ⋮ → Cho phép cài đặt bị hạn chế. Sau đó quay lại và bật dịch vụ lên.</string>
     <string name="onboarding_open_app_info">Mở thông tin ứng dụng</string>
 
     <string name="onboarding_overlay_title">Vẽ đè lên ứng dụng khác</string>
@@ -15,17 +15,17 @@
     <string name="onboarding_open_overlay">Cho phép vẽ đè</string>
 
     <string name="onboarding_notifications_title">Thông báo</string>
-    <string name="onboarding_notifications_body">Khi chạy, một thông báo sẽ nằm trong bảng thông báo kèm nút Dừng và Gỡ chạm kẹt. Auto Click vẫn chạy được nếu không có quyền này — chỉ là nó sẽ im lặng hơn về việc mình đang chạy.</string>
+    <string name="onboarding_notifications_body">Khi chạy, một thông báo sẽ nằm trong bảng thông báo kèm nút Dừng và Gỡ chạm kẹt. Clickify vẫn chạy được nếu không có quyền này — chỉ là nó sẽ im lặng hơn về việc mình đang chạy.</string>
     <string name="onboarding_allow">Cho phép</string>
 
     <string name="onboarding_blocked_title">Advanced Protection đang bật</string>
-    <string name="onboarding_blocked_body">Advanced Protection từ chối quyền trợ năng với mọi ứng dụng không phải công cụ hỗ trợ người khuyết tật, và Auto Click là công cụ tự động hoá chứ không phải công cụ hỗ trợ. Không có ngoại lệ cho từng ứng dụng và không có gì để thử lại ở đây. Tắt Advanced Protection là cách duy nhất, và đó là quyết định của bạn.</string>
+    <string name="onboarding_blocked_body">Advanced Protection từ chối quyền trợ năng với mọi ứng dụng không phải công cụ hỗ trợ người khuyết tật, và Clickify là công cụ tự động hoá chứ không phải công cụ hỗ trợ. Không có ngoại lệ cho từng ứng dụng và không có gì để thử lại ở đây. Tắt Advanced Protection là cách duy nhất, và đó là quyết định của bạn.</string>
 
     <string name="onboarding_granted">Đã có</string>
     <string name="onboarding_needed">Cần</string>
     <string name="onboarding_optional">Tuỳ chọn</string>
-    <string name="onboarding_done">Bắt đầu dùng Auto Click</string>
+    <string name="onboarding_done">Bắt đầu dùng Clickify</string>
     <string name="onboarding_waiting">Đang chờ hai mục trên</string>
     <string name="onboarding_reopen">Thiết lập</string>
-    <string name="onboarding_not_ready">Auto Click chưa được thiết lập</string>
+    <string name="onboarding_not_ready">Clickify chưa được thiết lập</string>
 </resources>

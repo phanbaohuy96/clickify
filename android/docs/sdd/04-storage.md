@@ -100,7 +100,7 @@ is a **Scenario** that exists in the interface and not on disk.
 
 ## Settings, which are not a Scenario
 
-**AP-1** `[A1]` The handful of things Auto Click remembers about **itself** live in a Preferences
+**AP-1** `[A1]` The handful of things Clickify remembers about **itself** live in a Preferences
 `DataStore`, apart from every **Scenario**.
 
 Apart on purpose. A **Scenario** is the user's document and is built to travel ([ADR-0014]); where

@@ -3,7 +3,7 @@
   canPerformGestures is the whole point: it is what dispatchGesture() needs (GX-1).
 
   isAccessibilityTool is false on purpose (PM-3). Only software built to help people overcome a
-  disability may claim true, and Auto Click is an automation tool. PM-11 records what that honesty
+  disability may claim true, and Clickify is an automation tool. PM-11 records what that honesty
   costs under Advanced Protection Mode, and accepts it.
 
   canRetrieveWindowContent is required for ACTION_SET_TEXT to reach the focused field (GX-17).

@@ -1,4 +1,4 @@
-# SDD — Auto Click for Android
+# SDD — Clickify for Android
 
 The specification comes **before** the code here too. The rules in
 [`../../../docs/sdd/README.md`](../../../docs/sdd/README.md) apply unchanged: every observable

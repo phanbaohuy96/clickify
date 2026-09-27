@@ -1,6 +1,6 @@
-# Auto Click for macOS
+# Clickify for macOS
 
-The macOS member of Auto Click: a menu-bar app that emits synthetic mouse and keyboard events. This
+The macOS member of Clickify: a menu-bar app that emits synthetic mouse and keyboard events. This
 document holds **only** the terms that do not exist on Android; everything shared — **Scenario**,
 **Step**, **Action**, **Target**, **Guard**, **Template**, **Search region**, **Recording session**,
 **Interface language** — is defined once in the [root glossary](../CONTEXT.md) and is not repeated
@@ -23,7 +23,7 @@ The window of the **Locked application** that relative **Target**s are measured 
 _Avoid_: main window, focused window
 
 **Recognition language**:
-The language Vision is told to expect when looking for a text **Target** — the language of the **application being automated**, not of Auto Click.
+The language Vision is told to expect when looking for a text **Target** — the language of the **application being automated**, not of Clickify.
 _Avoid_: OCR language setting, text language
 
 **Input source**:
@@ -39,7 +39,7 @@ _Avoid_: keyboard language, typing language
 - A **Template** **Target** is the opposite: it needs no **Locked application**, and a **Template** can be cropped from anywhere on screen, including from a screenshot open in another application.
 - One **Recording session** produces exactly one **Scenario**; it watches the mouse only, never the keyboard.
 - **Interface language**, **Recognition language** and **Input source** are three independent settings that share a word. None of them is derived from another, and wiring any two together is a bug.
-- A **Locked application** is something Auto Click **addresses**, which is the sharpest difference from Android: there a **Gesture** goes to whatever happens to be in front, so the application can only be observed and refused, never aimed at.
+- A **Locked application** is something Clickify **addresses**, which is the sharpest difference from Android: there a **Gesture** goes to whatever happens to be in front, so the application can only be observed and refused, never aimed at.
 
 ## Example dialogue
 

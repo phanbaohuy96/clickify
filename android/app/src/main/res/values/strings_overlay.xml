@@ -6,7 +6,7 @@
     <string name="overlay_free_the_touch">Free the touch</string>
     <string name="overlay_collapse">Collapse</string>
     <string name="overlay_open_panel">Steps and settings</string>
-    <string name="overlay_open_app">Open Auto Click</string>
+    <string name="overlay_open_app">Open Clickify</string>
     <string name="overlay_close">Close</string>
     <string name="overlay_expand">Expand</string>
     <string name="overlay_starting_in">Starting in %1$d</string>
@@ -20,7 +20,7 @@
     <string name="overlay_action_refused">Step %1$d was refused by the system</string>
     <!-- The run notification (GX-7). -->
     <string name="run_channel_name">Running a scenario</string>
-    <string name="run_notification_title">Auto Click is running</string>
+    <string name="run_notification_title">Clickify is running</string>
     <plurals name="overlay_steps">
         <item quantity="one">%1$d step</item>
         <item quantity="other">%1$d steps</item>

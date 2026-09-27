@@ -50,7 +50,7 @@ Ranked by how badly it breaks trust, not by how often it is mentioned.
 11. **Being blocked by the automated app.** Klick'r's own README answers this with "try the obfuscated
     version", which says plainly that this is an arms race it is losing.
 
-## Where Auto Click already stands ahead
+## Where Clickify already stands ahead
 
 Not aspiration — these exist and are specified today on macOS.
 
@@ -67,7 +67,7 @@ Not aspiration — these exist and are specified today on macOS.
   Against pain point 9, this is the largest structural advantage in the list.
 - **A domain that deliberately refuses control flow**, which is the other half of pain point 9.
 
-## Where Auto Click is behind, or absent
+## Where Clickify is behind, or absent
 
 - No Android build at all.
 - No swipe with a configurable duration (macOS `drag` is close but is a mouse drag).
@@ -81,7 +81,7 @@ Not aspiration — these exist and are specified today on macOS.
 Kept here, next to the evidence, until the Android specification exists to number them.
 
 - **Pain 1 — the stuck-touch freeze.** A stroke with `willContinue` is a finger held down; it lifts
-  only when the terminating stroke is sent. Auto Click **must** send it on every exit — completion,
+  only when the terminating stroke is sent. Clickify **must** send it on every exit — completion,
   Stop, error, cancellation, service disconnect. That is `SF-1` rewritten in Android's vocabulary,
   and it is the prevention half.
   The recovery half: a **"free the touch"** action, always reachable from the persistent notification

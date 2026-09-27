@@ -1,6 +1,6 @@
 # `.strings` files, and a live bundle swap
 
-Auto Click is being prepared for release as open source, and its interface is written entirely in
+Clickify is being prepared for release as open source, and its interface is written entirely in
 Vietnamese — 239 string literals across 21 files. `CFBundleDevelopmentRegion` said `vi`. The
 documentation and the log messages were translated to English earlier; the interface was not.
 
@@ -88,7 +88,7 @@ Two blind alleys worth recording, because both look like the answer:
   governs *formatting* — plural rules, number shapes — and does **not** select a `.lproj`. The same
   goes for `.environment(\.locale)` in SwiftUI; it is not a language switch.
 - Setting `AppleLanguages` and offering to relaunch. Honest, and about fifteen lines. Rejected
-  because Auto Click is an `LSUIElement` agent: it has no Dock icon and no window of its own, so an
+  because Clickify is an `LSUIElement` agent: it has no Dock icon and no window of its own, so an
   application that vanishes and comes back leaves the user with nothing to watch and no evidence it
   returned.
 
@@ -118,7 +118,7 @@ down and it is the strongest argument that was available for the relaunch option
 **And that global cannot live on the main actor** — see the section below, which corrects what this
 one first said.
 
-**Four `@Published` message properties freeze.** `AutoClicker.message`, `ScenarioRecorder.message`,
+**Four `@Published` message properties freeze.** `SimpleModeModel.message`, `ScenarioRecorder.message`,
 `ScenarioRunner.message` and `LaunchAtLoginManager.errorMessage` hold strings already materialised
 at the moment of an event, so a language change leaves them in the old language until the next
 action. They become enums rendered at display time — which is the shape `SettingsValidationError`

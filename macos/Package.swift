@@ -3,16 +3,16 @@
 import PackageDescription
 
 let package = Package(
-    name: "AutoClick",
+    name: "Clickify",
     platforms: [
         .macOS(.v14)
     ],
     products: [
-        .executable(name: "AutoClick", targets: ["AutoClick"])
+        .executable(name: "Clickify", targets: ["Clickify"])
     ],
     targets: [
         .executableTarget(
-            name: "AutoClick",
+            name: "Clickify",
             linkerSettings: [
                 .linkedFramework("AppKit"),
                 .linkedFramework("ApplicationServices"),
@@ -23,8 +23,8 @@ let package = Package(
             ]
         ),
         .testTarget(
-            name: "AutoClickTests",
-            dependencies: ["AutoClick"]
+            name: "ClickifyTests",
+            dependencies: ["Clickify"]
         )
     ]
 )

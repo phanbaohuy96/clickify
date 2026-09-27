@@ -8,11 +8,11 @@ plugins {
 }
 
 android {
-    namespace = "com.pbh.autoclick"
+    namespace = "com.pbh.clickify"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.pbh.autoclick"
+        applicationId = "com.pbh.clickify"
         minSdk = 30
         targetSdk = 36
         versionCode = 1

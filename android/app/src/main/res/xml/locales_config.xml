@@ -2,7 +2,7 @@
 <!--
   IL-2: the languages this app has words for.
 
-  Android 13 reads this to offer Auto Click in Settings → Apps → Auto Click → Language. The app's
+  Android 13 reads this to offer Clickify in Settings → Apps → Clickify → Language. The app's
   own picker (IL-1) does not need it: the picker swaps the resources itself, because most of this
   interface is in the Overlay rather than in an Activity and an Overlay window is never recreated
   for a configuration change. Declaring it anyway means the two agree — "follow the system" follows

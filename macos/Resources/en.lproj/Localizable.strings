@@ -1,6 +1,6 @@
-/* Auto Click — English (the development language, LC-1).
+/* Clickify — English (the development language, LC-1).
    This file is the source of truth: every other language is a translation of it, and any key missing
-   elsewhere falls back to here (LC-7). Keys are declared in Sources/AutoClick/Localization/StringKey.swift.
+   elsewhere falls back to here (LC-7). Keys are declared in Sources/Clickify/Localization/StringKey.swift.
    Strings carrying a count live in Localizable.stringsdict instead (LC-9). */
 
 /* MARK: Menu bar popover */
@@ -86,7 +86,7 @@
 "editor.empty.title" = "No scenarios yet";
 "editor.empty.action" = "Create the first scenario";
 "editor.newer_format.title" = "“%@” uses a newer format";
-"editor.newer_format.detail" = "Read-only: this build of Auto Click can neither edit nor run it.";
+"editor.newer_format.detail" = "Read-only: this build of Clickify can neither edit nor run it.";
 "editor.scenario_name" = "Scenario name";
 "editor.repeat_until_stopped" = "Repeat until stopped";
 "editor.iteration_count" = "Loops";
@@ -146,7 +146,7 @@
 "step.key" = "Key";
 "step.modifiers" = "Modifiers";
 "step.key_preview" = "Will send %@.";
-"step.key_activation_hint" = "Before typing, Auto Click brings %@ to the front; if it cannot, it stops.";
+"step.key_activation_hint" = "Before typing, Clickify brings %@ to the front; if it cannot, it stops.";
 "step.key_no_lock_hint" = "No application is locked: the keys will go to whichever window is in front.";
 "step.target.kind" = "Kind";
 "step.target.cursor_hint" = "Reads the cursor position again on every repetition, so the sequence follows your hand.";
@@ -211,20 +211,20 @@
 "error.lock.not_running" = "The chosen application is not running.";
 "error.fixed_point_missing" = "Choose a fixed click point.";
 "error.empty_scenario" = "The scenario has no steps yet.";
-"error.accessibility_denied" = "Grant Auto Click the Accessibility permission and try again. If Auto Click is already in the list, switch it off and on again — an update invalidates the old grant.";
+"error.accessibility_denied" = "Grant Clickify the Accessibility permission and try again. If Clickify is already in the list, switch it off and on again — an update invalidates the old grant.";
 "error.missing_locked_application" = "The scenario has a window-anchored step, so a locked application has to be chosen.";
 "error.locked_application_not_running" = "%@ is not running.";
-"error.locked_application_terminated" = "The destination application closed; Auto Click stopped.";
-"error.point_outside_locked_application" = "The point is outside the locked application; Auto Click stopped.";
+"error.locked_application_terminated" = "The destination application closed; Clickify stopped.";
+"error.point_outside_locked_application" = "The point is outside the locked application; Clickify stopped.";
 "error.anchor_window_unavailable" = "No window of %@ could be read as the coordinate origin — it may be minimised under the Dock.";
-"error.activation_failed" = "%@ could not be brought to the front to type into; Auto Click stopped.";
+"error.activation_failed" = "%@ could not be brought to the front to type into; Clickify stopped.";
 "error.unknown_key" = "The key “%@” is not recognised.";
-"error.target_not_found" = "%@ was not found on screen; Auto Click stopped.";
+"error.target_not_found" = "%@ was not found on screen; Clickify stopped.";
 "error.launch_at_login" = "The login setting could not be changed: %@";
-"error.schema_too_new" = "The scenario uses format version %1$d, and this build of Auto Click only understands up to %2$d.";
+"error.schema_too_new" = "The scenario uses format version %1$d, and this build of Clickify only understands up to %2$d.";
 "error.unknown_action" = "The action “%@” is not recognised.";
 "error.unknown_target" = "The target “%@” is not recognised.";
-"error.screen_recording_denied" = "Grant Auto Click the Screen Recording permission and try again. If it is already granted, quit Auto Click and open it again.";
+"error.screen_recording_denied" = "Grant Clickify the Screen Recording permission and try again. If it is already granted, quit Clickify and open it again.";
 "error.no_display" = "No display could be found to capture.";
 "error.pixel_scale_unreadable" = "The display's pixel scale could not be read, so it was skipped to avoid clicking in the wrong place.";
 "error.screen_capture_failed" = "The screen could not be captured.";

@@ -1,4 +1,4 @@
-# Auto Click
+# Clickify
 
 One product on two platforms — a macOS menu-bar app and an Android app — both automating repetitive
 work by emitting synthetic input. This document is the project's **glossary**, not a spec, and it
@@ -7,6 +7,11 @@ defined beside it: [macOS](./macos/CONTEXT.md), [Android](./android/CONTEXT.md).
 [`CONTEXT-MAP.md`](./CONTEXT-MAP.md) says how the three fit together.
 
 ## Language
+
+**Clickify**:
+The product's name, the same on both platforms — a proper noun, so it is never translated, never
+inflected and never shortened.
+_Avoid_: Auto Click, AutoClick, Clickify Auto Clicker, "the app"
 
 **Scenario**:
 An ordered, user-named sequence of operations that runs start to finish as one unit.
@@ -38,17 +43,19 @@ The part of the screen narrowed down to look for a **Template**; optional, and i
 _Avoid_: search frame, scope, bounds
 
 **Recording session**:
-The span of time Auto Click watches what the user really does, in order to build a **Scenario**.
+The span of time Clickify watches what the user really does, in order to build a **Scenario**.
 *What* it can watch is the one part neither platform shares — a mouse on one, swallowed touches on
 the other — so each glossary states its own.
 _Avoid_: record, capture
 
 **Interface language**:
-Which translation of Auto Click's **own** menus and labels is on screen. It is a display setting and nothing else: it never decides what recognition is told to expect, and never decides how characters are typed.
+Which translation of Clickify's **own** menus and labels is on screen. It is a display setting and nothing else: it never decides what recognition is told to expect, and never decides how characters are typed.
 _Avoid_: language (unqualified), locale, region
 
 ## Relationships
 
+- **Clickify** is the product; an *auto clicker* is the category it belongs to. The category stays a
+  lowercase common noun and never stands in for the name.
 - Every automated operation, whichever surface it came from, executes through the same **Scenario** runner.
 - A **Scenario** holds one or more ordered **Step**s.
 - A **Step** pairs exactly one **Action** with exactly one **Target**; the two axes are independent.
@@ -77,6 +84,12 @@ _Avoid_: language (unqualified), locale, region
 
 ## Flagged ambiguities
 
+- "Auto Click" was at once the product's name and a plain description of what the product does, so
+  no sentence could tell the two apart — settled: the name is **Clickify**, the category is
+  "auto clicker" in lowercase, and a sentence that would read the same with any other auto clicker
+  in it is talking about the category, not about **Clickify**. The rule that the name is never
+  translated was being obeyed before it was ever written down: it already sat untranslated inside
+  Japanese and Chinese sentences.
 - "wait" was once listed as an **Action** — corrected: it is a property of a **Step**.
 - "long press" is settled as holding in place, and travelling is a different **Action** from holding — `drag` on macOS, `swipe` on Android.
 - "wait until the button appears" is not control flow — it is the timeout on resolving a **Template** **Target**.

@@ -1,6 +1,6 @@
 # One directory per Scenario, with Templates duplicated
 
-Every **Scenario** is a directory `~/Library/Application Support/AutoClick/Scenarios/<id>/`
+Every **Scenario** is a directory `~/Library/Application Support/Clickify/Scenarios/<id>/`
 holding `scenario.json` and `templates/`. Two **Scenario**s that use the same button will hold
 **two copies** of the same **Template** — deliberately, not by oversight.
 

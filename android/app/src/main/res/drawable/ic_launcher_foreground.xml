@@ -1,30 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  The app's mark is the Marker: the thing the user places, drags and aims with. A ring with a dot
-  in it is what a tap looks like, and the second, fainter ring outside it is what a repeated one
-  looks like — which is the whole product in two shapes.
+  The mark is the name and the act at once: a C for Clickify, drawn as one heavy arc, holding a
+  single solid dot — the tap. Two shapes and nothing else, which is the whole reason it survives
+  being 48px tall in a launcher and losing its colour in a themed icon.
+
+  The dot is deliberately *inside* the C rather than beside it: the product is not a clicker that
+  happens to be called Clickify, it is the letter closing around the thing it acts on.
 
   Everything sits inside the central 72dp of the 108dp viewport, which is the only part of an
-  adaptive icon a launcher promises not to crop.
+  adaptive icon a launcher promises not to crop. The arc's outer edge reaches 30dp from centre —
+  6dp of clearance, so a circular mask never bites it.
 -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="108dp"
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
-    <!-- The repeat: a ring at the edge of the safe zone, faint, and open at the top right so it
-         reads as motion rather than as a second target. -->
+    <!-- The C: an arc of 320°, opening to the right, cut square at both ends. Butt caps rather than
+         round ones — a rounded terminal would read as a speech bubble or a loading spinner. -->
     <path
-        android:pathData="M54,20 A34,34 0 1 1 30,30"
-        android:strokeWidth="3"
-        android:strokeColor="#59E8B33C"
-        android:strokeLineCap="round" />
-    <!-- The Marker itself. -->
-    <path
-        android:pathData="M54,32 A22,22 0 1 1 53.98,32 Z"
-        android:strokeWidth="6"
+        android:pathData="M77.26,45.53 A24.75,24.75 0 1 0 77.26,62.47"
+        android:strokeWidth="10.5"
         android:strokeColor="#FFE8B33C" />
+    <!-- The tap. -->
     <path
-        android:pathData="M54,44 A10,10 0 1 1 53.99,44 Z"
+        android:pathData="M54,46 A8,8 0 1 1 53.99,46 Z"
         android:fillColor="#FFE8B33C" />
 </vector>

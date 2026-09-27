@@ -1,6 +1,6 @@
-# Auto Click for Android
+# Clickify for Android
 
-The Android member of Auto Click. This document holds **only** the terms that do not exist on
+The Android member of Clickify. This document holds **only** the terms that do not exist on
 macOS; everything shared — **Scenario**, **Step**, **Action**, **Target**, **Guard**, **Template**,
 **Search region**, **Recording session**, **Interface language** — is defined once in the
 [root glossary](../CONTEXT.md) and is not repeated here. The terms that exist only on the other
@@ -11,7 +11,7 @@ This document is a **glossary**, not a spec.
 ## Language
 
 **Overlay**:
-The window Auto Click draws on top of whichever application is in front.
+The window Clickify draws on top of whichever application is in front.
 _Avoid_: floating window, bubble, HUD, widget, popup
 
 **Marker**:
@@ -20,7 +20,7 @@ being automated and tapped to configure that **Step**.
 _Avoid_: point, dot, pin, cursor, hotspot, anchor
 
 **Gesture**:
-The synthetic touch Auto Click hands to the system to perform an **Action** — one or more strokes,
+The synthetic touch Clickify hands to the system to perform an **Action** — one or more strokes,
 each with a path and a duration.
 _Avoid_: event, touch, injection, input
 
@@ -44,8 +44,8 @@ _Avoid_: current app, active app, locked application
 
 ## Relationships
 
-- The **Overlay** is the only surface Auto Click has while another application is in front, so
-  **both** authoring and running happen there. Auto Click's own screens exist to manage
+- The **Overlay** is the only surface Clickify has while another application is in front, so
+  **both** authoring and running happen there. Clickify's own screens exist to manage
   **Scenario**s, never to build one.
 - A **Marker** shows exactly one **Step**. A **Step** whose **Target** is a fixed point has one
   **Marker**; a swipe has two, joined; a **Step** with no fixed point has none.
@@ -61,7 +61,7 @@ _Avoid_: current app, active app, locked application
   entirely — the same shape macOS already has for its keyboard **Action**s. **Set text** goes to the
   focused field, so the **Step** before it is normally a tap that puts focus there.
 - A **Gesture** carries no identity: the system delivers it to whatever is in front. The
-  **Foreground application** is therefore something Auto Click **observes and may refuse to act
+  **Foreground application** is therefore something Clickify **observes and may refuse to act
   on**, never something it can aim at — the opposite of macOS's
   [**Locked application**](../macos/CONTEXT.md), which is addressed directly.
 

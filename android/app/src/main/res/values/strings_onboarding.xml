@@ -2,18 +2,18 @@
     <!-- 02-permissions-and-onboarding.md. PM-2: every one of these says what the permission does
          NOT do as well as what it does, because Android's own consent dialogue only says the
          alarming half. -->
-    <string name="onboarding_title">Set up Auto Click</string>
-    <string name="onboarding_intro">Auto Click needs two permissions before it can do anything. It reads nothing from your screen, keeps every scenario on this device, and has no permission to use the internet.</string>
+    <string name="onboarding_title">Set up Clickify</string>
+    <string name="onboarding_intro">Clickify needs two permissions before it can do anything. It reads nothing from your screen, keeps every scenario on this device, and has no permission to use the internet.</string>
 
     <string name="onboarding_accessibility_title">Accessibility service</string>
-    <string name="onboarding_accessibility_body">Sending a touch to another app is the only thing Android lets an accessibility service do, and it is the only way this app can work. Android will warn you that the service "can observe your actions" — that warning covers every service of this kind. Auto Click replays the taps you set up and looks at nothing.</string>
+    <string name="onboarding_accessibility_body">Sending a touch to another app is the only thing Android lets an accessibility service do, and it is the only way this app can work. Android will warn you that the service "can observe your actions" — that warning covers every service of this kind. Clickify replays the taps you set up and looks at nothing.</string>
     <string name="onboarding_open_accessibility">Open accessibility settings</string>
 
     <!-- PM-4: this card appears only after a visit to Accessibility has come back with nothing
          granted, because the menu entry it names does not exist until the toggle has been refused
          once. PM-8: the path, and no guess at what this manufacturer calls its menus. -->
     <string name="onboarding_restricted_title">The toggle was greyed out</string>
-    <string name="onboarding_restricted_body">Android blocks accessibility for apps installed from a file rather than from a store. Now that the toggle has refused once, the way through exists: Settings → Apps → Auto Click → the ⋮ menu → Allow restricted settings. Then come back and turn the service on.</string>
+    <string name="onboarding_restricted_body">Android blocks accessibility for apps installed from a file rather than from a store. Now that the toggle has refused once, the way through exists: Settings → Apps → Clickify → the ⋮ menu → Allow restricted settings. Then come back and turn the service on.</string>
     <string name="onboarding_open_app_info">Open app info</string>
 
     <string name="onboarding_overlay_title">Draw over other apps</string>
@@ -21,18 +21,18 @@
     <string name="onboarding_open_overlay">Allow drawing over apps</string>
 
     <string name="onboarding_notifications_title">Notifications</string>
-    <string name="onboarding_notifications_body">A run puts a notification in the shade carrying Stop and Free the touch. Auto Click will still run without it — it will just be quieter about the fact that it is running.</string>
+    <string name="onboarding_notifications_body">A run puts a notification in the shade carrying Stop and Free the touch. Clickify will still run without it — it will just be quieter about the fact that it is running.</string>
     <string name="onboarding_allow">Allow</string>
 
     <!-- PM-11. -->
     <string name="onboarding_blocked_title">Advanced Protection is on</string>
-    <string name="onboarding_blocked_body">Advanced Protection refuses accessibility permission to every app that is not an assistive tool, and Auto Click is an automation tool rather than an assistive one. There is no per-app exception and nothing here to retry. Turning Advanced Protection off is the only way, and that is your decision to make.</string>
+    <string name="onboarding_blocked_body">Advanced Protection refuses accessibility permission to every app that is not an assistive tool, and Clickify is an automation tool rather than an assistive one. There is no per-app exception and nothing here to retry. Turning Advanced Protection off is the only way, and that is your decision to make.</string>
 
     <string name="onboarding_granted">Ready</string>
     <string name="onboarding_needed">Needed</string>
     <string name="onboarding_optional">Optional</string>
-    <string name="onboarding_done">Start using Auto Click</string>
+    <string name="onboarding_done">Start using Clickify</string>
     <string name="onboarding_waiting">Waiting for the two above</string>
     <string name="onboarding_reopen">Set-up</string>
-    <string name="onboarding_not_ready">Auto Click is not set up yet</string>
+    <string name="onboarding_not_ready">Clickify is not set up yet</string>
 </resources>

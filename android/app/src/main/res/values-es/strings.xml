@@ -1,6 +1,6 @@
 <resources>
     <string name="accessibility_service_summary">Toca, desliza y escribe por ti</string>
-    <string name="accessibility_service_description">Auto Click repite solo los toques y deslizamientos que tú mismo configuras. Necesita este permiso porque enviar un toque a otra aplicación es lo único que Android permite hacer a un servicio de accesibilidad. No lee nada de tu pantalla, lo guarda todo en este dispositivo y no tiene permiso para usar internet.</string>
+    <string name="accessibility_service_description">Clickify repite solo los toques y deslizamientos que tú mismo configuras. Necesita este permiso porque enviar un toque a otra aplicación es lo único que Android permite hacer a un servicio de accesibilidad. No lee nada de tu pantalla, lo guarda todo en este dispositivo y no tiene permiso para usar internet.</string>
     <string name="scenario_new">Nuevo escenario</string>
     <string name="scenario_none">Todavía no hay escenarios. Crea uno y coloca sus marcadores sobre la aplicación que quieras automatizar.</string>
     <string name="scenario_default_name">Sin título</string>
