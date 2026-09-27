@@ -1,11 +1,11 @@
 package com.pbh.clickify.brand
 
+import org.junit.Test
 import java.io.File
 import kotlin.test.assertContains
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
-import org.junit.Test
 
 /**
  * The product name is a proper noun and is never translated ([ADR-0017]), so it sits as a plain literal in
@@ -65,7 +65,8 @@ class BrandNameTest {
         val LOCALES = setOf("values", "values-vi", "values-ja", "values-es", "values-zh-rCN")
 
         fun stringResources(): List<File> =
-            androidRoot().walkTopDown()
+            androidRoot()
+                .walkTopDown()
                 .onEnter { it.name != "build" }
                 .filter { it.isFile && it.name.startsWith("strings") && it.extension == "xml" }
                 .filter { it.parentFile.name in LOCALES }
