@@ -15,11 +15,11 @@ anything the diff alone does not explain.
 ## What to look for, most important first
 
 1. **Correctness** — bugs, broken edge cases, races, a stroke or finger left on the screen
-   (`SF-1`), anything that stops Stop from working.
+   (`SF-1` on macOS, `GX-10` on Android), anything that stops Stop from working.
 2. **The plan** — does the diff do what the plan says, all of it, and nothing outside it?
 3. **Spec first** — every behaviour change has its requirement changed; every cited identifier
    exists (`grep` it, or `.agents/skills/doc-claim-audit/check-docs.sh` on changed documents).
-4. **Strings** — all five languages on every platform touched, "Clickify" untranslated, no
+4. **Strings** — every interface language (`LC-1` / `IL-1`) on every platform touched, "Clickify" as `CONTEXT.md` defines it, no
    hard-coded translatable literal (`add-interface-string`).
 5. **Claims** — every claim in the PR body and in changed documents is backed by output or code;
    the tier 2 section is filled; *What this does not claim* is honest.

@@ -61,10 +61,10 @@ person can check lives in `docs/manual-e2e-tests.md`.
 
 - Everything in the repository is English: docs, comments, logs, fixtures, scripts.
 - No translatable user-facing string is hard-coded (the name and raw numbers are not translatable). macOS: a `StringKey` case plus `macos/Resources/<code>.lproj`.
-  Android: string resources in the module that shows them. Five interface languages: en, vi, ja,
-  zh-Hans, es.
-- **Clickify** is a proper noun: never translated, inflected or shortened. "auto clicker" is the
-  lowercase category. "Auto Click" is the retired name (ADR-0017).
+  Android: string resources in the module that shows them. The interface languages are `LC-1`
+  (macOS) and `IL-1` (Android).
+- **Clickify** and *auto clicker* are defined in `CONTEXT.md`; "Auto Click" is the retired name
+  (ADR-0017).
 
 ## Out of scope unless the owner asks in the session
 
@@ -77,7 +77,9 @@ person can check lives in `docs/manual-e2e-tests.md`.
 
 ## Traps that already cost real time
 
-Each one produces a plausible result rather than a failure. Details in the `prove-a-change` skill.
+Each one produces a plausible result rather than a failure. This is a reminder list; the facts are
+in `android/docs/testing.md` (*Four traps*, *Two facts about the device*, *Platform behaviour worth knowing about*) and in the
+`prove-a-change` skill's references.
 
 - An e2e run that clicks remembered coordinates — the macOS status item moves between runs.
 - `am force-stop` / `am start -S` wipe the Android accessibility grant; the app then looks un-onboarded.

@@ -18,7 +18,7 @@ to carry it out exactly, prove it, and report honestly. You do not make design d
   not name really must change, stop and report why instead of changing it.
 - If the plan is wrong, contradicts the code, or leaves a decision open: **stop and report**. Do not
   choose for the user.
-- Use the glossary's words exactly. Never translate "Clickify".
+- Use the glossary's words exactly. "Clickify" is as `CONTEXT.md` defines it.
 - Never commit, push, switch branches, open pull requests or post anything to GitHub.
 
 ## Before reporting

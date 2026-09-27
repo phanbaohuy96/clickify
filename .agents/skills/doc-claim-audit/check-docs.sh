@@ -13,6 +13,9 @@ defined=$(grep -rhoE '\*\*[A-Z]{2}-[0-9]+\*\*|^\| *`?[A-Z]{2}-[0-9]+|^#+ *[A-Z]{
 count=$(printf '%s\n' "$defined" | grep -c .)
 echo "requirement identifiers defined: $count"
 [ "$count" -gt 0 ] || { echo "no identifiers found — the pattern no longer matches the SDD"; exit 2; }
+# Every prefix the SDD defines, so a new registry is checked without editing this script.
+prefixes=$(printf '%s\n' "$defined" | cut -d- -f1 | sort -u | paste -sd'|' -)
+echo "prefixes: $prefixes"
 
 files=("$@")
 if [ $# -eq 0 ]; then while IFS= read -r f; do files+=("$f"); done < <(git ls-files "*.md"); fi
@@ -25,6 +28,6 @@ for f in "${files[@]}"; do
   done < <(grep -oE '\]\([^)#: ]+(#[^)]*)?\)' "$f" | sed -E 's/^\]\(//; s/\)$//; s/#.*//')
   while read -r id; do
     printf '%s\n' "$defined" | grep -qx "$id" || { echo "$f: cites $id — not defined in any SDD"; problems=$((problems + 1)); }
-  done < <(grep -oE '\b(DM|EX|ST|UI|RC|RG|SF|LC|PM|SM|FS|GX|OV|RD|DS|AP|PK|TP|IL)-[0-9]+\b' "$f" | sort -u)
+  done < <(grep -oE "\\b($prefixes)-[0-9]+\\b" "$f" | sort -u)
 done
 [ "$problems" -eq 0 ]

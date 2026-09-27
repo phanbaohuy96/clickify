@@ -23,10 +23,9 @@ This file is the part of running it that went wrong before.
 - Look the status item up through Accessibility on **every** run (an `AXMenuBarItem`), and confirm
   the popover is open before pressing Start. If the item or the Start button cannot be found, abort —
   do not click.
-- The popover **is** readable through Accessibility (observed 2026-09-17: buttons and links carry an
-  `AXDescription`). The note under *How session A was run* saying it has no readable attributes
-  predates that. Match on the label in the **current interface language**, since labels come from
-  `<code>.lproj`.
+- The popover is readable through Accessibility (`docs/manual-e2e-tests.md`, *The popover's
+  Accessibility tree is readable after all*). Match on the label in the **current interface
+  language**, since labels come from `<code>.lproj`.
 - The app cannot write to `/tmp`; diagnostics written from inside it silently produce nothing.
 
 ## Templates

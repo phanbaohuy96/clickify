@@ -5,13 +5,13 @@ description: Add, change or remove text the Clickify user sees, in all five inte
 
 # Add an interface string
 
-Five interface languages on both platforms: **en** (development language and fallback), **vi**,
-**ja**, **zh-Hans** (Android folder `values-zh-rCN`), **es**. A string missing from one of them does
-not fail loudly — the user silently gets English.
+The interface languages are `LC-1` (macOS, `docs/sdd/09-localisation.md`) and `IL-1` (Android,
+`android/docs/sdd/11-localisation.md`); on Android zh-Hans is the folder `values-zh-rCN`. A string
+missing from one of them does not fail loudly — the user silently gets English.
 
 ## Rules that are not about files
 
-- **Clickify** is never translated, inflected or shortened, in any language. Android enforces this
+- **Clickify** stays exactly as `CONTEXT.md` defines it, in every language. Android enforces this
   in `BrandNameTest`; macOS relies on you.
 - Use the glossary's words (`CONTEXT.md`, the platform glossary), translated consistently with the
   existing strings in that language — read the neighbours before writing a new one.
@@ -52,9 +52,8 @@ not fail loudly — the user silently gets English.
    `app_name` is skipped because it exists only in `values/`, on purpose.
 4. `cd android && make check`.
 
-**Known gap:** `:core` and `:data` have only `values` and `values-vi`, so their error texts appear in
-English to ja, zh-Hans and es users. Adding a string there means adding the three missing folders,
-or saying explicitly in the PR that you did not.
+A module can have fewer `values-*` folders than `:app` (`ls` its `res/`). Adding a string there
+means adding the missing languages, or saying explicitly in the PR that you did not.
 
 ## Before handing back
 

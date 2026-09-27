@@ -15,8 +15,8 @@ re-read on every turn. So what a task costs is context length × turns, far more
 writes the code. The implementer saves mainly because it starts clean, carrying the plan and not the
 grilling transcript; the cheaper model saves again on top.
 
-But a spawn is not free: starting a subagent and reading its role cost 50–90k tokens on Claude and
-about 66k on Codex. So a **small** task is done in the main session, and every run ends with
+But a spawn is not free: starting a subagent and reading its role cost about 50–60k tokens on Claude
+and about 66k on Codex. So a **small** task is done in the main session, and every run ends with
 `measure.py`, so the claim stays measured.
 
 ## Models: tiers, resolved at run time
@@ -27,19 +27,19 @@ Two tiers, `strong` and `fast`. What each harness uses for them:
 |---|---|---|---|
 | Claude Code | `sonnet`, effort medium | `opus`, effort high | aliases in `.claude/agents/*.md`, always the newest model |
 | Codex | resolved | resolved | `resolve-model.py codex <tier>` → `<model> <effort>` |
-| Grok | resolved | resolved | `resolve-model.py grok <tier>` → `<model>`; effort is inherited |
+| Grok | resolved | resolved | `resolve-model.py grok <tier>` → `<model> <effort>`; pass only the model, effort is inherited |
 
 `resolve-model.py` reads the preference list in `.agents/models.json`, takes the harness's live
 catalog, and returns the first candidate that answers a one-word ping (cached for the day — a ping
-costs about 33k tokens on Codex). Exit code 3 means nothing answered: spawn without a model, which
-inherits the main session's.
+costs about 33k tokens on Codex; a failed one is cached too, and `--refresh` pings again). Exit code 3
+means nothing answered: spawn without a model, which inherits the main session's.
 
 The main session's model is chosen when it starts, and this skill cannot switch it. Start it on the
 `strong` tier. Claude: `claude --model opus`. Codex:
 
 ```bash
 read model effort < <(.agents/skills/start-task/resolve-model.py codex strong)
-codex -m "$model" -c model_reasoning_effort="$effort"
+if [ -n "$model" ]; then codex -m "$model" -c model_reasoning_effort="$effort"; else codex; fi
 ```
 
 ## Phase 1 — Plan (main session)
@@ -55,7 +55,7 @@ codex -m "$model" -c model_reasoning_effort="$effort"
    - **Goal** — one paragraph, in the glossary's words.
    - **Requirements** — each ID to add or change and its new wording (`spec-first-change`).
    - **Changes** — file by file, what and why. Name every file.
-   - **Strings** — every new user-facing string in all five languages, or "none".
+   - **Strings** — every new user-facing string in every interface language (`LC-1` / `IL-1`), or "none".
    - **Verify** — the exact commands from `prove-a-change`, and what passing looks like.
    - **Out of scope** — what the implementer must not touch.
    - **Open questions** — must be empty before phase 2.

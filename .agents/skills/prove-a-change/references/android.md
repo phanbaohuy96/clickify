@@ -9,9 +9,9 @@ procedure for driving the **shipped** interface by hand, and what that costs.
 - Order matters: `appops set com.pbh.clickify ACCESS_RESTRICTED_SETTINGS allow` **first**, then
   `settings put secure enabled_accessibility_services …`, `settings put secure accessibility_enabled 1`,
   `appops set com.pbh.clickify SYSTEM_ALERT_WINDOW allow`. Otherwise the enable is silently reverted.
-- `am force-stop` **and** `am start -S` wipe `enabled_accessibility_services`. The app then shows
-  onboarding, which looks like the grant failed. Re-grant, then bring the Activity forward with a
-  plain `am start` (no `-S`). `adb install -r` does not wipe it; an uninstall does.
+- After anything that wipes the grant (`testing.md`, *Two facts about the device*; `am start -S`
+  force-stops too), the app shows onboarding, which looks like the grant failed. Re-grant, then bring
+  the Activity forward with a plain `am start` (no `-S`).
 - `dumpsys accessibility | grep -i clickify` says whether the service is really **bound**, not just
   enabled.
 
@@ -19,11 +19,9 @@ procedure for driving the **shipped** interface by hand, and what that costs.
 
 - The **Overlay** is drawn by the accessibility service, so `uiautomator dump` does not contain it —
   the dump shows whatever is behind (usually the launcher). Locate controls in the **pixels**.
-- Never press anything with `adb shell input` while a gesture is in flight: it injects from the same
-  virtual device and takes the stroke's pointer away, so the harness destroys what it measures. Use
-  `adb emu event mouse <x> <y> 0 <1|0>` (portrait panel coordinates, whatever the rotation).
-- `adb shell input swipe` from a screen edge is taken as a back gesture; start a little way in.
-  Swipes under ~900ms may be too few events for Compose to see a drag.
+- Press anything while a gesture is in flight the way `testing.md` trap 4 says, never with
+  `adb shell input`. Edge swipes: its *Platform behaviour worth knowing about*. Swipes under
+  ~900ms may be too few events for Compose to see a drag.
 - Coordinates that matter are read from `dumpsys window windows`, not from a screenshot.
 - Over Settings the Overlay is force-hidden by the platform (anti-tapjacking). Not a bug.
 

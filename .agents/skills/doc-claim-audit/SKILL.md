@@ -31,7 +31,7 @@ New files are not tracked yet — pass them by name.
 | a number (a latency, a count, a pixel) | a run output, test print or measurement recorded with its device; otherwise remove it or mark it unmeasured |
 | "not possible", "never", "always" | the strongest claims and the most often wrong — find the evidence or soften to what was observed |
 | a term in bold | it means what its **one** glossary says; if not, the document or the glossary is wrong |
-| "**Clickify**" | never translated, inflected or shortened; "auto clicker" is the lowercase category |
+| "**Clickify**", "auto clicker" | used as `CONTEXT.md` defines them |
 
 Where a claim cannot be checked, write it as unverified rather than deleting the doubt.
 
@@ -41,12 +41,3 @@ Where a claim cannot be checked, write it as unverified rather than deleting the
 translate it, with a language switcher at the top of each. A change to what the product does, a
 command or a link goes into **all five** in the same change. A wording-only change to the English
 may stay English, but the PR says the translations were not updated.
-
-## 4. Known drift, found while writing this skill
-
-Worth fixing in their own change rather than in whatever you are doing:
-
-- `macos/README.md` → *Development* says `swift test`; CI runs `swift test --no-parallel`, and
-  `macos.yml` explains the plain form ran for thirty minutes without finishing.
-- `docs/manual-e2e-tests.md` → *How session A was run* says the popover's AX tree is unreadable; a
-  later session read its buttons through Accessibility (see `prove-a-change/references/macos.md`).

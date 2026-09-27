@@ -13,25 +13,33 @@ import collections, datetime, glob, json, os, re, sqlite3, subprocess, sys
 ROOT = subprocess.run(["git", "rev-parse", "--show-toplevel"], capture_output=True, text=True).stdout.strip()
 
 
+def local(text):
+    """An ISO time as naive local time, whether or not it carries an offset."""
+    t = datetime.datetime.fromisoformat(text.replace("Z", "+00:00"))
+    return t.astimezone().replace(tzinfo=None) if t.tzinfo else t
+
+
 def since_arg():
     if "--since" in sys.argv:
-        return datetime.datetime.fromisoformat(sys.argv[sys.argv.index("--since") + 1])
+        return local(sys.argv[sys.argv.index("--since") + 1])
     plans = sorted(glob.glob(os.path.join(ROOT, ".agents", "plans", "*.md")), key=os.path.getmtime)
     for plan in reversed(plans):
         m = re.search(r"^Started:\s*(\S+)", open(plan).read(), re.M)
         if m:
-            return datetime.datetime.fromisoformat(m.group(1))
+            return local(m.group(1))
     return None
 
 
 def stamp(entry):
     ts = entry.get("timestamp")
-    return datetime.datetime.fromisoformat(ts.replace("Z", "+00:00")).astimezone().replace(tzinfo=None) if ts else None
+    return local(ts) if ts else None
 
 
 def usage(path, since):
-    rows = collections.defaultdict(collections.Counter)
-    for line in open(path, errors="ignore"):
+    # Claude Code writes one line per content block of a reply, each repeating the reply's usage;
+    # count every reply once, by its message id.
+    replies = {}
+    for n, line in enumerate(open(path, errors="ignore")):
         try:
             e = json.loads(line)
         except ValueError:
@@ -41,6 +49,9 @@ def usage(path, since):
             continue
         if since and (stamp(e) or since) < since:
             continue
+        replies[m.get("id") or n] = m
+    rows = collections.defaultdict(collections.Counter)
+    for m in replies.values():
         u, c = m["usage"], rows[m.get("model", "?")]
         c["turns"] += 1
         c["cache read"] += u.get("cache_read_input_tokens") or 0
