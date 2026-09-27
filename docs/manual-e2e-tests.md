@@ -605,9 +605,10 @@ Nothing was judged by eye. Two small tools were built:
 Two things had to be worked around, and session A's results have to be read with both limits in
 mind:
 
-- **The SwiftUI popover's AX tree has no readable attributes** — 63 elements with empty `role`,
-  `name` and `value`. So it has to be clicked by coordinates measured from a screenshot. The editor
-  window is the opposite: a real `NSWindow`, where AX works well.
+- **The SwiftUI popover's AX tree had no readable attributes** in this session — 63 elements with
+  empty `role`, `name` and `value` — so it was clicked by coordinates measured from a screenshot. A
+  later session found it readable; see *The popover's Accessibility tree is readable after all*. The
+  editor window is a real `NSWindow`, where AX works well.
 - **The scenarios for A4…A9 were written straight to `scenario.json`** using the app's own encoder,
   rather than built in the editor window. That also checks `ST-2` and `ST-5`…`ST-8`, but it does
   **not** check `UI-9` (drag to reorder, add/duplicate/delete a Step) or `UI-10` (the detail panel).

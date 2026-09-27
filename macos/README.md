@@ -178,7 +178,7 @@ obvious. Change a behaviour and you change the spec first.
 ## Development
 
 ```bash
-swift test
+swift test --no-parallel   # what CI runs; .github/workflows/macos.yml says why
 swift run Clickify
 ```
 
