@@ -95,17 +95,27 @@ Repository skills live in `.agents/skills/<name>/SKILL.md` (`.claude/skills` is 
 | `prove-a-change` | about to say a change works — choosing the tier, running it, writing the evidence |
 | `add-interface-string` | adding or changing text the user sees |
 | `doc-claim-audit` | editing or reviewing a README, SDD file, ADR or testing document |
+| `start-task` | taking a task from idea to reviewed PR: plan → cheap implementer → check → PR → reviewer |
+
+`start-task` spawns two subagents, `implementer` and `reviewer`. Their instructions live once, in
+`.agents/skills/start-task/roles/`. Claude Code defines them in `.claude/agents/` with the aliases
+`sonnet` and `opus`; Codex and Grok get a model chosen at run time from `.agents/models.json` by
+`resolve-model.py`. Each run ends with `measure.py`, which reports the tokens per phase. The model and effort for each phase are in that skill's table.
 
 ## Per-harness notes
 
 Checked on 2026-09-27 by asking each CLI, with tools forbidden, what it had loaded.
 
 - **Claude Code** — loads `CLAUDE.md`, which imports this file; skills through the `.claude/skills`
-  symlink.
-- **Codex** — loads this file and `.agents/skills/` natively.
+  symlink; subagents from `.claude/agents/`.
+- **Codex** — loads this file and `.agents/skills/` natively. Its `spawn_agent` (0.154) has no named
+  roles, so `start-task` passes the resolved model and effort explicitly.
 - **Grok** — loads this file, `CLAUDE.md` (for Claude compatibility; its notes are labelled
   Claude-only) and `.agents/skills/`, but **only in a trusted folder**: without `--trust` or an
   interactive grant it starts with neither. Keep repository skills out of `.grok/skills/`, so there
   is one copy.
 - **agy (Antigravity CLI)** — loads this file and `.agents/skills/` natively. Do not add a
   `GEMINI.md`; it would be a second copy of this one.
+- **`start-task` on Grok** passes the resolved model to `spawn_subagent`; effort cannot be set per
+  subagent there, so it is inherited. Written from Grok's documentation and **not yet run** — the
+  account had no credit when it was set up. On **agy**, run every phase in the main session.

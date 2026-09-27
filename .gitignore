@@ -13,3 +13,6 @@ keystore.properties
 *.jks
 *.keystore
 .env
+
+# Agent working files: plans written by the start-task skill
+.agents/plans/

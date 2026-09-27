@@ -1,0 +1,40 @@
+{
+  "_about": "Model preferences for the start-task skill, by tier. resolve-model.py picks, at run time, the first candidate that is in the harness's live catalog and answers a one-word ping. Patterns are shell globs, tried in order; several matches of one glob are tried newest version first. Claude Code is not listed: its subagents use the aliases `opus` and `sonnet` in .claude/agents/, which always resolve to the latest models. Add the models your own machine offers; if nothing matches, the subagent inherits the main session's model.",
+  "tiers": {
+    "strong": {
+      "effort": "high",
+      "used_by": "the reviewer subagent; also what to start the main session on"
+    },
+    "fast": {
+      "effort": "medium",
+      "used_by": "the implementer subagent"
+    }
+  },
+  "codex": {
+    "_note": "OpenAI first, as listed on developers.openai.com/api/docs/pricing on 2026-09-27; the Grok entries serve a Codex pointed at an xAI-compatible provider. Catalogs do not overlap, so order between the two families does not matter. gpt-6-sol costs what Sonnet 5 costs, so it is the strong tier and the fast tier drops one size to Luna; gpt-6-astra ($10/$50) is left out on cost.",
+    "strong": [
+      "gpt-6-sol",
+      "gpt-5.6-sol",
+      "gpt-5.5",
+      "grok-4.7",
+      "grok-4.[0-9]"
+    ],
+    "fast": [
+      "gpt-6-luna",
+      "gpt-5.6-luna",
+      "gpt-5.6-terra",
+      "grok-*-build-fast",
+      "kimi-*-code",
+      "glm-*-flash"
+    ]
+  },
+  "grok": {
+    "strong": [
+      "grok-4.7",
+      "grok-4.[0-9]"
+    ],
+    "fast": [
+      "grok-*-build-fast"
+    ]
+  }
+}
