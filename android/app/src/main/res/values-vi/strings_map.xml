@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A5, the Scenario map. See android/docs/sdd/12-scenario-map.md. -->
+<resources>
+    <string name="map_menu_preview">Xem trước</string>
+    <string name="map_open_overlay">Mở trong Overlay</string>
+    <string name="map_caption_profile">%1$d×%2$d · %3$s</string>
+    <string name="map_caption_repeat">↻ ×%1$d</string>
+    <string name="map_caption_until_stopped">↻ tới khi dừng</string>
+    <string name="map_badge_present">có mặt</string>
+    <string name="map_badge_absent">vắng mặt</string>
+    <string name="map_detail_destination">Tới %1$d, %2$d</string>
+    <string name="map_detail_path">Đường %1$d: %2$d, %3$d tới %4$d, %5$d · %6$d ms</string>
+    <string name="map_detail_region">Vùng %1$d, %2$d tới %3$d, %4$d</string>
+    <string name="map_frame_description">Bản đồ của kịch bản</string>
+    <string name="map_dot_description">Bước %1$s</string>
+    <string name="map_empty">Kịch bản này chưa có bước nào.</string>
+    <string name="map_not_found">Không thể mở kịch bản này.</string>
+    <string name="map_play">Phát</string>
+    <string name="map_pause">Tạm dừng</string>
+    <string name="map_replay">Phát lại</string>
+    <string name="map_speed_label">%1$s×</string>
+    <string name="map_speed_description">Tốc độ %1$s×</string>
+    <string name="map_step_of">Bước %1$d/%2$d</string>
+    <string name="map_wait">chờ %1$d ms</string>
+    <string name="map_repeat">×%1$d</string>
+    <string name="map_out_not_found_stop">không thấy → dừng</string>
+    <string name="map_out_not_found_skip">không thấy → bỏ qua</string>
+    <string name="map_out_only_present">chỉ khi có mặt</string>
+    <string name="map_out_only_absent">chỉ khi vắng mặt</string>
+    <string name="map_out_otherwise_skip">nếu không → bỏ qua</string>
+    <string name="map_out_otherwise_stop">nếu không → dừng</string>
+</resources>

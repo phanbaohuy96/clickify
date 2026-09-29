@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A5, the Scenario map. See android/docs/sdd/12-scenario-map.md. -->
+<resources>
+    <string name="map_menu_preview">Vista previa</string>
+    <string name="map_open_overlay">Abrir en el Overlay</string>
+    <string name="map_caption_profile">%1$d×%2$d · %3$s</string>
+    <string name="map_caption_repeat">↻ ×%1$d</string>
+    <string name="map_caption_until_stopped">↻ hasta pararlo</string>
+    <string name="map_badge_present">presente</string>
+    <string name="map_badge_absent">ausente</string>
+    <string name="map_detail_destination">A %1$d, %2$d</string>
+    <string name="map_detail_path">Trazo %1$d: %2$d, %3$d a %4$d, %5$d · %6$d ms</string>
+    <string name="map_detail_region">Región %1$d, %2$d a %3$d, %4$d</string>
+    <string name="map_frame_description">Mapa del escenario</string>
+    <string name="map_dot_description">Paso %1$s</string>
+    <string name="map_empty">Este escenario aún no tiene pasos.</string>
+    <string name="map_not_found">No se pudo abrir este escenario.</string>
+    <string name="map_play">Reproducir</string>
+    <string name="map_pause">Pausar</string>
+    <string name="map_replay">Repetir</string>
+    <string name="map_speed_label">%1$s×</string>
+    <string name="map_speed_description">Velocidad %1$s×</string>
+    <string name="map_step_of">Paso %1$d/%2$d</string>
+    <string name="map_wait">espera %1$d ms</string>
+    <string name="map_repeat">×%1$d</string>
+    <string name="map_out_not_found_stop">no aparece → parar</string>
+    <string name="map_out_not_found_skip">no aparece → omitir</string>
+    <string name="map_out_only_present">solo si está presente</string>
+    <string name="map_out_only_absent">solo si está ausente</string>
+    <string name="map_out_otherwise_skip">si no → omitir</string>
+    <string name="map_out_otherwise_stop">si no → parar</string>
+</resources>

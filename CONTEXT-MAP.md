@@ -8,7 +8,8 @@ Clickify is one product on two platforms. The concepts are shared; almost nothin
   **Target**, **Guard**, **Template**, **Search region**, **Recording session**,
   **Interface language**. True on every platform.
 - [Clickify for Android](./android/CONTEXT.md) — **Overlay**, **Marker**, **Gesture**,
-  **Global action**, **Set text**, **Screen profile**, **Foreground application**.
+  **Global action**, **Set text**, **Screen profile**, **Foreground application**,
+  **Scenario map**, **Playback**.
 - [Clickify for macOS](./macos/CONTEXT.md) — **Simple mode**, **Locked application**,
   **Anchor window**, **Recognition language**, **Input source**.
 

@@ -24,6 +24,7 @@ ambiguous about which platform it belongs to.
 | `PK` | Picking a point to aim a Step at | [09](./09-picking.md) |
 | `TP` | Templates and recognition | [10](./10-recognition.md) |
 | `IL` | Interface languages | [11](./11-localisation.md) |
+| `MP` | The Scenario map | [12](./12-scenario-map.md) |
 
 macOS identifiers — `DM`, `EX`, `ST`, `UI`, `RC`, `RG`, `SF`, `LC` — keep their meaning when cited
 from here, and always link back to [`../../../docs/sdd/`](../../../docs/sdd/).
@@ -35,7 +36,7 @@ obvious name losing to the rule is the rule working.
 
 ## Status
 
-Every requirement carries the slice it belongs to, `[A1]`…`[A4]`, see [01](./01-scope.md).
+Every requirement carries the slice it belongs to, `[A1]`…`[A5]`, see [01](./01-scope.md).
 `[done]` means the code and its tests exist. It does **not** mean the behaviour has been seen on a
 real phone: per [`../testing.md`](../testing.md) no physical Android device is in use on this
 project, so anything that can only be proved on hardware stays listed there as unverified.

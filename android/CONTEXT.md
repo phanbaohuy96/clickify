@@ -42,6 +42,18 @@ _Avoid_: screen size, device config, layout, resolution
 The application whose window is in front, which is therefore the one a **Gesture** will reach.
 _Avoid_: current app, active app, locked application
 
+**Scenario map**:
+A read-only drawing of one **Scenario** on a frame shaped like its **Screen profile**: every **Step**
+at the place it will act, joined in order, with its **Guard** and **Template** beside it. It shows
+what a run would do; it never runs anything.
+_Avoid_: preview (the button's word, not the concept's), diagram, simulation, flowchart
+
+**Playback**:
+The **Scenario map** walking its own path one **Step** at a time, at a pace of its own rather than
+the **Scenario**'s timing, taking the path on which every **Guard** comes true and every **Template**
+is found where it was cropped.
+_Avoid_: dry run, simulation, test run, replay (the button's word)
+
 ## Relationships
 
 - The **Overlay** is the only surface Clickify has while another application is in front, so
@@ -51,6 +63,13 @@ _Avoid_: current app, active app, locked application
   **Marker**; a swipe has two, joined; a **Step** with no fixed point has none.
 - **Marker**s are numbered by **Step** order, because order is the one thing a spatial layout
   cannot show by itself.
+- A **Scenario map** draws the same numbered path the **Marker**s do, from Clickify's own screens
+  rather than over another application, and so is a way to read a **Scenario**, never to build one.
+  Because a **Scenario** has no branches, the map has one path; a **Guard** or search that gives up
+  either ends it or steps around its own **Step**, never elsewhere. See [ADR-0011](../docs/adr/0011-a-scenario-has-no-branches.md).
+- **Playback** reads a **Scenario** in time, it does not try one: it never sees a screen, so it
+  cannot know whether a **Guard** holds, and it says what would happen if one did not instead of
+  pretending to find out. Nothing about a **Playback** is evidence that a **Scenario** works.
 - A **Scenario** belongs to exactly one **Screen profile**. A **Marker** is a raw pixel inside that
   profile, never a fraction of the screen; when the profile does not match, the **Scenario** refuses
   to run rather than acting approximately. See [ADR-0013].

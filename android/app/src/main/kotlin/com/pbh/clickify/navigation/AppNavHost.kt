@@ -4,6 +4,8 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.pbh.clickify.feature.map.navigation.ScenarioMapRoute
+import com.pbh.clickify.feature.map.ui.ScenarioMapScreen
 import com.pbh.clickify.feature.onboarding.navigation.OnboardingRoute
 import com.pbh.clickify.feature.onboarding.ui.OnboardingScreen
 import com.pbh.clickify.feature.scenario.navigation.ScenarioListRoute
@@ -25,7 +27,13 @@ fun AppNavHost(startWithOnboarding: Boolean) {
         startDestination = if (startWithOnboarding) OnboardingRoute else ScenarioListRoute,
     ) {
         composable<ScenarioListRoute> {
-            ScenarioListScreen(onSetUp = { navController.navigate(OnboardingRoute) })
+            ScenarioListScreen(
+                onSetUp = { navController.navigate(OnboardingRoute) },
+                onPreview = { navController.navigate(ScenarioMapRoute(it.toString())) },
+            )
+        }
+        composable<ScenarioMapRoute> {
+            ScenarioMapScreen(onSetUp = { navController.navigate(OnboardingRoute) })
         }
         composable<OnboardingRoute> {
             OnboardingScreen(

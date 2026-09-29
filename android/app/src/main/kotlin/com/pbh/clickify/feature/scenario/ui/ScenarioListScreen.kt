@@ -64,6 +64,7 @@ import com.pbh.clickify.overlay.OverlayService
 @Composable
 fun ScenarioListScreen(
     onSetUp: () -> Unit,
+    onPreview: (java.util.UUID) -> Unit,
     viewModel: ScenarioListViewModel = hiltViewModel(),
 ) {
     val context = LocalContext.current
@@ -120,6 +121,7 @@ fun ScenarioListScreen(
                     ScenarioRow(
                         stored = stored,
                         onOpen = { viewModel.open(stored) },
+                        onPreview = { onPreview(stored.scenario.id) },
                         onRename = { renaming = stored },
                         onDuplicate = { viewModel.duplicate(stored) },
                         onDelete = { confirmingDelete = stored },
@@ -246,6 +248,7 @@ private fun RenameDialog(
 private fun ScenarioRow(
     stored: StoredScenario,
     onOpen: () -> Unit,
+    onPreview: () -> Unit,
     onRename: () -> Unit,
     onDuplicate: () -> Unit,
     onDelete: () -> Unit,
@@ -286,6 +289,7 @@ private fun ScenarioRow(
             Spacer(Modifier.padding(horizontal = 2.dp))
             RowMenu(
                 readOnly = stored.readOnly,
+                onPreview = onPreview,
                 onRename = onRename,
                 onDuplicate = onDuplicate,
                 onDelete = onDelete,
@@ -304,6 +308,7 @@ private fun ScenarioRow(
 @Composable
 private fun RowMenu(
     readOnly: Boolean,
+    onPreview: () -> Unit,
     onRename: () -> Unit,
     onDuplicate: () -> Unit,
     onDelete: () -> Unit,
@@ -316,6 +321,14 @@ private fun RowMenu(
         }
         DropdownMenu(expanded = open, onDismissRequest = { open = false }) {
             if (!readOnly) {
+                // MP-1: reading a Scenario, kept off the row's own tap, which opens the Overlay.
+                DropdownMenuItem(
+                    text = { Text(stringResource(R.string.map_menu_preview)) },
+                    onClick = {
+                        open = false
+                        onPreview()
+                    },
+                )
                 DropdownMenuItem(
                     text = { Text(stringResource(R.string.scenario_rename)) },
                     onClick = {
@@ -389,7 +402,7 @@ private fun LanguageMenu(
 }
 
 /** The Activity behind a Compose `LocalContext`, which is wrapped at least once by the theme. */
-private tailrec fun Context.findActivity(): Activity? =
+internal tailrec fun Context.findActivity(): Activity? =
     when (this) {
         is Activity -> this
         is ContextWrapper -> baseContext.findActivity()
