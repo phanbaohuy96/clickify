@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A5, the Scenario map. See android/docs/sdd/12-scenario-map.md. -->
+<resources>
+    <string name="map_menu_preview">Preview</string>
+    <string name="map_open_overlay">Open in Overlay</string>
+    <string name="map_caption_profile">%1$d×%2$d · %3$s</string>
+    <string name="map_caption_repeat">↻ ×%1$d</string>
+    <string name="map_caption_until_stopped">↻ until stopped</string>
+    <string name="map_badge_present">present</string>
+    <string name="map_badge_absent">absent</string>
+    <string name="map_detail_destination">To %1$d, %2$d</string>
+    <string name="map_detail_path">Path %1$d: %2$d, %3$d to %4$d, %5$d · %6$d ms</string>
+    <string name="map_detail_region">Region %1$d, %2$d to %3$d, %4$d</string>
+    <string name="map_frame_description">Map of the scenario</string>
+    <string name="map_dot_description">Step %1$s</string>
+    <string name="map_empty">This scenario has no steps yet.</string>
+    <string name="map_not_found">This scenario could not be opened.</string>
+    <string name="map_play">Play</string>
+    <string name="map_pause">Pause</string>
+    <string name="map_replay">Replay</string>
+    <string name="map_speed_label">%1$s×</string>
+    <string name="map_speed_description">Speed %1$s×</string>
+    <string name="map_step_of">Step %1$d/%2$d</string>
+    <string name="map_wait">wait %1$d ms</string>
+    <string name="map_repeat">×%1$d</string>
+    <string name="map_out_not_found_stop">not found → stop</string>
+    <string name="map_out_not_found_skip">not found → skip</string>
+    <string name="map_out_only_present">only if present</string>
+    <string name="map_out_only_absent">only if absent</string>
+    <string name="map_out_otherwise_skip">otherwise → skip</string>
+    <string name="map_out_otherwise_stop">otherwise → stop</string>
+</resources>

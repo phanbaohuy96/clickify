@@ -95,6 +95,23 @@ inside the single theme both surfaces pass through, with no restart and nothing 
 on 30, and it restarts the process to apply — which would take the **Overlay** off the screen of
 whatever the user was in the middle of automating.
 
+### A5 — The Scenario map
+
+Specified in [12](./12-scenario-map.md), where the prefix is `MP`.
+
+- A read-only, fullscreen Activity screen: a phone frame shaped like the **Scenario**'s **Screen
+  profile**, with each **Step** at the pixel it acts on, numbered and joined in order by arrows
+- **Playback**: the map plays the **Scenario** through by itself, **Step** by **Step**, on the path
+  where every **Guard** holds and every **Template** is found. It never loops and never waits a real
+  delay, and it is not evidence that the **Scenario** works
+- **Template** pictures where they were cropped, and a tooltip and a card that say what a **Step**
+  looks for and what happens when it gives up
+- Controls for play/pause, previous and next **Step**, replay and speed; pinch and pan inside the
+  frame; open the **Scenario** in the **Overlay**
+- One path and no branch: a search that gives up ends the path or steps around its own **Step**,
+  never elsewhere ([ADR-0011])
+- Nothing is edited from it, and nothing new is stored
+
 ## Out of scope
 
 Stated explicitly so it does not get proposed again.

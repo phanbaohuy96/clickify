@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A5, the Scenario map. See android/docs/sdd/12-scenario-map.md. -->
+<resources>
+    <string name="map_menu_preview">预览</string>
+    <string name="map_open_overlay">在悬浮窗中打开</string>
+    <string name="map_caption_profile">%1$d×%2$d · %3$s</string>
+    <string name="map_caption_repeat">↻ ×%1$d</string>
+    <string name="map_caption_until_stopped">↻ 直到手动停止</string>
+    <string name="map_badge_present">出现</string>
+    <string name="map_badge_absent">不出现</string>
+    <string name="map_detail_destination">到 %1$d, %2$d</string>
+    <string name="map_detail_path">路径 %1$d：%2$d, %3$d 到 %4$d, %5$d · %6$d 毫秒</string>
+    <string name="map_detail_region">区域 %1$d, %2$d 到 %3$d, %4$d</string>
+    <string name="map_frame_description">场景地图</string>
+    <string name="map_dot_description">第 %1$s 步</string>
+    <string name="map_empty">这个场景还没有步骤。</string>
+    <string name="map_not_found">无法打开这个场景。</string>
+    <string name="map_play">播放</string>
+    <string name="map_pause">暂停</string>
+    <string name="map_replay">重播</string>
+    <string name="map_speed_label">%1$s×</string>
+    <string name="map_speed_description">速度 %1$s×</string>
+    <string name="map_step_of">第 %1$d/%2$d 步</string>
+    <string name="map_wait">等待 %1$d 毫秒</string>
+    <string name="map_repeat">×%1$d</string>
+    <string name="map_out_not_found_stop">未找到 → 停止</string>
+    <string name="map_out_not_found_skip">未找到 → 跳过</string>
+    <string name="map_out_only_present">仅当出现时</string>
+    <string name="map_out_only_absent">仅当不出现时</string>
+    <string name="map_out_otherwise_skip">否则 → 跳过</string>
+    <string name="map_out_otherwise_stop">否则 → 停止</string>
+</resources>

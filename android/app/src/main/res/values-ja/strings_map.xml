@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A5, the Scenario map. See android/docs/sdd/12-scenario-map.md. -->
+<resources>
+    <string name="map_menu_preview">プレビュー</string>
+    <string name="map_open_overlay">オーバーレイで開く</string>
+    <string name="map_caption_profile">%1$d×%2$d · %3$s</string>
+    <string name="map_caption_repeat">↻ ×%1$d</string>
+    <string name="map_caption_until_stopped">↻ 停止するまで</string>
+    <string name="map_badge_present">あり</string>
+    <string name="map_badge_absent">なし</string>
+    <string name="map_detail_destination">移動先 %1$d, %2$d</string>
+    <string name="map_detail_path">パス %1$d：%2$d, %3$d から %4$d, %5$d · %6$d ミリ秒</string>
+    <string name="map_detail_region">範囲 %1$d, %2$d から %3$d, %4$d</string>
+    <string name="map_frame_description">シナリオのマップ</string>
+    <string name="map_dot_description">ステップ %1$s</string>
+    <string name="map_empty">このシナリオにはまだステップがありません。</string>
+    <string name="map_not_found">このシナリオを開けませんでした。</string>
+    <string name="map_play">再生</string>
+    <string name="map_pause">一時停止</string>
+    <string name="map_replay">もう一度再生</string>
+    <string name="map_speed_label">%1$s×</string>
+    <string name="map_speed_description">速度 %1$s×</string>
+    <string name="map_step_of">ステップ %1$d/%2$d</string>
+    <string name="map_wait">%1$d ミリ秒待つ</string>
+    <string name="map_repeat">×%1$d</string>
+    <string name="map_out_not_found_stop">見つからない → 停止</string>
+    <string name="map_out_not_found_skip">見つからない → スキップ</string>
+    <string name="map_out_only_present">ある場合のみ</string>
+    <string name="map_out_only_absent">ない場合のみ</string>
+    <string name="map_out_otherwise_skip">そうでなければ → スキップ</string>
+    <string name="map_out_otherwise_stop">そうでなければ → 停止</string>
+</resources>
