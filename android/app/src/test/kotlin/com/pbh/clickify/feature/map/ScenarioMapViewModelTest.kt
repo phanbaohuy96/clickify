@@ -157,6 +157,31 @@ class ScenarioMapViewModelTest {
         }
 
     @Test
+    fun `a tick after a long stop advances at most one capped frame`() =
+        runTest(dispatcher) {
+            val viewModel = viewModel(three)
+            advanceUntilIdle()
+
+            viewModel.tick(60_000)
+            assertEquals(100, viewModel.state.value.elapsedMilliseconds)
+            viewModel.cycleSpeed()
+            viewModel.tick(60_000)
+            assertEquals(300, viewModel.state.value.elapsedMilliseconds)
+        }
+
+    @Test
+    fun `a slow speed does not lose the fraction of each frame`() =
+        runTest(dispatcher) {
+            val viewModel = viewModel(three)
+            advanceUntilIdle()
+            repeat(4) { viewModel.cycleSpeed() }
+            assertEquals(PlaybackSpeed.HALF, viewModel.state.value.speed)
+
+            repeat(100) { viewModel.tick(17) }
+            assertTrue(kotlin.math.abs(viewModel.state.value.elapsedMilliseconds - 850) <= 1)
+        }
+
+    @Test
     fun `paused, a tick does nothing`() =
         runTest(dispatcher) {
             val viewModel = viewModel(three)
@@ -248,7 +273,7 @@ class ScenarioMapViewModelTest {
             val viewModel = viewModel(three)
             advanceUntilIdle()
 
-            viewModel.tick(1_000_000)
+            repeat(200) { viewModel.tick(100) }
 
             var state = viewModel.state.value
             assertFalse(state.playing)

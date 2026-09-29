@@ -30,6 +30,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.withContext
 import java.util.UUID
 import javax.inject.Inject
+import kotlin.math.floor
 
 data class ScenarioMapUiState(
     val loading: Boolean = true,
@@ -94,6 +95,9 @@ class ScenarioMapViewModel
             }
         }
 
+        /** The part of a millisecond a scaled tick left over, so that 0.5x does not lose half of every frame. */
+        private var remainder = 0.0
+
         private suspend fun load(id: UUID) {
             when (val result = repository.load(id)) {
                 is AppResult.Failure -> setState { copy(loading = false, failed = true) }
@@ -148,6 +152,7 @@ class ScenarioMapViewModel
         /** `MP-11`: back to Step 1, then play. */
         fun replay() {
             if (currentState.beats.isEmpty()) return
+            remainder = 0.0
             setState { copy(elapsedMilliseconds = 0, playing = true, followCamera = true, cardFor = null) }
         }
 
@@ -178,12 +183,16 @@ class ScenarioMapViewModel
             val state = currentState
             if (!state.playing || state.beats.isEmpty()) return
             val total = state.beats.totalMilliseconds
-            val elapsed = (state.elapsedMilliseconds + (frameDeltaMillis * state.speed.factor).toLong()).coerceAtMost(total)
+            val exact =
+                state.elapsedMilliseconds + remainder + frameDeltaMillis.coerceIn(0, MAX_FRAME_DELTA_MILLISECONDS) * state.speed.factor
+            val elapsed = floor(exact).toLong().coerceAtMost(total)
+            remainder = if (elapsed >= total) 0.0 else exact - elapsed
             setState { copy(elapsedMilliseconds = elapsed, playing = elapsed < total) }
         }
 
         private fun jumpTo(stepIndex: Int?) {
             val beat = stepIndex?.let { currentState.beats.stepBeatIndexOf(it) } ?: return
+            remainder = 0.0
             setState { copy(elapsedMilliseconds = beats.startOf(beat), cardFor = null) }
         }
 
@@ -191,3 +200,10 @@ class ScenarioMapViewModel
             currentState.scenario?.let { sendEffect(ScenarioMapEffect.OpenOverlay(it.id)) }
         }
     }
+
+/**
+ * The longest a single frame may move Playback. The Compose frame clock pauses while the app is stopped,
+ * so the first frame after coming back reports all the time spent away; without this cap Playback would
+ * jump by that much.
+ */
+internal const val MAX_FRAME_DELTA_MILLISECONDS = 100L

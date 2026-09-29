@@ -35,9 +35,8 @@ internal data class FrameView(
         return copy(zoom = next, pan = clamped(centroid - (centroid - pan) * (next / zoom) + panChange, next))
     }
 
-    /** The pan that puts [point] in the middle of the frame, as far as the edges allow. */
-    fun centredOn(point: ScreenPoint): Offset =
-        clamped(Offset(size.width / 2f - point.x * fit * zoom, size.height / 2f - point.y * fit * zoom), zoom)
+    /** The pan that puts the canvas place [screen] in the middle of the frame, as far as the edges allow. */
+    fun panToCentre(screen: Offset): Offset = clamped(pan + Offset(size.width / 2f, size.height / 2f) - screen, zoom)
 
     private fun clamped(
         pan: Offset,
@@ -68,6 +67,9 @@ internal class MapLayout(
     /** The box the Step numbered [stepNumber] occupies, whether it is a dot or a chip. */
     fun rectOf(stepNumber: Int): Rect? =
         dots.firstOrNull { stepNumber in it.dot.numbers }?.rect ?: chips.firstOrNull { it.chip.stepNumber == stepNumber }?.rect
+
+    /** Where the Step numbered [stepNumber] is drawn on screen: its dot's centre, or its chip's laid-out centre (`MP-6`). */
+    fun centreOf(stepNumber: Int): Offset? = rectOf(stepNumber)?.center
 
     /** The Step numbers under [tap], or null for empty frame. A dot wins over a chip beneath it. */
     fun hit(

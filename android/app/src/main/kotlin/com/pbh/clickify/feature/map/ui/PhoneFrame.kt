@@ -51,9 +51,7 @@ import com.pbh.clickify.R
 import com.pbh.clickify.domain.map.Beat
 import com.pbh.clickify.domain.map.MapChip
 import com.pbh.clickify.domain.map.ScenarioMap
-import com.pbh.clickify.domain.map.placeOf
 import com.pbh.clickify.domain.scenario.Scenario
-import com.pbh.clickify.domain.scenario.ScreenPoint
 import com.pbh.clickify.domain.scenario.ScreenProfile
 import com.pbh.clickify.overlay.ui.summary
 
@@ -100,7 +98,7 @@ internal fun PhoneFrame(
     val currentView by rememberUpdatedState(view)
     val currentLayout by rememberUpdatedState(layout)
     val currentActions by rememberUpdatedState(actions)
-    FollowCamera(state.followCamera && state.playing, focusOf(map, state), { currentView }) { pan += it }
+    FollowCamera(state.followCamera && state.playing, focusOf(layout, state), { currentView }) { pan += it }
 
     val scene = sceneOf(map, layout, state, colours, view)
     val frameDescription = stringResource(R.string.map_frame_description)
@@ -183,19 +181,17 @@ private fun FrameOverlays(
     }
 }
 
-/** Where the camera looks: the current Step's place, or the point the arrow has reached (`MP-13`). */
+/** Where the camera looks, on screen: the current Step as drawn, or the point the arrow has reached (`MP-13`). */
 private fun focusOf(
-    map: ScenarioMap,
+    layout: MapLayout,
     state: ScenarioMapUiState,
-): ScreenPoint? =
+): Offset? =
     when (val beat = state.beats.getOrNull(state.position.beatIndex)) {
-        is Beat.StepBeat -> map.placeOf(beat.stepIndex + 1)
+        is Beat.StepBeat -> layout.centreOf(beat.stepIndex + 1)
         is Beat.TravelBeat -> {
-            val progress = state.position.progress
-            ScreenPoint(
-                (beat.from.x + (beat.to.x - beat.from.x) * progress).toInt(),
-                (beat.from.y + (beat.to.y - beat.from.y) * progress).toInt(),
-            )
+            val from = layout.centreOf(beat.fromIndex + 1)
+            val to = layout.centreOf(beat.toIndex + 1)
+            if (from == null || to == null) null else from + (to - from) * state.position.progress
         }
         null -> null
     }
@@ -244,7 +240,7 @@ private const val CARD_GAP_DP = 16f
 @Composable
 private fun FollowCamera(
     following: Boolean,
-    focus: ScreenPoint?,
+    focus: Offset?,
     view: () -> FrameView,
     onPan: (Offset) -> Unit,
 ) {
@@ -254,7 +250,7 @@ private fun FollowCamera(
         while (following) {
             withFrameNanos { }
             val now = currentView()
-            val target = currentFocus?.let { now.centredOn(it) }
+            val target = currentFocus?.let { now.panToCentre(it) }
             if (target != null && now.zoom > 1f) onPan((target - now.pan) * FOLLOW_EASE)
         }
     }
@@ -267,6 +263,24 @@ private fun DotTargets(
     density: Float,
     onTapStep: (List<Int>) -> Unit,
 ) {
+    layout.chips.forEach { placed ->
+        val description = stringResource(R.string.map_dot_description, placed.chip.stepNumber.toString())
+        val width = placed.rect.width.toInt()
+        val height = placed.rect.height.toInt()
+        Box(
+            Modifier
+                .offset { IntOffset(placed.rect.left.toInt(), placed.rect.top.toInt()) }
+                .size(with(LocalDensity.current) { width.toDp() }, with(LocalDensity.current) { height.toDp() })
+                .semantics {
+                    contentDescription = description
+                    role = Role.Button
+                    onClick {
+                        onTapStep(listOf(placed.chip.stepNumber))
+                        true
+                    }
+                },
+        )
+    }
     layout.dots.forEach { placed ->
         val description = stringResource(R.string.map_dot_description, placed.dot.label)
         val half = density * DOT_TARGET_DP / 2

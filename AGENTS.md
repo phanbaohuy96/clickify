@@ -19,7 +19,7 @@ kind of target application.
 | Before you… | Read |
 |---|---|
 | use or coin **any** domain word | `CONTEXT-MAP.md`, then `CONTEXT.md` and the platform glossary (`macos/CONTEXT.md`, `android/CONTEXT.md`) |
-| change observable behaviour | the requirement registry: `docs/sdd/README.md` (macOS: `DM EX ST UI RC RG SF LC`) or `android/docs/sdd/README.md` (`PM SM FS GX OV RD DS AP PK TP IL`) |
+| change observable behaviour | the requirement registry: `docs/sdd/README.md` (macOS: `DM EX ST UI RC RG SF LC`) or `android/docs/sdd/README.md` (`PM SM FS GX OV RD DS AP PK TP IL MP`) |
 | undo or work around a design choice | `docs/adr/` and `android/docs/adr/` — one numbering sequence across both folders |
 | claim something works on a device or screen | `android/docs/testing.md` (tiers 1–3, and the traps) or `docs/manual-e2e-tests.md` |
 | open a pull request | `.github/pull_request_template.md` |

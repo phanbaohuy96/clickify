@@ -24,13 +24,15 @@ import com.pbh.clickify.R
 import com.pbh.clickify.domain.scenario.OnTimeout
 import com.pbh.clickify.domain.scenario.Presence
 import com.pbh.clickify.domain.scenario.Step
+import com.pbh.clickify.overlay.ui.asSeconds
 import com.pbh.clickify.overlay.ui.summary
 import java.util.UUID
 
 /**
  * `MP-6`: where a box of [size] goes beside [anchor] inside [bounds]. It goes to the right of the anchor
- * and hangs below its middle; when that does not fit it flips to the left and above, and only then is
- * it clamped, so nothing is cut at the edge. [preferAbove] starts above instead, for a badge.
+ * and hangs below its middle; when that does not fit it flips to the left. When neither side has room it
+ * goes wholly below the anchor, or wholly above it, so it never covers what it points at; only when
+ * nothing fits is it clamped into [bounds]. [preferAbove] starts above instead, for a badge.
  */
 internal fun placeBeside(
     anchor: Rect,
@@ -39,15 +41,40 @@ internal fun placeBeside(
     bounds: Size,
     preferAbove: Boolean = false,
 ): Offset {
-    var x = anchor.right + gap
-    if (x + size.width > bounds.width) x = anchor.left - gap - size.width
-    var y = if (preferAbove) anchor.center.y - size.height else anchor.center.y
-    if (preferAbove && y < 0f) y = anchor.center.y
-    if (!preferAbove && y + size.height > bounds.height) y = anchor.center.y - size.height
+    val maxX = (bounds.width - size.width).coerceAtLeast(0f)
+    val maxY = (bounds.height - size.height).coerceAtLeast(0f)
+    val right = anchor.right + gap
+    val left = anchor.left - gap - size.width
+    val besideX =
+        when {
+            right + size.width <= bounds.width -> right
+            left >= 0f -> left
+            else -> null
+        }
+    if (besideX != null) {
+        var y = if (preferAbove) anchor.center.y - size.height else anchor.center.y
+        if (preferAbove && y < 0f) y = anchor.center.y
+        if (!preferAbove && y + size.height > bounds.height) y = anchor.center.y - size.height
+        return Offset(besideX.coerceIn(0f, maxX), y.coerceIn(0f, maxY))
+    }
     return Offset(
-        x.coerceIn(0f, (bounds.width - size.width).coerceAtLeast(0f)),
-        y.coerceIn(0f, (bounds.height - size.height).coerceAtLeast(0f)),
+        (anchor.center.x - size.width / 2f).coerceIn(0f, maxX),
+        belowOrAbove(anchor, gap, size, bounds, preferAbove).coerceIn(0f, maxY),
     )
+}
+
+/** The top edge for a box that has no room at either side: wholly below the anchor, or wholly above it. */
+private fun belowOrAbove(
+    anchor: Rect,
+    gap: Float,
+    size: Size,
+    bounds: Size,
+    preferAbove: Boolean,
+): Float {
+    val below = anchor.bottom + gap
+    val above = anchor.top - gap - size.height
+    val fitsBelow = below + size.height <= bounds.height
+    return if ((preferAbove || !fitsBelow) && above >= 0f) above else below
 }
 
 /** Lays [content] out inside the frame beside [anchor] (`MP-6`); the frame is the space this is given. */
@@ -102,7 +129,7 @@ internal fun MapTooltip(
                 Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(6.dp)) {
                     TemplateThumb(thumbnails[search.templateId], TOOLTIP_PICTURE_DP.dp)
                     Text(
-                        stringResource(R.string.map_wait, search.waitMilliseconds) + " · " + notFound(search.onTimeout),
+                        stringResource(R.string.recognition_wait, search.waitMilliseconds.asSeconds()) + " · " + notFound(search.onTimeout),
                         style = MaterialTheme.typography.labelSmall,
                     )
                 }

@@ -131,6 +131,7 @@ private fun LoadedMap(
     val tick by rememberUpdatedState(viewModel::tick)
     LaunchedEffect(state.playing) {
         if (!state.playing) return@LaunchedEffect
+        // Read afresh each time the loop starts, so that time spent stopped is never a delta.
         var last = withFrameMillis { it }
         while (true) {
             val now = withFrameMillis { it }

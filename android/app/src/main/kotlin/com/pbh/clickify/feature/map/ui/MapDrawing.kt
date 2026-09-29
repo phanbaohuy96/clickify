@@ -126,6 +126,12 @@ internal class MapScene(
 ) {
     val dp: Float get() = view.density
     val dotRadius: Float get() = dp * DOT_RADIUS_DP
+
+    /** `MP-6`: an end of a travel beat where it is drawn, which for a chip is where the layout put it and not its raw pixel. */
+    fun travelEnd(
+        stepIndex: Int,
+        raw: ScreenPoint,
+    ): Offset = layout.centreOf(stepIndex + 1) ?: view.toScreen(raw)
 }
 
 /** Everything on the map, back to front: pictures, order, travelled path, gestures, give-up, marks, finger, label. */
@@ -186,8 +192,8 @@ private fun DrawScope.drawTravelled(scene: MapScene) {
     val current = scene.play.position
     scene.play.beats.forEachIndexed { index, beat ->
         if (beat !is Beat.TravelBeat || index > current.beatIndex) return@forEachIndexed
-        val from = scene.view.toScreen(beat.from)
-        val to = scene.view.toScreen(beat.to)
+        val from = scene.travelEnd(beat.fromIndex, beat.from)
+        val to = scene.travelEnd(beat.toIndex, beat.to)
         if (index < current.beatIndex) {
             arrow(from, to, scene.colours.accent.copy(alpha = VISITED_ALPHA), scene.dp * ARROW_STROKE_DP * 2, inset, head)
         } else {
@@ -235,7 +241,7 @@ private fun DrawScope.drawWaitLabel(scene: MapScene) {
     val label = scene.play.waitLabel ?: return
     val progress = scene.play.position.progress
     val alpha = if (progress < FADE_FROM) 1f else ((1f - progress) / (1f - FADE_FROM)).coerceIn(0f, 1f)
-    val middle = scene.view.toScreen(ScreenPoint((beat.from.x + beat.to.x) / 2, (beat.from.y + beat.to.y) / 2))
+    val middle = (scene.travelEnd(beat.fromIndex, beat.from) + scene.travelEnd(beat.toIndex, beat.to)) / 2f
     val pad = scene.dp * CHIP_PADDING_DP
     val width = label.size.width + pad * 2
     val height = label.size.height + pad * 2
